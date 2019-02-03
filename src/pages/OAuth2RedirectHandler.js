@@ -3,16 +3,34 @@ import { SocialLoginContainer } from 'containers';
 import { withRouter } from 'react-router';
 import { connect } from 'react-redux';
 import  { Redirect } from 'react-router-dom'
+import { ACCESS_TOKEN } from '../constants';
+import { parse } from 'query-string'
+import { SetAuthorizationToken } from '../utils'
 
 class OAuth2RedirectHandler extends Component {
 
     render() {
         
-        const token = true;
+        let queryString = parse(this.props.location.search);
+        let token;
+        let error;
 
-        let result = token ? <Redirect to="/main"/> : <Redirect to="/"/>
+        if(queryString)
+            if(queryString.token){
+                token = queryString.token
+                SetAuthorizationToken(token) //request Header에 토큰 포함
+            }
+            else
+                error = queryString.error
 
-        return result;
+        //토큰 값이 존재 한다면
+        if(token){
+            localStorage.setItem(ACCESS_TOKEN, token)
+            return <Redirect to="/main"/>
+        }
+        else{ //error라면
+            return <Redirect to="/"/>
+        }
     }
 }
 

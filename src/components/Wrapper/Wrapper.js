@@ -3,7 +3,7 @@ import './Wrapper.css'
 
 const Wrapper = ({children}) =>{
     return(
-        <div className="Wrapper">
+        <div className="wrapper">
             {children}
         </div>
     );

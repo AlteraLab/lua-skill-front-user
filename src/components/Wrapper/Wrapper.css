@@ -1,10 +1,17 @@
-.Wrapper {
+.wrapper {
     width: 50rem;
     margin: 0 auto;
+    position:relative;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-align-items: center;
+    align-items: center; 
 }
 
 @media (max-width: 768px) {
-    .Wrapper {
+    .wrapper {
         width: 90%;
+        height: 300px;
+        vertical-align: middle
     }   
 }
