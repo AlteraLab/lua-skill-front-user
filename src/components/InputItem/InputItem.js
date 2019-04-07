@@ -1,7 +1,7 @@
 import React from 'react';
 import './InputItem.css';
 
-const InputItem = ({ name, label, must, placeholder, disabled, value }) => {
+const InputItem = ({ name, label, must, placeholder, disabled, value, onChange }) => {
     const inputItemClass='InputItem'
     let inputItem = must ? `${inputItemClass} must` : inputItemClass;
     let color = disabled ? '#EDEDED' : 'white';
@@ -21,6 +21,8 @@ const InputItem = ({ name, label, must, placeholder, disabled, value }) => {
                         backgroundColor: color
                     }}
                     value={value}
+                    name={label}
+                    onChange={onChange}
                 />
             </div>
         </div>

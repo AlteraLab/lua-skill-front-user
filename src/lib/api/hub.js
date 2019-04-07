@@ -1,13 +1,16 @@
 import axios from 'axios';
 import ip from 'ip';
 import publicIp from 'public-ip';
-import { HUB_EXTERNAL_PORT } from '../../constants';
+import { 
+    HUB_EXTERNAL_PORT,
+    API_BASE_URL
+} from '../../constants';
 
 //skill 서버로 데이터 전송
-export const registerHub = (natAddress) => {
-    let baseURL = `http://${natAddress}:12345/hub`
-
-    return axios.post(baseURL, { natAddress: natAddress })
+export const registerHub = (hubInfo) => {
+    const baseURL = `${API_BASE_URL}/hub`
+    return axios
+        .post(baseURL, hubInfo)
         .then(res => {
             console.log(res);
             return res;

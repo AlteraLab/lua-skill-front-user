@@ -19,31 +19,57 @@ import scanBtnImg from '../img/scan-button-img.jpg';
 
 class HubAddPage extends Component {
 
+    //동일 네트워크에 허브가 존재하는지를 식별하고, 존재한다면 값을 받아옴
     _scanHub = () => {
         const { HubActions } = this.props;
         HubActions.scanHub();
     }
 
-    _createHub = () => {
+    //스킬서버로 요청하여 허브 생성을 하기 위한 함수
+    _registerHub = () => {
+        const { 
+            HubActions, 
+            editHubInfo,
+            scanHubInfo 
+        } = this.props;
+        
+        //form validation 우선적으로 수행해야
+
+
+        HubActions.registerHub({
+            ipv4: scanHubInfo.ipv4,
+            mac: scanHubInfo.mac,
+            name: editHubInfo.hubName,
+            id: editHubInfo.hubId,
+            desc: editHubInfo.hubDesc
+        })
+    }
+
+    //type이 text인 input의 값을 갱신하기 위함
+    _changeInputText = (e) => {
         const { HubActions } = this.props;
-        console.log(ip.address())
-        publicIp.v4().then(res => {
-            console.log(res)
-            HubActions.registerHub(res);
+        const { name, value } = e.target;
+
+        HubActions.changeInput({
+            name, //input tag의 name, redux store의 상태값과 일치해야
+            value
         })
     }
 
     componentDidMount() {
+        const { HubActions } = this.props;
+        HubActions.clearScanHub(); // 페이지 진입 시 scanHubInfo의 값을 초기 값으로 설정
     }
 
     render() {
         const { user, scanHubInfo } = this.props;
+
         const {
             status,
             ipv4,
             mac
         } = scanHubInfo;
-        console.log(scanHubInfo.ipv4);
+
         return (
             <Fragment>
                 <BasicNav user={user} />
@@ -52,8 +78,10 @@ class HubAddPage extends Component {
                         title="허브 스캔"
                         descriptions={{
                             title: '스캔 가이드',
-                            lists: ['사용자 디바이스를 허브가 연결된 공유기랑 연결하세요.',
-                            '연결 후 스캔 버튼을 클릭합니다.']
+                            lists: [
+                                '허브에 파란색 LED가 점등되어 있는지 확인하세요.',
+                                '사용자 디바이스를 허브가 연결된 공유기랑 연결하세요.',
+                                '연결 후 스캔 버튼을 클릭합니다.']
                             }}>
                         <InputItem 
                             name='연결된 공유기' 
@@ -79,19 +107,22 @@ class HubAddPage extends Component {
                             label='hubName' 
                             must={true} 
                             placeholder='16자 이내'
+                            onChange={this._changeInputText}
                         />
                         <InputItem 
                             name='검색용 아이디' 
                             label='hubId' 
                             must={true} 
                             placeholder='20자 이내, 변경불가'
+                            onChange={this._changeInputText}
                         />
                         <InputItem 
                             name='허브 설명' 
                             label='hubDesc' 
-                            placeholder='60자 이내'
+                            placeholder='20자 이내'
+                            onChange={this._changeInputText}
                         />
-                        <SubmitBtn onClick={this._createHub} context='확인'/>
+                        <SubmitBtn onClick={this._registerHub} context='확인'/>
                     </InputContainer>
                     <LinkBtn to='/main' context="이전"/>
                 </BasicBoard>
@@ -116,6 +147,11 @@ export default withRouter(
                 status: state.hub.getIn(['scanHubInfo','status']),
                 ipv4: state.hub.getIn(['scanHubInfo','ipv4']),
                 mac: state.hub.getIn(['scanHubInfo','mac'])
+            },
+            editHubInfo: {
+                hubName: state.hub.getIn(['editHubInfo','hubName']),
+                hubId: state.hub.getIn(['editHubInfo','hubId']),
+                hubDesc: state.hub.getIn(['editHubInfo','hubDesc'])
             }
         }),
         // props 로 넣어줄 액션 생성함수
