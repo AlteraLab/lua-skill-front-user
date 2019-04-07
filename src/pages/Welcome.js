@@ -3,9 +3,15 @@ import { SocialLoginContainer } from 'containers';
 import { withRouter } from 'react-router';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom'
-import { Container, Header } from 'semantic-ui-react'
+import { Container, Header, Grid } from 'semantic-ui-react'
+import queryString from 'query-string'
 
 class Welcome extends Component {
+
+    componentDidMount() {
+        const values = queryString.parse(this.props.location.search)
+        console.log(values.id)
+    }
 
     render() {
 
@@ -14,10 +20,13 @@ class Welcome extends Component {
 
         return (
             <Fragment>
-                <Header />
-                <Container>
-                    <SocialLoginContainer />
-                </Container>
+                <Grid centered verticalAlign='middle'>
+                    <Grid.Row>
+                        <Grid.Column>
+                            <SocialLoginContainer />
+                        </Grid.Column>
+                    </Grid.Row>
+                </Grid>
             </Fragment>
         )
     }

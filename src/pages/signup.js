@@ -7,20 +7,8 @@ import { Container, Header, Button } from 'semantic-ui-react';
 import * as userActions from '../store/modules/user';
 import * as hubActions from '../store/modules/hub';
 import { CustomHeader } from '../components';
-import ip from 'ip';
-import publicIp from 'public-ip';
 
-class Main extends Component {
-
-    _createHub = () => {
-        const { HubActions } = this.props;
-        console.log(ip.address())
-        publicIp.v4().then(res=>{
-            console.log(res)
-            HubActions.registerHub(res);
-        })
-        
-    }
+class signup extends Component {
 
     componentDidMount() {
         const { UserActions } = this.props;
@@ -30,12 +18,17 @@ class Main extends Component {
     render() {
         return (
             <Fragment>
-                <CustomHeader>
-                    <span>SIBA</span>
-                </CustomHeader>
-                <Container>
-                    <Button onClick={this._createHub}>허브 등록</Button>
-                </Container>
+                <header>
+
+                </header>
+                <section>
+                    <article>
+                        
+                    </article>
+                </section>
+                <footer>
+
+                </footer>
             </Fragment>
         )
     }

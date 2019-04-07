@@ -1,7 +1,7 @@
 //Duck pattern
 
 import { createAction, handleActions } from 'redux-actions';
-import { Map } from 'immutable';
+import { Map, List } from 'immutable';
 import { pender } from 'redux-pender';
 import * as UserApi from 'lib/api/user';
 
@@ -13,7 +13,16 @@ export const getUserInfo = createAction(GET_USER_INFO, UserApi.getUserInfo);
 
 /*--------state definition--------*/
 const initialState = Map({
-    userInfo: null,
+    userInfo: Map({
+        hubs: List(),
+        user: Map({
+            userId: null,
+            providerId: '',
+            name: '',
+            email: '',
+            profileImage:null
+        })
+    }),
     
 });
 
@@ -23,9 +32,10 @@ export default handleActions({
     ...pender({
         type: GET_USER_INFO,
         onSuccess: (state, action) => {
-            return state.set('userInfo', Map(
-                action.payload.data.data
-            ));
+            return state.set('userInfo', Map({
+                hubs: List(action.payload.data.data.hubs),
+                user: Map(action.payload.data.data.user)
+            }));
         },
     }),
 

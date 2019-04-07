@@ -1,0 +1,23 @@
+.LinkBtn{
+    position: relative;
+    border: 1px solid rgb(216,216,216);
+    border-radius: 2px;
+    background-color: white;
+    color: rgb(102,102,102);
+    padding: 3px 6px 3px 10px;
+    width: 65px;
+    height: 27px;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+    font-size: 12px;
+    font-weight: 400;
+    font-family: 'Noto Sans', sans-serif;
+    cursor: pointer;
+}
+
+.LinkBtn .ico{
+    position: absolute;
+    left: 7px;
+    top: 4px;
+}

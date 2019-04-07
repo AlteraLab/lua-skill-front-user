@@ -1,0 +1,33 @@
+.SubmitBtn{
+    width: 100%;
+    position: relative;
+    margin: 0 auto;
+    text-align: right;
+    line-height: 0;
+}
+
+.SubmitBtn .inner{
+    position: relative;
+    border: none;
+    border-radius: 2px;
+    background-color: #ADD8E8;
+    color: #2A2C2B;
+    padding: 3px 6px 3px 10px;
+    width: 65px;
+    height: 27px;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+    font-size: 12px;
+    font-weight: 400;
+    font-family: 'Noto Sans', sans-serif;
+    cursor: pointer;
+    margin-top: 5px;
+    display: inline-block;
+}
+
+.SubmitBtn .ico{
+    position: absolute;
+    left: 7px;
+    top: 5px;
+}

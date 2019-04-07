@@ -1,0 +1,54 @@
+.InputContainer{
+    padding: 0 0 17px;
+    border-bottom: 1px solid;
+    margin: 0 0 11px;
+}
+
+.InputContainer .input-cont-header h3{
+    display: block;
+    font-size: 15px;
+    font-weight: bold;
+    color: rgb(51,51,51);
+    font-family: 'Noto Sans', sans-serif;
+}
+
+.InputContainer .desc{
+    border: 1px solid #E4E4E4;
+    border-radius: 3px;
+    margin-top: 6px;
+}
+
+.InputContainer .desc-title{
+    display: block;
+    padding: 6px;
+    font-weight: normal;
+    font-size: 13px;
+    line-height: 19px;
+    color: rgb(46,172,188)
+}
+
+.InputContainer ul{
+    margin: 0;
+    padding: 0 0 7px 2px;
+    position: relative;
+    list-style: none;
+}
+
+.InputContainer li{
+    margin: 0 0 5px 19px;
+    color: rgb(51,51,51);
+    display: list-item;
+    list-style: none;
+}
+
+.InputContainer li::before{
+    position: absolute;
+    left: 9px;
+    margin: 0 1rem 0 0;
+    color: #b1b1b1;
+    content: '•';
+}
+
+.InputContainer p{
+    font-size: 12px;
+}

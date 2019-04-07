@@ -1,0 +1,93 @@
+.BasicBoard{
+    padding: 70px 0;
+    min-height: 100vh;
+    display: block;
+}
+
+.BasicBoard h3{
+    margin: 0
+}
+
+.BasicBoard .basic-container{
+    position: relative;
+    margin: 0 auto;
+    color: rgb(51,51,51);
+    overflow: hidden;
+    width: 85%;
+    font-weight: 400;
+}
+
+.BasicBoard .basic-header{
+    border-bottom: 1px solid #666;
+    padding-bottom: 14px;
+    margin-bottom: 15px;
+}
+
+.BasicBoard .hub-count{
+    color: white;
+    padding: 2px 6px; 
+    border-radius: 9px;
+    font-size: 14px;
+    margin-right: 5px;
+}
+
+.BasicBoard .blue{
+    background-color: #34BBEF;
+}
+
+.BasicBoard .red{
+    background-color: #cc0000;
+}
+
+.BasicBoard .hub-add-btn{
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 103px;
+    height: 25px;
+    border-radius: 3px;
+    border: none;
+    cursor: pointer;
+    font-size: 13px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    background-color: #ADD8E8;
+}
+
+.BasicBoard .hub-add-btn:focus{
+    outline: none;
+} 
+
+.BasicBoard .hub-add-btn .ico{
+    padding: 4px 0;
+    border-radius: 3px 0 0 3px;
+    background-color: #2A2C2B;
+    color: white;
+    width: 23%;
+    height: 25px;
+    z-index:2;
+    position:relative;
+    text-align: center;
+}
+
+.BasicBoard .hub-add-btn .ico:after{
+    content:"";
+    position:absolute;
+    right:-6px;
+    top: 5px;
+    width: 0; 
+    height: 0; 
+    border-top: 7px solid transparent;
+    border-bottom: 6px solid transparent;
+    border-left: 6px solid #2A2C2B;
+}
+
+.BasicBoard .hub-add-btn .text{
+    background-color: #ADD8E8;
+    color: #2A2C2B;
+    width: 77%;
+    padding-left: 5px;
+    font-size: 12px;
+    text-align: center;
+}

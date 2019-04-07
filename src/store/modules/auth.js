@@ -1,7 +1,7 @@
 //Duck pattern
 
 import { createAction, handleActions } from 'redux-actions';
-import { Map } from 'immutable';
+import { Map, List } from 'immutable';
 import { pender } from 'redux-pender';
 import * as AuthApi from 'lib/api/auth';
 
