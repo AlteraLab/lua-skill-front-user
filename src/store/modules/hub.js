@@ -23,13 +23,15 @@ export const changeInput = createAction(CHANGE_INPUT);
 const initialState = Map({
     scanHubInfo: Map({
         status: false,
-        ipv4: '',
-        mac: ''
+        external_ip: '',
+        mac_addr: '',
+        external_port: '',
+        before_ip:''
     }),
     editHubInfo: Map({
-        hubName:'',
-        hubId:'',
-        hubDesc:''
+        hub_name:'',
+        search_id:'',
+        hub_descript:'',
     }),
     registerResult: null
 });
@@ -40,8 +42,10 @@ export default handleActions({
     [CLEAR_SCAN_HUB]: (state, action) => {
         return state.set('scanHubInfo', Map({
             status: false,
-            ipv4: '',
-            mac: ''
+            external_ip: '',
+            mac_addr: '',
+            external_port: '',
+            before_ip:''
         }))
     },
 
@@ -72,10 +76,12 @@ export default handleActions({
             ));
         },
         onFailure: (state, action) => {
-            return state.set('scanHubInfo', Map({
+            return state.set('scanHubInfo',Map({
                 status: false,
-                ipv4: '',
-                mac: ''
+                external_ip: '',
+                mac_addr: '',
+                external_port: '',
+                before_ip:''
             }));
         }
     }),

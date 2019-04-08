@@ -37,11 +37,13 @@ class HubAddPage extends Component {
 
 
         HubActions.registerHub({
-            ipv4: scanHubInfo.ipv4,
-            mac: scanHubInfo.mac,
-            name: editHubInfo.hubName,
-            id: editHubInfo.hubId,
-            desc: editHubInfo.hubDesc
+            external_ip: scanHubInfo.external_ip,
+            external_port: scanHubInfo.external_port,
+            before_ip: scanHubInfo.before_ip,
+            mac_addr: scanHubInfo.mac,
+            hub_name: editHubInfo.hubName,
+            search_id: editHubInfo.hubId,
+            hub_descript: editHubInfo.hubDesc
         })
     }
 
@@ -66,8 +68,8 @@ class HubAddPage extends Component {
 
         const {
             status,
-            ipv4,
-            mac
+            external_ip,
+            mac_addr
         } = scanHubInfo;
 
         return (
@@ -85,40 +87,40 @@ class HubAddPage extends Component {
                             }}>
                         <InputItem 
                             name='연결된 공유기' 
-                            label='hubNat' 
+                            label='external_ip' 
                             must={true} 
                             disabled={true}
                             placeholder='스캔후에 자동설정'
-                            value={ipv4}
+                            value={external_ip}
                         />
                         <InputItem 
                             name='허브 mac주소' 
-                            label='hubMac' 
+                            label='mac_addr' 
                             must={true} 
                             disabled={true}
                             placeholder='스캔후에 자동설정'
-                            value={mac}
+                            value={mac_addr}
                         />
                         <SubmitBtn onClick={this._scanHub} context='스캔'/>
                     </InputContainer>
                     <InputContainer title="허브 정보 설정" bold={true}>
                         <InputItem 
                             name='허브 이름' 
-                            label='hubName' 
+                            label='hub_name' 
                             must={true} 
                             placeholder='16자 이내'
                             onChange={this._changeInputText}
                         />
                         <InputItem 
                             name='검색용 아이디' 
-                            label='hubId' 
+                            label='hub_id' 
                             must={true} 
                             placeholder='20자 이내, 변경불가'
                             onChange={this._changeInputText}
                         />
                         <InputItem 
                             name='허브 설명' 
-                            label='hubDesc' 
+                            label='hub_descript' 
                             placeholder='20자 이내'
                             onChange={this._changeInputText}
                         />
@@ -145,8 +147,10 @@ export default withRouter(
             hubs: state.user.getIn(['userInfo', 'hubs']),
             scanHubInfo: {
                 status: state.hub.getIn(['scanHubInfo','status']),
-                ipv4: state.hub.getIn(['scanHubInfo','ipv4']),
-                mac: state.hub.getIn(['scanHubInfo','mac'])
+                external_ip: state.hub.getIn(['scanHubInfo','external_ip']),
+                external_port: state.hub.getIn(['scanHubInfo','external_port']),
+                mac_addr: state.hub.getIn(['scanHubInfo','mac_addr']),
+                before_ip: state.hub.getIn(['scanHubInfo','before_ip']),
             },
             editHubInfo: {
                 hubName: state.hub.getIn(['editHubInfo','hubName']),
