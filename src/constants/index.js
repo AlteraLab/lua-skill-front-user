@@ -1,5 +1,5 @@
-//export const API_BASE_URL = 'http://203.250.32.29:4000';
-export const API_BASE_URL = 'http://203.250.32.29:8083';
+export const API_BASE_URL = 'http://203.250.32.29:4000';
+//export const API_BASE_URL = 'http://203.250.32.29:8083';
 
 export const OAUTH2_REDIRECT_URI = 'http://203.250.32.29:3000/oauth2/redirect'
 

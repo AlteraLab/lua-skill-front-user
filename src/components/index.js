@@ -1,4 +1,3 @@
-import Wrapper from 'components/Wrapper/Wrapper'
 import SocialLogin from 'components/SocialLogin/SocialLogin'
 import PrivateRoute from 'components/PrivateRoute/PrivateRoute'
 import BasicNav from 'components/BasicNav/BasicNav'
@@ -9,9 +8,10 @@ import InputContainer from 'components/InputContainer/InputContainer'
 import InputItem from 'components/InputItem/InputItem'
 import LinkBtn from 'components/LinkBtn/LinkBtn'
 import SubmitBtn from 'components/SubmitBtn/SubmitBtn'
+import UtteranceBox from 'components/UtteranceBox/UtteranceBox'
+import WelcomeBoard from 'components/WelcomeBoard/WelcomeBoard'
 
 export {
-    Wrapper,
     PrivateRoute,
     SocialLogin,
     BasicNav,
@@ -21,5 +21,7 @@ export {
     InputItem,
     HubBox,
     LinkBtn,
-    SubmitBtn
+    SubmitBtn,
+    UtteranceBox,
+    WelcomeBoard
 }

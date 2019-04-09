@@ -3,8 +3,12 @@ import { SocialLoginContainer } from 'containers';
 import { withRouter } from 'react-router';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom'
-import { Container, Header, Grid } from 'semantic-ui-react'
 import queryString from 'query-string'
+import {
+    BasicFooter,
+    WelcomeBoard,
+    UtteranceBox,
+} from '../components';
 
 class Welcome extends Component {
 
@@ -20,13 +24,11 @@ class Welcome extends Component {
 
         return (
             <Fragment>
-                <Grid centered verticalAlign='middle'>
-                    <Grid.Row>
-                        <Grid.Column>
-                            <SocialLoginContainer />
-                        </Grid.Column>
-                    </Grid.Row>
-                </Grid>
+                <WelcomeBoard>
+                    <SocialLoginContainer>
+                        <UtteranceBox text="SIBA를 시작해보라 왈!"/>
+                    </SocialLoginContainer>
+                </WelcomeBoard>
             </Fragment>
         )
     }

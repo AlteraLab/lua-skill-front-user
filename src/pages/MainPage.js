@@ -9,7 +9,7 @@ import { SibaHeader } from '../components';
 import ip from 'ip';
 import publicIp from 'public-ip';
 import {
-    BasicNav, 
+    BasicNav,
     BasicFooter,
     HubBox,
 } from '../components';
@@ -18,13 +18,13 @@ import BasicBoard from '../components/BasicBoard/BasicBoard';
 class MainPage extends Component {
 
     //HubBox 컴포넌트들을 렌더링
-    _rederHubBox = (hubBoxList) =>{
+    _rederHubBox = (hubBoxList) => {
         return hubBoxList.map(
             hubBox => {
-                return <HubBox/>
+                return <HubBox hubInfo={hubBox} key={hubBox.hub_id}/>
             }
         )
-    } 
+    }
 
     componentDidMount() {
         const { UserActions } = this.props;
@@ -35,16 +35,22 @@ class MainPage extends Component {
         const { user, hubs } = this.props;
         return (
             <Fragment>
-                <BasicNav user={user}/>
-                <BasicBoard 
+                <BasicNav user={user} />
+                <BasicBoard
                     title="내 IoT허브"
                     renderInfo={{
                         renderFunc: this._rederHubBox,
                         items: hubs
                     }}
                     type="hub"
-                />
-                <BasicFooter/>
+                >
+                    <HubBox hubInfo={{
+                        hub_name: '거실 허브',
+                        external_ip: '203.250.32.29',
+                        hub_id: 2,
+                    }}/>
+                </BasicBoard>
+                <BasicFooter />
             </Fragment>
         )
     }
@@ -56,8 +62,8 @@ export default withRouter(
         state => ({
             isAuthenticated: state.auth.getIn(['userState', 'isAuthenticated']),
             user: {
-                name: state.user.getIn(['userInfo', 'user','name']),
-                profileImage:state.user.getIn(['userInfo', 'user','profileImage']),
+                name: state.user.getIn(['userInfo', 'user', 'name']),
+                profileImage: state.user.getIn(['userInfo', 'user', 'profileImage']),
             },
             hubs: state.user.getIn(['userInfo', 'hubs'])
         }),

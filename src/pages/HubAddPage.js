@@ -40,10 +40,10 @@ class HubAddPage extends Component {
             external_ip: scanHubInfo.external_ip,
             external_port: scanHubInfo.external_port,
             before_ip: scanHubInfo.before_ip,
-            mac_addr: scanHubInfo.mac,
-            hub_name: editHubInfo.hubName,
-            search_id: editHubInfo.hubId,
-            hub_descript: editHubInfo.hubDesc
+            mac_addr: scanHubInfo.mac_addr,
+            hub_name: editHubInfo.hub_name,
+            search_id: editHubInfo.search_id,
+            hub_descript: editHubInfo.hub_descript
         })
     }
 
@@ -153,9 +153,9 @@ export default withRouter(
                 before_ip: state.hub.getIn(['scanHubInfo','before_ip']),
             },
             editHubInfo: {
-                hubName: state.hub.getIn(['editHubInfo','hubName']),
-                hubId: state.hub.getIn(['editHubInfo','hubId']),
-                hubDesc: state.hub.getIn(['editHubInfo','hubDesc'])
+                hub_name: state.hub.getIn(['editHubInfo','hub_name']),
+                search_id: state.hub.getIn(['editHubInfo','search_id']),
+                hub_descript: state.hub.getIn(['editHubInfo','hub_descript'])
             }
         }),
         // props 로 넣어줄 액션 생성함수
