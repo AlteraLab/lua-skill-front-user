@@ -4,16 +4,16 @@ self.__precacheManifest = [
     "url": "/siba-FE-usr/static/media/icons.0ab54153.woff2"
   },
   {
-    "revision": "3b384b6cd785b3e182f7",
-    "url": "/siba-FE-usr/static/css/main.30f2c860.chunk.css"
+    "revision": "f1a0b1a3258b66cebc27",
+    "url": "/siba-FE-usr/static/css/main.79dbd48a.chunk.css"
   },
   {
     "revision": "a1a749e89f578a49306ec2b055c073da",
     "url": "/siba-FE-usr/static/media/brand-icons.a1a749e8.svg"
   },
   {
-    "revision": "a2c3d35c963068cf68e4",
-    "url": "/siba-FE-usr/static/js/1.a2c3d35c.chunk.js"
+    "revision": "55b758fe0b9fc3feb903",
+    "url": "/siba-FE-usr/static/js/1.55b758fe.chunk.js"
   },
   {
     "revision": "dc2500af4682144f6bb8",
@@ -24,12 +24,16 @@ self.__precacheManifest = [
     "url": "/siba-FE-usr/static/media/siba.ffae1ab1.png"
   },
   {
+    "revision": "cd6c777f1945164224dee082abaea03a",
+    "url": "/siba-FE-usr/static/media/outline-icons.cd6c777f.woff2"
+  },
+  {
     "revision": "ef60a4f6c25ef7f39f2d25a748dbecfe",
     "url": "/siba-FE-usr/static/media/outline-icons.ef60a4f6.woff"
   },
   {
-    "revision": "cd6c777f1945164224dee082abaea03a",
-    "url": "/siba-FE-usr/static/media/outline-icons.cd6c777f.woff2"
+    "revision": "9c74e172f87984c48ddf5c8108cabe67",
+    "url": "/siba-FE-usr/static/media/flags.9c74e172.png"
   },
   {
     "revision": "701ae6abd4719e9c2ada3535a497b341",
@@ -40,12 +44,8 @@ self.__precacheManifest = [
     "url": "/siba-FE-usr/static/media/outline-icons.ad97afd3.ttf"
   },
   {
-    "revision": "9c74e172f87984c48ddf5c8108cabe67",
-    "url": "/siba-FE-usr/static/media/flags.9c74e172.png"
-  },
-  {
-    "revision": "3b384b6cd785b3e182f7",
-    "url": "/siba-FE-usr/static/js/main.3b384b6c.chunk.js"
+    "revision": "f1a0b1a3258b66cebc27",
+    "url": "/siba-FE-usr/static/js/main.f1a0b1a3.chunk.js"
   },
   {
     "revision": "faff92145777a3cbaf8e7367b4807987",
@@ -60,20 +60,20 @@ self.__precacheManifest = [
     "url": "/siba-FE-usr/static/media/brand-icons.a046592b.woff"
   },
   {
-    "revision": "8e3c7f5520f5ae906c6cf6d7f3ddcd19",
-    "url": "/siba-FE-usr/static/media/icons.8e3c7f55.eot"
-  },
-  {
-    "revision": "c5ebe0b32dc1b5cc449a76c4204d13bb",
-    "url": "/siba-FE-usr/static/media/brand-icons.c5ebe0b3.ttf"
-  },
-  {
     "revision": "b87b9ba532ace76ae9f6edfe9f72ded2",
     "url": "/siba-FE-usr/static/media/icons.b87b9ba5.ttf"
   },
   {
+    "revision": "8e3c7f5520f5ae906c6cf6d7f3ddcd19",
+    "url": "/siba-FE-usr/static/media/icons.8e3c7f55.eot"
+  },
+  {
     "revision": "13db00b7a34fee4d819ab7f9838cc428",
     "url": "/siba-FE-usr/static/media/brand-icons.13db00b7.eot"
+  },
+  {
+    "revision": "c5ebe0b32dc1b5cc449a76c4204d13bb",
+    "url": "/siba-FE-usr/static/media/brand-icons.c5ebe0b3.ttf"
   },
   {
     "revision": "82f60bd0b94a1ed68b1e6e309ce2e8c3",
@@ -84,11 +84,11 @@ self.__precacheManifest = [
     "url": "/siba-FE-usr/static/media/icons.962a1bf3.svg"
   },
   {
-    "revision": "a2c3d35c963068cf68e4",
-    "url": "/siba-FE-usr/static/css/1.dc7ad0c8.chunk.css"
+    "revision": "55b758fe0b9fc3feb903",
+    "url": "/siba-FE-usr/static/css/1.dec6f8dd.chunk.css"
   },
   {
-    "revision": "790e9362526adb2b662bcf0ff1e43c42",
+    "revision": "61a30b99b3236fc25e016040ac62d125",
     "url": "/siba-FE-usr/index.html"
   }
 ];
