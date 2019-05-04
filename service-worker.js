@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/siba-FE-usr/precache-manifest.2a3aa393825abea8ae4f96f20495aa52.js"
+  "/siba-FE-usr/precache-manifest.80481559ae3e887d95a520c55354eef3.js"
 );
 
 workbox.clientsClaim();

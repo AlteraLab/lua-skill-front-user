@@ -4,16 +4,16 @@ self.__precacheManifest = [
     "url": "/siba-FE-usr/static/media/icons.0ab54153.woff2"
   },
   {
-    "revision": "e18794678e34f7b17561",
-    "url": "/siba-FE-usr/static/css/main.79dbd48a.chunk.css"
+    "revision": "2071f824884f10c86da9",
+    "url": "/siba-FE-usr/static/css/main.52b356b9.chunk.css"
   },
   {
     "revision": "a1a749e89f578a49306ec2b055c073da",
     "url": "/siba-FE-usr/static/media/brand-icons.a1a749e8.svg"
   },
   {
-    "revision": "c1ac9ffea40377e0e89c",
-    "url": "/siba-FE-usr/static/js/1.c1ac9ffe.chunk.js"
+    "revision": "1d80d4d017d3cc393d92",
+    "url": "/siba-FE-usr/static/js/1.1d80d4d0.chunk.js"
   },
   {
     "revision": "dc2500af4682144f6bb8",
@@ -32,20 +32,20 @@ self.__precacheManifest = [
     "url": "/siba-FE-usr/static/media/outline-icons.cd6c777f.woff2"
   },
   {
-    "revision": "9c74e172f87984c48ddf5c8108cabe67",
-    "url": "/siba-FE-usr/static/media/flags.9c74e172.png"
+    "revision": "ad97afd3337e8cda302d10ff5a4026b8",
+    "url": "/siba-FE-usr/static/media/outline-icons.ad97afd3.ttf"
   },
   {
     "revision": "701ae6abd4719e9c2ada3535a497b341",
     "url": "/siba-FE-usr/static/media/outline-icons.701ae6ab.eot"
   },
   {
-    "revision": "ad97afd3337e8cda302d10ff5a4026b8",
-    "url": "/siba-FE-usr/static/media/outline-icons.ad97afd3.ttf"
+    "revision": "9c74e172f87984c48ddf5c8108cabe67",
+    "url": "/siba-FE-usr/static/media/flags.9c74e172.png"
   },
   {
-    "revision": "e18794678e34f7b17561",
-    "url": "/siba-FE-usr/static/js/main.e1879467.chunk.js"
+    "revision": "2071f824884f10c86da9",
+    "url": "/siba-FE-usr/static/js/main.2071f824.chunk.js"
   },
   {
     "revision": "faff92145777a3cbaf8e7367b4807987",
@@ -84,11 +84,11 @@ self.__precacheManifest = [
     "url": "/siba-FE-usr/static/media/icons.962a1bf3.svg"
   },
   {
-    "revision": "c1ac9ffea40377e0e89c",
-    "url": "/siba-FE-usr/static/css/1.dec6f8dd.chunk.css"
+    "revision": "1d80d4d017d3cc393d92",
+    "url": "/siba-FE-usr/static/css/1.71c4e1a7.chunk.css"
   },
   {
-    "revision": "7d738c9c9aa7e26f133ba7e65c12d06e",
+    "revision": "8b2460f86aa8fc5f39e7a7f0957dc04e",
     "url": "/siba-FE-usr/index.html"
   }
 ];
