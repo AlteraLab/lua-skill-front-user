@@ -4,7 +4,7 @@ self.__precacheManifest = [
     "url": "/siba-FE-usr/static/media/icons.0ab54153.woff2"
   },
   {
-    "revision": "f1a0b1a3258b66cebc27",
+    "revision": "d64ecee3bc16706726fc",
     "url": "/siba-FE-usr/static/css/main.79dbd48a.chunk.css"
   },
   {
@@ -12,8 +12,8 @@ self.__precacheManifest = [
     "url": "/siba-FE-usr/static/media/brand-icons.a1a749e8.svg"
   },
   {
-    "revision": "55b758fe0b9fc3feb903",
-    "url": "/siba-FE-usr/static/js/1.55b758fe.chunk.js"
+    "revision": "c1ac9ffea40377e0e89c",
+    "url": "/siba-FE-usr/static/js/1.c1ac9ffe.chunk.js"
   },
   {
     "revision": "dc2500af4682144f6bb8",
@@ -36,16 +36,16 @@ self.__precacheManifest = [
     "url": "/siba-FE-usr/static/media/flags.9c74e172.png"
   },
   {
-    "revision": "701ae6abd4719e9c2ada3535a497b341",
-    "url": "/siba-FE-usr/static/media/outline-icons.701ae6ab.eot"
-  },
-  {
     "revision": "ad97afd3337e8cda302d10ff5a4026b8",
     "url": "/siba-FE-usr/static/media/outline-icons.ad97afd3.ttf"
   },
   {
-    "revision": "f1a0b1a3258b66cebc27",
-    "url": "/siba-FE-usr/static/js/main.f1a0b1a3.chunk.js"
+    "revision": "701ae6abd4719e9c2ada3535a497b341",
+    "url": "/siba-FE-usr/static/media/outline-icons.701ae6ab.eot"
+  },
+  {
+    "revision": "d64ecee3bc16706726fc",
+    "url": "/siba-FE-usr/static/js/main.d64ecee3.chunk.js"
   },
   {
     "revision": "faff92145777a3cbaf8e7367b4807987",
@@ -60,12 +60,12 @@ self.__precacheManifest = [
     "url": "/siba-FE-usr/static/media/brand-icons.a046592b.woff"
   },
   {
-    "revision": "b87b9ba532ace76ae9f6edfe9f72ded2",
-    "url": "/siba-FE-usr/static/media/icons.b87b9ba5.ttf"
-  },
-  {
     "revision": "8e3c7f5520f5ae906c6cf6d7f3ddcd19",
     "url": "/siba-FE-usr/static/media/icons.8e3c7f55.eot"
+  },
+  {
+    "revision": "b87b9ba532ace76ae9f6edfe9f72ded2",
+    "url": "/siba-FE-usr/static/media/icons.b87b9ba5.ttf"
   },
   {
     "revision": "13db00b7a34fee4d819ab7f9838cc428",
@@ -84,11 +84,11 @@ self.__precacheManifest = [
     "url": "/siba-FE-usr/static/media/icons.962a1bf3.svg"
   },
   {
-    "revision": "55b758fe0b9fc3feb903",
+    "revision": "c1ac9ffea40377e0e89c",
     "url": "/siba-FE-usr/static/css/1.dec6f8dd.chunk.css"
   },
   {
-    "revision": "61a30b99b3236fc25e016040ac62d125",
+    "revision": "e28830ca666a944ba3636f1b1e975240",
     "url": "/siba-FE-usr/index.html"
   }
 ];
