@@ -1,15 +1,36 @@
-import React, { Component } from 'react';
-import { Container, Header, Button, Divider } from 'semantic-ui-react';
+import React, { Component, Fragment } from 'react';
+import {
+    BasicNav,
+    BasicFooter,
+} from '../components';
+import { withRouter } from 'react-router';
+import { connect } from 'react-redux';
 
 class NotFound extends Component {
 
     render() {
+        const { user } = this.props;
         return (
-            <Container text>
-                <span>404 not found</span>
-            </Container>
+            <Fragment>
+                {/* <BasicNav user={user} />
+                not found
+                <BasicFooter /> */}
+                not found
+            </Fragment>
         )
     }
 }
 
-export default NotFound;
+export default withRouter(
+    //subscribe redux store
+    connect(
+        state => ({
+            isAuthenticated: state.auth.getIn(['userState', 'isAuthenticated']),
+            user: {
+                userId: state.user.getIn(['userInfo', 'user', 'userId']),
+                name: state.user.getIn(['userInfo', 'user', 'name']),
+                profileImage: state.user.getIn(['userInfo', 'user', 'profileImage']),
+            },
+        })
+    )(NotFound)
+);

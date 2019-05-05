@@ -1,10 +1,14 @@
 {
+  "homepage": "https://dcu-icslab.github.io/siba-FE-usr",
   "name": "lua",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
     "axios": "^0.18.0",
+    "connected-react-router": "^6.4.0",
     "cross-env": "^5.2.0",
+    "gh-pages": "^2.0.1",
+    "history": "^4.9.0",
     "immutable": "^4.0.0-rc.12",
     "ip": "^1.1.5",
     "moment": "^2.24.0",
@@ -29,7 +33,9 @@
     "start": "cross-env NODE_PATH=src react-scripts start",
     "build": "cross-env NODE_PATH=src react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app"

@@ -10,7 +10,7 @@ import { SetAuthorizationToken } from '../utils'
 class OAuth2RedirectHandler extends Component {
 
     render() {
-        
+
         let queryString = parse(this.props.location.search);
         let token;
         let error;
