@@ -4,7 +4,7 @@ self.__precacheManifest = [
     "url": "/siba-FE-usr/static/media/icons.0ab54153.woff2"
   },
   {
-    "revision": "02644bfc7f20e5ecf3e0",
+    "revision": "d3dc7c4dd466c8f54291",
     "url": "/siba-FE-usr/static/css/main.52b356b9.chunk.css"
   },
   {
@@ -32,6 +32,10 @@ self.__precacheManifest = [
     "url": "/siba-FE-usr/static/media/outline-icons.cd6c777f.woff2"
   },
   {
+    "revision": "9c74e172f87984c48ddf5c8108cabe67",
+    "url": "/siba-FE-usr/static/media/flags.9c74e172.png"
+  },
+  {
     "revision": "701ae6abd4719e9c2ada3535a497b341",
     "url": "/siba-FE-usr/static/media/outline-icons.701ae6ab.eot"
   },
@@ -40,12 +44,8 @@ self.__precacheManifest = [
     "url": "/siba-FE-usr/static/media/outline-icons.ad97afd3.ttf"
   },
   {
-    "revision": "9c74e172f87984c48ddf5c8108cabe67",
-    "url": "/siba-FE-usr/static/media/flags.9c74e172.png"
-  },
-  {
-    "revision": "02644bfc7f20e5ecf3e0",
-    "url": "/siba-FE-usr/static/js/main.02644bfc.chunk.js"
+    "revision": "d3dc7c4dd466c8f54291",
+    "url": "/siba-FE-usr/static/js/main.d3dc7c4d.chunk.js"
   },
   {
     "revision": "faff92145777a3cbaf8e7367b4807987",
@@ -60,12 +60,12 @@ self.__precacheManifest = [
     "url": "/siba-FE-usr/static/media/brand-icons.a046592b.woff"
   },
   {
-    "revision": "8e3c7f5520f5ae906c6cf6d7f3ddcd19",
-    "url": "/siba-FE-usr/static/media/icons.8e3c7f55.eot"
-  },
-  {
     "revision": "b87b9ba532ace76ae9f6edfe9f72ded2",
     "url": "/siba-FE-usr/static/media/icons.b87b9ba5.ttf"
+  },
+  {
+    "revision": "8e3c7f5520f5ae906c6cf6d7f3ddcd19",
+    "url": "/siba-FE-usr/static/media/icons.8e3c7f55.eot"
   },
   {
     "revision": "13db00b7a34fee4d819ab7f9838cc428",
@@ -88,7 +88,7 @@ self.__precacheManifest = [
     "url": "/siba-FE-usr/static/css/1.71c4e1a7.chunk.css"
   },
   {
-    "revision": "aaf73c3d66bb7c707ae75233e9f582b3",
+    "revision": "85a6cb394c5263edac930923bc9da62e",
     "url": "/siba-FE-usr/index.html"
   }
 ];

@@ -1,7 +1,7 @@
 {
   "main.css": "/siba-FE-usr/static/css/main.52b356b9.chunk.css",
-  "main.js": "/siba-FE-usr/static/js/main.02644bfc.chunk.js",
-  "main.js.map": "/siba-FE-usr/static/js/main.02644bfc.chunk.js.map",
+  "main.js": "/siba-FE-usr/static/js/main.d3dc7c4d.chunk.js",
+  "main.js.map": "/siba-FE-usr/static/js/main.d3dc7c4d.chunk.js.map",
   "static/css/1.71c4e1a7.chunk.css": "/siba-FE-usr/static/css/1.71c4e1a7.chunk.css",
   "static/js/1.1d80d4d0.chunk.js": "/siba-FE-usr/static/js/1.1d80d4d0.chunk.js",
   "static/js/1.1d80d4d0.chunk.js.map": "/siba-FE-usr/static/js/1.1d80d4d0.chunk.js.map",
@@ -9,9 +9,9 @@
   "runtime~main.js.map": "/siba-FE-usr/static/js/runtime~main.dc2500af.js.map",
   "static/media/semantic.min.css": "/siba-FE-usr/static/media/brand-icons.a1a749e8.svg",
   "static/media/siba.jpg": "/siba-FE-usr/static/media/siba.bdfffa57.jpg",
-  "static/css/1.71c4e1a7.chunk.css.map": "/siba-FE-usr/static/css/1.71c4e1a7.chunk.css.map",
   "static/css/main.52b356b9.chunk.css.map": "/siba-FE-usr/static/css/main.52b356b9.chunk.css.map",
+  "static/css/1.71c4e1a7.chunk.css.map": "/siba-FE-usr/static/css/1.71c4e1a7.chunk.css.map",
   "index.html": "/siba-FE-usr/index.html",
-  "precache-manifest.c09d43af45847170f6202e08109de164.js": "/siba-FE-usr/precache-manifest.c09d43af45847170f6202e08109de164.js",
+  "precache-manifest.797224db9e319bbf4bb8ab25900d586f.js": "/siba-FE-usr/precache-manifest.797224db9e319bbf4bb8ab25900d586f.js",
   "service-worker.js": "/siba-FE-usr/service-worker.js"
 }
