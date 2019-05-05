@@ -4,7 +4,7 @@ self.__precacheManifest = [
     "url": "/siba-FE-usr/static/media/icons.0ab54153.woff2"
   },
   {
-    "revision": "d3dc7c4dd466c8f54291",
+    "revision": "dd6d588feb28f698e93e",
     "url": "/siba-FE-usr/static/css/main.52b356b9.chunk.css"
   },
   {
@@ -24,12 +24,12 @@ self.__precacheManifest = [
     "url": "/siba-FE-usr/static/media/siba.bdfffa57.jpg"
   },
   {
-    "revision": "ef60a4f6c25ef7f39f2d25a748dbecfe",
-    "url": "/siba-FE-usr/static/media/outline-icons.ef60a4f6.woff"
-  },
-  {
     "revision": "cd6c777f1945164224dee082abaea03a",
     "url": "/siba-FE-usr/static/media/outline-icons.cd6c777f.woff2"
+  },
+  {
+    "revision": "ef60a4f6c25ef7f39f2d25a748dbecfe",
+    "url": "/siba-FE-usr/static/media/outline-icons.ef60a4f6.woff"
   },
   {
     "revision": "9c74e172f87984c48ddf5c8108cabe67",
@@ -44,8 +44,8 @@ self.__precacheManifest = [
     "url": "/siba-FE-usr/static/media/outline-icons.ad97afd3.ttf"
   },
   {
-    "revision": "d3dc7c4dd466c8f54291",
-    "url": "/siba-FE-usr/static/js/main.d3dc7c4d.chunk.js"
+    "revision": "dd6d588feb28f698e93e",
+    "url": "/siba-FE-usr/static/js/main.dd6d588f.chunk.js"
   },
   {
     "revision": "faff92145777a3cbaf8e7367b4807987",
@@ -88,7 +88,7 @@ self.__precacheManifest = [
     "url": "/siba-FE-usr/static/css/1.71c4e1a7.chunk.css"
   },
   {
-    "revision": "85a6cb394c5263edac930923bc9da62e",
+    "revision": "2db860f689957c69c4dc5fb0bbb72bb1",
     "url": "/siba-FE-usr/index.html"
   }
 ];
