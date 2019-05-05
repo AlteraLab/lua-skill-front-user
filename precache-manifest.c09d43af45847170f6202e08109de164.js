@@ -4,7 +4,7 @@ self.__precacheManifest = [
     "url": "/siba-FE-usr/static/media/icons.0ab54153.woff2"
   },
   {
-    "revision": "450bc2a4a7c61e5c9cb4",
+    "revision": "02644bfc7f20e5ecf3e0",
     "url": "/siba-FE-usr/static/css/main.52b356b9.chunk.css"
   },
   {
@@ -44,8 +44,8 @@ self.__precacheManifest = [
     "url": "/siba-FE-usr/static/media/flags.9c74e172.png"
   },
   {
-    "revision": "450bc2a4a7c61e5c9cb4",
-    "url": "/siba-FE-usr/static/js/main.450bc2a4.chunk.js"
+    "revision": "02644bfc7f20e5ecf3e0",
+    "url": "/siba-FE-usr/static/js/main.02644bfc.chunk.js"
   },
   {
     "revision": "faff92145777a3cbaf8e7367b4807987",
@@ -88,7 +88,7 @@ self.__precacheManifest = [
     "url": "/siba-FE-usr/static/css/1.71c4e1a7.chunk.css"
   },
   {
-    "revision": "6813c63918c975d13322ce661a8dcd99",
+    "revision": "aaf73c3d66bb7c707ae75233e9f582b3",
     "url": "/siba-FE-usr/index.html"
   }
 ];

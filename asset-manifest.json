@@ -1,7 +1,7 @@
 {
   "main.css": "/siba-FE-usr/static/css/main.52b356b9.chunk.css",
-  "main.js": "/siba-FE-usr/static/js/main.450bc2a4.chunk.js",
-  "main.js.map": "/siba-FE-usr/static/js/main.450bc2a4.chunk.js.map",
+  "main.js": "/siba-FE-usr/static/js/main.02644bfc.chunk.js",
+  "main.js.map": "/siba-FE-usr/static/js/main.02644bfc.chunk.js.map",
   "static/css/1.71c4e1a7.chunk.css": "/siba-FE-usr/static/css/1.71c4e1a7.chunk.css",
   "static/js/1.1d80d4d0.chunk.js": "/siba-FE-usr/static/js/1.1d80d4d0.chunk.js",
   "static/js/1.1d80d4d0.chunk.js.map": "/siba-FE-usr/static/js/1.1d80d4d0.chunk.js.map",
@@ -12,6 +12,6 @@
   "static/css/1.71c4e1a7.chunk.css.map": "/siba-FE-usr/static/css/1.71c4e1a7.chunk.css.map",
   "static/css/main.52b356b9.chunk.css.map": "/siba-FE-usr/static/css/main.52b356b9.chunk.css.map",
   "index.html": "/siba-FE-usr/index.html",
-  "precache-manifest.5c8e092c371378da28911f4b359cd82f.js": "/siba-FE-usr/precache-manifest.5c8e092c371378da28911f4b359cd82f.js",
+  "precache-manifest.c09d43af45847170f6202e08109de164.js": "/siba-FE-usr/precache-manifest.c09d43af45847170f6202e08109de164.js",
   "service-worker.js": "/siba-FE-usr/service-worker.js"
 }
