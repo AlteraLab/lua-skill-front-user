@@ -1,5 +1,6 @@
 import React from 'react';
 import './InputItem.css';
+import {input} from 'react-inputs-validation';
 
 const InputItem = ({ name, label, must, placeholder, disabled, value, onChange }) => {
     const inputItemClass='InputItem'
@@ -22,7 +23,15 @@ const InputItem = ({ name, label, must, placeholder, disabled, value, onChange }
                     }}
                     value={value}
                     name={label}
-                    onChange={onChange}
+                    /*onChange={(value,e) =>{
+                        this.setState({value});   
+                        console.log(e); 
+                    }}
+                    onBlur={(e) => {console.log(e)}}
+                    validationOption={{
+                        name:'label',
+                        check: true,
+                        required:true}}*/
                 />
             </div>
         </div>

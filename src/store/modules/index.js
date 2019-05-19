@@ -1,11 +1,13 @@
 import { combineReducers } from 'redux';
 import { penderReducer } from 'redux-pender';
+import { connectRouter } from 'connected-react-router'
 
 import auth from './auth';
 import user from './user';
 import hub from './hub';
 
-export default combineReducers({
+export default (history) => combineReducers({
+    router: connectRouter(history),
     auth,
     user,
     hub,

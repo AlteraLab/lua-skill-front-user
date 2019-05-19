@@ -1,7 +1,20 @@
+
 .BasicBoard{
     padding: 70px 0;
     min-height: 100vh;
-    display: block;
+    display: flex;
+}
+
+.BasicBoard .box-field {
+    display: flex;
+    /* height: 100vh; */
+    align-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    justify-content: space-between;
+    /* width: 600px; */
+    height: 400px;
 }
 
 .BasicBoard h3{

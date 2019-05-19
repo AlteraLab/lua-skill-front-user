@@ -1,10 +1,37 @@
+/* @media only screen and (max-width:980px) {
+    
+} */
+
+.HubBox {
+    flex: 0 0 100%; /*grow, shrink, basis*/
+}
+
+
+@media only screen and (min-width:512px) {
+    .HubBox {
+        flex: 0 0 308px; /*grow, shrink, basis*/
+    }   
+}
+
+@media only screen and (min-width:768px) {
+    .HubBox {
+        flex: 0 0 338px; /*grow, shrink, basis*/
+    }   
+}
+
+@media only screen and (min-width:1024px) {
+    .HubBox {
+        flex: 0 0 353px; /*grow, shrink, basis*/
+    }   
+}
+
 .HubBox{
     height: 192px;
     margin-bottom: 11px;
     border-radius: 2px;
     border: 1px solid rgb(234,234,234);
-    display: flex;
-    flex-direction: column;
+    /* display: flex;
+    flex-direction: column; */
     background-color: white;
 }
 
@@ -13,6 +40,7 @@
     padding: 0;
     display: flex;
     flex-direction: row;
+    
 }
 
 .HubBox .hub-name{

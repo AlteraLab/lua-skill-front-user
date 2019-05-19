@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { Route, Switch, Redirect } from 'react-router-dom';
 import { HubBox } from '../components';
 import {
   Welcome,
@@ -13,12 +13,22 @@ import { PrivateRoute } from 'components';
 import { withRouter } from 'react-router';
 import { connect } from 'react-redux';
 import './App.css';
+import {REPO_NAME} from '../constants';
+import { MdLocalGasStation } from 'react-icons/md';
 
-const DynamicRoute = ({ match }) => {
-  return(<Route
-    path={`${match.url}/:id`}
-    component={HubAdminPage} />
-  )
+const DynamicRoute = ({ match, location }) => {
+  //location state가 존재하고 허브의 관리자 id와 hub의 user id가 일치한다면
+  if (location.state && location.state.hubInfo.adminId === location.state.userInfo.userId) {
+    console.log('ok!')
+    return (<Route
+      path={`${match.url}/:id`}
+      component={HubAdminPage} />
+    )
+  }
+  else {
+    console.log('false!')
+    return <Route component={NotFound} />
+  }
 }
 
 
@@ -33,8 +43,8 @@ class App extends Component {
           component={Main} /> */}
           <Route path="/main" component={MainPage} />
 
-          <Route path="/hub/add" component={HubAddPage} />
-          <Route path="/huba" component={DynamicRoute} />
+          <Route path="/add" component={HubAddPage} />
+          <Route path="/hub" component={DynamicRoute} />
           <Route path="/oauth2/redirect" component={OAuth2RedirectHandler} />
           <Route component={NotFound} />
         </Switch>

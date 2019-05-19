@@ -18,10 +18,10 @@ import BasicBoard from '../components/BasicBoard/BasicBoard';
 class MainPage extends Component {
 
     //HubBox 컴포넌트들을 렌더링
-    _rederHubBox = (hubBoxList) => {
+    _renderHubBox = (hubBoxList, userInfo) => {
         return hubBoxList.map(
             hubBox => {
-                return <HubBox hubInfo={hubBox} key={hubBox.hub_id}/>
+                return <HubBox hubInfo={hubBox} key={hubBox.hubId} userInfo={userInfo}/>
             }
         )
     }
@@ -39,16 +39,49 @@ class MainPage extends Component {
                 <BasicBoard
                     title="내 IoT허브"
                     renderInfo={{
-                        renderFunc: this._rederHubBox,
-                        items: hubs
+                        renderFunc: this._renderHubBox,
+                        items: hubs,
+                        userInfo: user
                     }}
-                    type="hub"
-                >
+                    type="hub">
+                    {<HubBox hubInfo={{
+                        hub_name: '거실 허브',
+                        external_ip: '203.250.32.29',
+                        hub_id: 2,
+                    }} userInfo={{
+                        user_name: 'gd',
+                        external_ip: '203.250.32.29',
+                        user_id: 5,
+                    }}/>}
                     <HubBox hubInfo={{
                         hub_name: '거실 허브',
                         external_ip: '203.250.32.29',
                         hub_id: 2,
+                    }} userInfo={{
+                        user_name: 'gd',
+                        external_ip: '203.250.32.29',
+                        user_id: 5,
                     }}/>
+                    <HubBox hubInfo={{
+                        hub_name: '거실 허브',
+                        external_ip: '203.250.32.29',
+                        hub_id: 2,
+                    }} userInfo={{
+                        user_name: 'gd',
+                        external_ip: '203.250.32.29',
+                        user_id: 5,
+                    }}/>
+                    <HubBox hubInfo={{
+                        hub_name: '거실 허브',
+                        external_ip: '203.250.32.29',
+                        hub_id: 2,
+                    }} userInfo={{
+                        user_name: 'gd',
+                        external_ip: '203.250.32.29',
+                        user_id: 5,
+                    }}/>
+                    
+            
                 </BasicBoard>
                 <BasicFooter />
             </Fragment>
@@ -62,6 +95,7 @@ export default withRouter(
         state => ({
             isAuthenticated: state.auth.getIn(['userState', 'isAuthenticated']),
             user: {
+                userId: state.user.getIn(['userInfo', 'user', 'userId']),
                 name: state.user.getIn(['userInfo', 'user', 'name']),
                 profileImage: state.user.getIn(['userInfo', 'user', 'profileImage']),
             },

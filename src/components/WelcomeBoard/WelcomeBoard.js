@@ -25,7 +25,8 @@ const WelcomeBoard = ({ children }) => {
                         </div>
                         {children}
                     </div>
-                    <div className="smartphone-btn" />
+                    <div className="smartphone-btn" />                                                                     
+                    
                 </div>
             </div>
     );

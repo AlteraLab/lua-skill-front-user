@@ -5,8 +5,7 @@ import Moment from 'react-moment';
 import { LinkBtn } from '../';
 import { Route, Link } from 'react-router-dom';
 
-const HubBox = ({hubInfo}) => {
-
+const HubBox = ({ hubInfo, userInfo }) => {
     return (
         <div className="HubBox">
             <header>
@@ -15,7 +14,7 @@ const HubBox = ({hubInfo}) => {
                         <MdDeviceHub size={17} style={{
                             position: 'relative',
                             top: '3px',
-                            marginRight: '4px',
+                            marginRight: '0.4px',
                             borderRadius: '5px',
                             backgroundColor: '#2A2C2B',
                             color: 'white'
@@ -60,15 +59,24 @@ const HubBox = ({hubInfo}) => {
                 <div className="wrap-btn">
                     <div className="short-info">
                         <div className="short-info-item">
-                            <MdTagFaces size={14} className="short-info-ico"/>
-                            <span className="short-info-label">관리자</span>
+                        <MdTagFaces size={14} className="short-info-ico" />
+                        <span className="short-info-label">
+                                {hubInfo.adminId === userInfo.userId ? '관리자' : '사용자'}
+                        </span>
                         </div>
                         <div className="short-info-item">
-                            <MdGroup size={14} className="short-info-ico"/>
+                            <MdGroup size={14} className="short-info-ico" />
                             <span className="short-info-label">4</span>
                         </div>
                     </div>
-                    <LinkBtn to={`hub/${hubInfo.hub_id}`} context='접속' />
+                    {hubInfo.adminId === userInfo.userId ? <LinkBtn to={{
+                        pathname: `/hub/${hubInfo.hubId}`,
+                        state: {
+                            hubInfo: hubInfo,
+                            userInfo: userInfo
+                        }
+                    }}
+                        context='접속' /> : ''}
                 </div>
             </footer>
         </div>)

@@ -23,7 +23,7 @@ export const scanHub = () => {
         console.log(ip.address());
         const baseURL = `http://${natAddress}:${HUB_EXTERNAL_PORT}/hub`
         return axios.get(baseURL, {
-            timeout: 5000 //5초 이내로 응답이 오지 않으면 에러로 간주
+            timeout: 8000 //8초 이내로 응답이 오지 않으면 에러로 간주
         })
         .then(res => {
             console.log(res);

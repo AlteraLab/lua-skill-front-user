@@ -1,3 +1,11 @@
+
+@media only screen and (max-width:500px) {
+    /* For mobile phones: */
+    .InputContainer {
+    width: 100%;
+    }
+}
+
 .InputContainer{
     padding: 0 0 17px;
     border-bottom: 1px solid;
