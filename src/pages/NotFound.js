@@ -12,11 +12,19 @@ class NotFound extends Component {
         const { user } = this.props;
         return (
             <Fragment>
+<<<<<<< HEAD
             {/* <BasicNav user={user} />
             not found
             <BasicFooter /> */}
             not found
         </Fragment>
+=======
+                {/* <BasicNav user={user} />
+                not found
+                <BasicFooter /> */}
+                not found
+            </Fragment>
+>>>>>>> 9382bedd945c7d9bbbae442e8de49f3139135aa5
         )
     }
 }
@@ -33,4 +41,8 @@ export default withRouter(
             },
         })
     )(NotFound)
+<<<<<<< HEAD
 ); 
+=======
+);
+>>>>>>> 9382bedd945c7d9bbbae442e8de49f3139135aa5

@@ -59,10 +59,17 @@ const HubBox = ({ hubInfo, userInfo }) => {
                 <div className="wrap-btn">
                     <div className="short-info">
                         <div className="short-info-item">
+<<<<<<< HEAD
                         <MdTagFaces size={14} className="short-info-ico" />
                         <span className="short-info-label">
                                 {hubInfo.adminId === userInfo.userId ? '관리자' : '사용자'}
                         </span>
+=======
+                            <MdTagFaces size={14} className="short-info-ico" />
+                            <span className="short-info-label">
+                                {hubInfo.adminId === userInfo.userId ? '관리자' : '사용자'}
+                            </span>
+>>>>>>> 9382bedd945c7d9bbbae442e8de49f3139135aa5
                         </div>
                         <div className="short-info-item">
                             <MdGroup size={14} className="short-info-ico" />

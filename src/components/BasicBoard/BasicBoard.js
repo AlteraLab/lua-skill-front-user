@@ -23,8 +23,14 @@ const BasicBoard = ({ children, title, renderInfo, type }) => {
                     </h3>
                     {type==='hub'?<HubAddButton />:''}
                 </header>
+<<<<<<< HEAD
                 <div className="box-field">
                 {renderInfo ? renderInfo.renderFunc(renderInfo.items, renderInfo.userInfo):''}
+=======
+                <article>
+                {renderInfo ? renderInfo.renderFunc(renderInfo.items, renderInfo.userInfo):''}
+                </article>
+>>>>>>> 9382bedd945c7d9bbbae442e8de49f3139135aa5
                 {children}
                 </div>
                 

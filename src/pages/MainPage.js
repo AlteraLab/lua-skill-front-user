@@ -44,6 +44,7 @@ class MainPage extends Component {
                         userInfo: user
                     }}
                     type="hub">
+<<<<<<< HEAD
                     {<HubBox hubInfo={{
                         hub_name: '거실 허브',
                         external_ip: '203.250.32.29',
@@ -82,6 +83,13 @@ class MainPage extends Component {
                     }}/>
                     
             
+=======
+                    {/* <HubBox hubInfo={{
+                        hub_name: '거실 허브',
+                        external_ip: '203.250.32.29',
+                        hub_id: 2,
+                    }}/> */}
+>>>>>>> 9382bedd945c7d9bbbae442e8de49f3139135aa5
                 </BasicBoard>
                 <BasicFooter />
             </Fragment>

@@ -42,7 +42,10 @@ class App extends Component {
           isAutenticated = { this.props.isAutenticated }
           component={Main} /> */}
           <Route path="/main" component={MainPage} />
+<<<<<<< HEAD
 
+=======
+>>>>>>> 9382bedd945c7d9bbbae442e8de49f3139135aa5
           <Route path="/add" component={HubAddPage} />
           <Route path="/hub" component={DynamicRoute} />
           <Route path="/oauth2/redirect" component={OAuth2RedirectHandler} />
