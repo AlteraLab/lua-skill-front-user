@@ -13,15 +13,22 @@ import {
     BasicFooter,
     HubBox,
 } from '../components';
+import { Link } from 'react-router-dom';
 import BasicBoard from '../components/BasicBoard/BasicBoard';
 
 class MainPage extends Component {
 
     //HubBox 컴포넌트들을 렌더링
-    _renderHubBox = (hubBoxList, userInfo) => {
+    _renderHubBox = (hubBoxList, renderInfo, userInfo) => {
         return hubBoxList.map(
             hubBox => {
-                return <HubBox hubInfo={hubBox} key={hubBox.hubId} userInfo={userInfo}/>
+                if(renderInfo.items.size ===0){
+                    /*return <img src={} id={}></img> */
+                }
+                return  <HubBox hubInfo={hubBox} 
+                            key={hubBox.hubId} 
+                            userInfo={userInfo}/>
+                    
             }
         )
     }
@@ -44,7 +51,6 @@ class MainPage extends Component {
                         userInfo: user
                     }}
                     type="hub">
-<<<<<<< HEAD
                     {<HubBox hubInfo={{
                         hub_name: '거실 허브',
                         external_ip: '203.250.32.29',
@@ -52,16 +58,16 @@ class MainPage extends Component {
                     }} userInfo={{
                         user_name: 'gd',
                         external_ip: '203.250.32.29',
-                        user_id: 5,
+                        user_id: 2,
                     }}/>}
                     <HubBox hubInfo={{
                         hub_name: '거실 허브',
                         external_ip: '203.250.32.29',
-                        hub_id: 2,
+                        hub_id: 1,
                     }} userInfo={{
                         user_name: 'gd',
                         external_ip: '203.250.32.29',
-                        user_id: 5,
+                        user_id: 1,
                     }}/>
                     <HubBox hubInfo={{
                         hub_name: '거실 허브',
@@ -70,7 +76,7 @@ class MainPage extends Component {
                     }} userInfo={{
                         user_name: 'gd',
                         external_ip: '203.250.32.29',
-                        user_id: 5,
+                        user_id: 4,
                     }}/>
                     <HubBox hubInfo={{
                         hub_name: '거실 허브',
@@ -79,17 +85,8 @@ class MainPage extends Component {
                     }} userInfo={{
                         user_name: 'gd',
                         external_ip: '203.250.32.29',
-                        user_id: 5,
+                        user_id: 8,
                     }}/>
-                    
-            
-=======
-                    {/* <HubBox hubInfo={{
-                        hub_name: '거실 허브',
-                        external_ip: '203.250.32.29',
-                        hub_id: 2,
-                    }}/> */}
->>>>>>> 9382bedd945c7d9bbbae442e8de49f3139135aa5
                 </BasicBoard>
                 <BasicFooter />
             </Fragment>

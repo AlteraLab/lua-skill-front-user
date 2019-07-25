@@ -26,7 +26,7 @@ class OAuth2RedirectHandler extends Component {
         //토큰 값이 존재 한다면
         if(token){
             localStorage.setItem(ACCESS_TOKEN, token)
-            return <Redirect to="/main"/>
+            return <Redirect to="/main"/> //엑세스 토큰을 이용하여 카카오 API에 접근
         }
         else{ //error라면
             return <Redirect to="/"/>

@@ -126,7 +126,7 @@ class HubAddPage extends Component {
                         />
                         <SubmitBtn onClick={this._registerHub} context='확인'/>
                     </InputContainer>
-                    <LinkBtn to='./main' context="이전"/>
+                    <LinkBtn to='./main' context="이전"  /* LinkBtn to='./no' context="이전" *//>
                 </BasicBoard>
                 <BasicFooter />
             </Fragment>

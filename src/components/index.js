@@ -10,18 +10,24 @@ import LinkBtn from 'components/LinkBtn/LinkBtn'
 import SubmitBtn from 'components/SubmitBtn/SubmitBtn'
 import UtteranceBox from 'components/UtteranceBox/UtteranceBox'
 import WelcomeBoard from 'components/WelcomeBoard/WelcomeBoard'
+import DeviceBox from 'components/DeviceBox/DeviceBox'
+import DevBtnBoard from 'components/DevBtnBoard/DevBtnBoard'
+import HubLogList from 'components/HubLogList/HubLogList'
 
 export {
     PrivateRoute,
     SocialLogin,
+    HubLogList,
     BasicNav,
     BasicFooter,
+    DevBtnBoard,
     BasicBoard,
     InputContainer,
     InputItem,
     HubBox,
     LinkBtn,
     SubmitBtn,
+    DeviceBox,
     UtteranceBox,
     WelcomeBoard
 }

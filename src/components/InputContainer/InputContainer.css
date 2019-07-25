@@ -1,15 +1,33 @@
 
-@media only screen and (max-width:500px) {
-    /* For mobile phones: */
+.InputContainer {
+    flex: 0 0 100%; /*grow, shrink, basis*/
+}
+
+
+@media only screen and (min-width:512px) {
     .InputContainer {
-    width: 100%;
+        flex: 0 0 400px; /*grow, shrink, basis*/
+    }   
+}
+@media only screen and (min-width:768px) {
+    .InputContainer {
+        flex: 0 0 650px; 
+        /*grow, shrink, basis*/
+    }   
+}
+
+@media only screen and (min-width:1024px) {
+    .InputContainer  {
+        flex: 0 0 850px; /*grow, shrink, basis*/
     }
 }
+
 
 .InputContainer{
     padding: 0 0 17px;
     border-bottom: 1px solid;
     margin: 0 0 11px;
+    
 }
 
 .InputContainer .input-cont-header h3{

@@ -17,21 +17,29 @@ export const registerHub = (hubInfo) => {
         });
 }
 
+
 //허브 정보 조회
 export const scanHub = () => {
     return publicIp.v4().then(natAddress => {
         console.log(ip.address());
         const baseURL = `http://${natAddress}:${HUB_EXTERNAL_PORT}/hub`
         return axios.get(baseURL, {
-<<<<<<< HEAD
             timeout: 8000 //8초 이내로 응답이 오지 않으면 에러로 간주
-=======
-            timeout: 8000 //5초 이내로 응답이 오지 않으면 에러로 간주
->>>>>>> 9382bedd945c7d9bbbae442e8de49f3139135aa5
         })
         .then(res => {
             console.log(res);
             return res;
         });
     })
+}
+
+//허브 아이디 값 요청
+export const getHubLogs = (hubId) => {
+    const baseURL = `${API_BASE_URL}/hubs/${hubId}/logs`
+    return axios
+        .get(baseURL)
+        .then(res => {
+            console.log(res);
+            return res;
+        });
 }

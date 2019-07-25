@@ -9,23 +9,10 @@ import {createBrowserHistory as createHistory} from 'history';
 //import {createHashHistory as createHistory} from 'history';
 
 const Root = () => {
-<<<<<<< HEAD
+
     const history = createHistory({
         basename: process.env.PUBLIC_URL
     });
-
-const store = configureStore(history)
-    //리덕스 store 적용
-    return (
-        <Provider store={store}>
-        <ConnectedRouter history={history}>
-                <App />
-        </ConnectedRouter>
-=======
-
-    const history = createHistory({
-        basename: process.env.PUBLIC_URL
-      });
     
     const store = configureStore(history)
 
@@ -35,7 +22,6 @@ const store = configureStore(history)
             <ConnectedRouter history={history}>
                 <App />
             </ConnectedRouter>
->>>>>>> 9382bedd945c7d9bbbae442e8de49f3139135aa5
         </Provider>
     )
 };

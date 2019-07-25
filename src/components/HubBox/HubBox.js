@@ -4,36 +4,39 @@ import { MdDeviceHub, MdTagFaces, MdGroup } from 'react-icons/md';
 import Moment from 'react-moment';
 import { LinkBtn } from '../';
 import { Route, Link } from 'react-router-dom';
+import { Dropdown } from 'semantic-ui-react'
 
 const HubBox = ({ hubInfo, userInfo }) => {
     return (
-        <div className="HubBox">
+        
+        <div className="HubBox" >
             <header>
                 <div className="hub-name">
                     <span className="title">
                         <MdDeviceHub size={17} style={{
                             position: 'relative',
                             top: '3px',
-                            marginRight: '0.4px',
+                            marginRight: '5px',
                             borderRadius: '5px',
                             backgroundColor: '#2A2C2B',
                             color: 'white'
                         }} />
                         <strong>{hubInfo.hub_name}</strong>
-                    </span>
+                        </span>
                     {/* <span className="subtitle">{hubInfo.search_id}</span> */}
-                </div>
-                <div className="hub-info">
-                    <div className="hub-info-item">
-                        <div className="hub-state on">
-                            <span><strong>on</strong></span>
+                
+                        </div>
+                        <div className="hub-info">
+                            <div className="hub-info-item">
+                                <div className="hub-state on">
+                                    <span><strong>on</strong></span>
+                                </div>
                         </div>
                     </div>
-                </div>
-            </header>
-            <section>
-                <article>
-                    <div className="hub-row">
+                </header>            
+                <section>
+                    <article>
+                        <div className="hub-row">
                         <div className="hub-label">연결된 NAT라우터</div>
                         <div className="hub-content">{hubInfo.external_ip}</div>
                     </div>
@@ -53,23 +56,16 @@ const HubBox = ({ hubInfo, userInfo }) => {
                             </Moment>
                         </div>
                     </div>
-                </article>
+                    </article>
             </section>
             <footer>
                 <div className="wrap-btn">
                     <div className="short-info">
                         <div className="short-info-item">
-<<<<<<< HEAD
                         <MdTagFaces size={14} className="short-info-ico" />
                         <span className="short-info-label">
                                 {hubInfo.adminId === userInfo.userId ? '관리자' : '사용자'}
                         </span>
-=======
-                            <MdTagFaces size={14} className="short-info-ico" />
-                            <span className="short-info-label">
-                                {hubInfo.adminId === userInfo.userId ? '관리자' : '사용자'}
-                            </span>
->>>>>>> 9382bedd945c7d9bbbae442e8de49f3139135aa5
                         </div>
                         <div className="short-info-item">
                             <MdGroup size={14} className="short-info-ico" />
