@@ -1,15 +1,10 @@
 import React, { Component, Fragment } from 'react';
-import {
-    BasicNav,
-    BasicFooter,
-} from '../components';
 import { withRouter } from 'react-router';
 import { connect } from 'react-redux';
 
 class NotFound extends Component {
 
     render() {
-        const { user } = this.props;
         return (
             <Fragment>
                 {/* <BasicNav user={user} />

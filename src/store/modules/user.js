@@ -7,9 +7,13 @@ import * as UserApi from 'lib/api/user';
 
 /*--------action type--------*/
 const GET_USER_INFO = 'user/GET_USER_INFO'; // kakao 로그인
+const CHANGE_PAGE = 'user/CHANGE_PAGE';
+// const GET_USER_ID = 'user/GET_USER_ID';
 
 /*--------create action--------*/
 export const getUserInfo = createAction(GET_USER_INFO, UserApi.getUserInfo);
+export const changePage = createAction(CHANGE_PAGE);
+// export const getUserId = createAction(GET_USER_ID,UserApi.getUserId);
 
 /*--------state definition--------*/
 const initialState = Map({
@@ -23,11 +27,16 @@ const initialState = Map({
             profileImage:null
         })
     }),
-    
+    page: '1',
+
 });
 
 /*--------reducer--------*/
 export default handleActions({
+
+    [CHANGE_PAGE]: (state, action) => {
+        return state.set('page', action.payload);
+    },
 
     ...pender({
         type: GET_USER_INFO,
@@ -38,5 +47,9 @@ export default handleActions({
             }));
         },
     }),
+
+    // ...pender({
+    //     type:GET_USER_ID,
+    // })
 
 }, initialState);

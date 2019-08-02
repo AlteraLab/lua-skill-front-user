@@ -13,8 +13,10 @@ import WelcomeBoard from 'components/WelcomeBoard/WelcomeBoard'
 import DeviceBox from 'components/DeviceBox/DeviceBox'
 import DevBtnBoard from 'components/DevBtnBoard/DevBtnBoard'
 import HubLogList from 'components/HubLogList/HubLogList'
+import FriendAdd from 'components/FriendAdd/FriendAdd'
 
 export {
+    FriendAdd,
     PrivateRoute,
     SocialLogin,
     HubLogList,

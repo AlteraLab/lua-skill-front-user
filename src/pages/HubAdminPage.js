@@ -7,11 +7,8 @@ import * as hubActions from '../store/modules/hub';
 import {
     BasicNav,
     BasicFooter,
-    DeviceBox,
-    HubMInfo
+    DevBtnBoard
 } from '../components';
-import { Link } from 'react-router-dom';
-import DevBtnBoard from '../components/DevBtnBoard/DevBtnBoard';
 
 class HubAdminPage extends Component {
 
