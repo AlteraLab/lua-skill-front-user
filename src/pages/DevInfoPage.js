@@ -28,17 +28,17 @@ class DevInfoPage extends Component {
         return (
             <Fragment>
                 <BasicNav user={user} />
-                <BasicBoard title="디바이스 1">
-                {<DeviceBox devInfo={{
-                            dev_name: '디바이스',
-                            external_ip: '203.250.32.29',
-                            dev_id: 128736,
-                        }} userInfo={{
-                        user_name: 'gd',
-                        external_ip: '203.250.32.29',
-                        user_id: 2,
-                    }}/>}
-                </BasicBoard>
+                    <BasicBoard title="디바이스 1">
+                        {<DeviceBox devInfo={{
+                                    dev_name: '디바이스',
+                                    external_ip: '203.250.32.29',
+                                    dev_id: 128736,
+                                }} userInfo={{
+                                user_name: 'gd',
+                                external_ip: '203.250.32.29',
+                                user_id: 2,
+                            }}/>}
+                    </BasicBoard>
                 <BasicFooter />
             </Fragment>
         )

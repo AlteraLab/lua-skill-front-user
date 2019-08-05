@@ -22,11 +22,9 @@ class DevAddPage extends Component {
         return (
             <Fragment>
                 <BasicNav user={user} />
-                <BasicBoard title="새로운 디바이스 추가하기">
-                    
-                    <LinkBtn to='./main' context="이전"  
-                    /* LinkBtn to='./no' '/hub/${hubInfo.hubId}' context="이전" *//>
-                </BasicBoard>
+                <BasicBoard title="새로운 디바이스 추가하기"
+                >
+                    <LinkBtn to='./main' context="이전"  /* LinkBtn to='./no' '/hub/${hubInfo.hubId}' context="이전" *//> </BasicBoard>
                 <BasicFooter />
             </Fragment>
         )

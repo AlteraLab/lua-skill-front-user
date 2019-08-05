@@ -11,7 +11,7 @@ const SCAN_HUB = 'hub/SCAN_HUB';
 const CLEAR_SCAN_HUB = 'hub/CLEAR_SCAN_HUB';
 const CLEAR_INPUT = 'hub/CLEAR_INPUT';
 const CHANGE_INPUT = 'hub/CHANGE_INPUT';
-const GET_HUB_LOGS = 'hub/GET_HUB_LOGS'
+const GET_HUB_LOGS = 'hub/GET_HUB_LOGS';
 
 /*--------create action--------*/
 export const registerHub = createAction(REGISTER_HUB, HubApi.registerHub);
@@ -23,7 +23,7 @@ export const getHubLogs = createAction(GET_HUB_LOGS, HubApi.getHubLogs);
 
 /*--------state definition--------*/
 const initialState = Map({
-
+    
     scanHubInfo: Map({
         status: false,
         external_ip: '',
@@ -31,16 +31,18 @@ const initialState = Map({
         external_port: '',
         before_ip:''
     }),
+
     editHubInfo: Map({
         hub_name:'',
         search_id:'',
         hub_descript:'',
     }),
+
     registerResult: null,
 
     hubLogList : Map({
         logs: List([])
-    })
+    }),
 });
 
 /*--------reducer--------*/
@@ -65,6 +67,8 @@ export default handleActions({
         const { name, value } = action.payload;
         return state.setIn(['editHubInfo', name], value);
     },
+
+// https://backend-intro.vlpt.us/6/01.html / https://velopert.com/3401
 
     ...pender({
         type: REGISTER_HUB,

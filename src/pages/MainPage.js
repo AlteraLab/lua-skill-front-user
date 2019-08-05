@@ -22,9 +22,9 @@ class MainPage extends Component {
     _renderHubBox = (hubBoxList, renderInfo, userInfo) => {
         return hubBoxList.map(
             hubBox => {
-                if(renderInfo.items.size ===0){
-                    /*return <img src={} id={}></img> */
-                }
+                // if(renderInfo.items.size === 0){
+                //     /*return <img src={} id={}></img> */
+                // }
                 return  <HubBox hubInfo={hubBox} 
                             key={hubBox.hubId} 
                             userInfo={userInfo}/>

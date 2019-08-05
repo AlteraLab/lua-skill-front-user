@@ -29,6 +29,7 @@ const initialState = Map({
 /*--------reducer--------*/
 export default handleActions({
 
+// https://backend-intro.vlpt.us/6/01.html / https://velopert.com/3401
     ...pender({
         type: GET_USER_INFO,
         onSuccess: (state, action) => {

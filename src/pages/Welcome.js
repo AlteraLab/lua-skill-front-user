@@ -20,13 +20,13 @@ class Welcome extends Component {
     render() {
 
         if (this.props.isAuthenticated)
-            return <Redirect to="/main" />
-
+            return <Redirect to="/main" /> 
         return (
             <Fragment>
                 <WelcomeBoard>
                     <SocialLoginContainer>
                         <UtteranceBox text="SIBA를 시작해보라 왈!"/>
+                        <BasicFooter />
                     </SocialLoginContainer>
                 </WelcomeBoard>
             </Fragment>

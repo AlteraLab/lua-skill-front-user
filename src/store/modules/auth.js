@@ -18,11 +18,12 @@ const initialState = Map({
         user: null,
         token: ''
     }),
-    
 });
 
 /*--------reducer--------*/
 export default handleActions({
+
+    // https://backend-intro.vlpt.us/6/01.html / https://velopert.com/3401
 
     ...pender({
         type: KAKAO_AUTH,

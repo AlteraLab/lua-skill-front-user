@@ -6,6 +6,8 @@ import {
     API_BASE_URL
 } from '../../constants';
 
+// https://backend-intro.vlpt.us/6/01.html / https://velopert.com/3401
+
 //skill 서버로 데이터 전송
 export const registerHub = (hubInfo) => {
     const baseURL = `${API_BASE_URL}/hub`

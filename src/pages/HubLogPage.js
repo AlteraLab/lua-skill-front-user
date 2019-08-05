@@ -27,10 +27,9 @@ class HubLogPage extends Component {
             <Fragment>
                 <BasicNav user={user} />
                 <BasicBoard
-                title="허브 로그" >
-                <HubLogList />
-        
-                    
+                    title="허브 로그" 
+                >
+                    <HubLogList />
                 </BasicBoard>
                 <BasicFooter />
             </Fragment>

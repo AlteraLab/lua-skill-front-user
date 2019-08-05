@@ -5,7 +5,8 @@ import {API_BASE_URL} from '../../constants';
 export const redirectWithAuth = (authCode) =>{
 
     let baseURL = `${API_BASE_URL}/kakaotest/${authCode}`
-
+    
+// https://backend-intro.vlpt.us/6/01.html / https://velopert.com/3401
     return axios.post(baseURL)
     .then(res=> {
         console.log(res);

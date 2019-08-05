@@ -62,24 +62,28 @@ const HubBox = ({ hubInfo, userInfo }) => {
                 <div className="wrap-btn">
                     <div className="short-info">
                         <div className="short-info-item">
-                        <MdTagFaces size={14} className="short-info-ico" />
-                        <span className="short-info-label">
+                            <MdTagFaces size={14} className="short-info-ico" />
+                            <span className="short-info-label">
                                 {hubInfo.adminId === userInfo.userId ? '관리자' : '사용자'}
-                        </span>
+                            </span>
                         </div>
                         <div className="short-info-item">
                             <MdGroup size={14} className="short-info-ico" />
                             <span className="short-info-label">4</span>
                         </div>
                     </div>
-                    {hubInfo.adminId === userInfo.userId ? <LinkBtn to={{
-                        pathname: `/hub/${hubInfo.hubId}`,
-                        state: {
-                            hubInfo: hubInfo,
-                            userInfo: userInfo
+
+                    {hubInfo.adminId === userInfo.userId 
+                    ? <LinkBtn to={
+                        {
+                            pathname: `/hub/${hubInfo.hubId}`,
+                            state: {
+                                hubInfo: hubInfo,
+                                userInfo: userInfo
+                            }
                         }
-                    }}
-                        context='접속' /> : ''}
+                    } context='접속' /> 
+                    : ''}
                 </div>
             </footer>
         </div>)

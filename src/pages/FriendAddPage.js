@@ -22,10 +22,9 @@ class FriendAddPage extends Component {
         return (
             <Fragment>
                 <BasicNav user={user} />
-                <BasicBoard
-                title="친구 추가" >
-                    
-                </BasicBoard>
+                   <BasicBoard
+                        title="친구 추가" >
+                    </BasicBoard>
                 <BasicFooter />
             </Fragment>
         )
