@@ -22,8 +22,6 @@ class MainPage extends Component {
     // 로그인 상태 -> isAuthcated 상태 true 로 변경
     _toggleIsAuthenticatedToTrue = () => {
         const { AuthActions } = this.props;
-        console.log('Execute _toggleIsAuthenticatedToTrue');
-        console.log(AuthActions);
         AuthActions.toggleAuthenticatedToTrue();
     }
 
@@ -50,7 +48,7 @@ class MainPage extends Component {
 
     render() {
         const { user, hubs, isAuthenticated } = this.props;
-
+        
         if(user.userId !== null && isAuthenticated === false) {
             this._toggleIsAuthenticatedToTrue();
         }

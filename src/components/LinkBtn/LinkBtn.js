@@ -5,7 +5,7 @@ import { MdChevronLeft } from 'react-icons/md';
 
 const LinkBtn = ({ to, context }) => {
     return (
-        <Link to={to} className="LinkBtn">
+        <Link to={to} className="LinkBtn"   >
             <div className="ico">
                 <MdChevronLeft size={16}/>
             </div>

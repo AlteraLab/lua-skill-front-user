@@ -4,12 +4,9 @@ import { Link } from 'react-router-dom';
 import { Dropdown } from 'semantic-ui-react'
 import { MdAccountCircle } from 'react-icons/md';
 
-const BasicNav = ({ children, user }) => {
-
-    const {
-        name,
-        profileImage
-    } = user;
+const BasicNav = ({ user }) => {
+  
+    const { name, profileImage } = user;
 
     return (
         <nav className="BasicNav">
@@ -22,14 +19,28 @@ const BasicNav = ({ children, user }) => {
                 <div className="util-item">
                     {name}
                 </div>
-                <Dropdown trigger={
-                    <span>
-                        {profileImage ?
-                        <img alt='Avatar' src={profileImage} height={32} width={32} /> 
-                        : <MdAccountCircle size={32}/>}
-                        <div className="notification">9+</div>
-                    </span>
-                } pointing='top right' icon={null}>
+                <Dropdown 
+                    trigger={
+                        <span>
+                            {
+                                profileImage ?
+                                <img 
+                                    alt='Avatar' 
+                                    src={profileImage} 
+                                    height={32} 
+                                    width={32} 
+                                /> 
+                                : 
+                                <MdAccountCircle size={32}/>
+                            }
+                            <div className="notification">
+                                9+
+                            </div>
+                        </span>
+                    } 
+                    pointing='top right' 
+                    icon={null}
+                >
                     <Dropdown.Menu>
                         <Dropdown.Item>
                         </Dropdown.Item>

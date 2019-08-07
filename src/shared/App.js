@@ -18,12 +18,15 @@ import { connect } from 'react-redux';
 import './App.css';
 
 const DynamicRoute = ({ match, location }) => {
-  //location state가 존재하고 허브의 관리자 id와 hub의 user id가 일치한다면
-  if (location.state && location.state.hubInfo.adminId === location.state.userInfo.userId) {
+  // 보류 : location state가 존재하고 허브의 관리자 id와 hub의 user id가 일치한다면
+  // 수정 : 허브의 일반 사용자도 허브를 사용할 수 있게 만듬
+  if (location.state) {
     console.log('ok!')
-    return (<Route
-      path={`${match.url}/:id`}
-      component={HubAdminPage} />
+    return (
+      <Route
+        path={ `${match.url}/:id` }
+        component={ HubAdminPage } 
+      />
     )
   }
   else {

@@ -63,9 +63,7 @@ const HubBox = ({ hubInfo, userId }) => {
                         <div className="short-info-item">
                             <MdTagFaces size={14} className="short-info-ico" />
                             <span className="short-info-label">
-
                                 {hubInfo.adminId === userId ? '관리자' : '사용자'}
-                                {/* {hubInfo.adminId === userInfo.user.userId ? '관리자' : '사용자'} */}
                             </span>
                         </div>
                         <div className="short-info-item">
@@ -74,27 +72,18 @@ const HubBox = ({ hubInfo, userId }) => {
                         </div>
                     </div>
 
-                    <LinkBtn to={
-                        {
-                            pathname: `/hub/${hubInfo.hubId}`,
-                            state: {
-                                hubInfo: hubInfo,
-                                userId: userId
+                    <LinkBtn 
+                        to={
+                            {
+                                pathname: `/hub/${hubInfo.hubId}`,
+                                state: {
+                                    hubInfo: hubInfo,
+                                    userId: userId
+                                }
                             }
-                        }
-                    } context='접속' /> 
-                    
-                    {/* {hubInfo.adminId === userInfo.userId 
-                    ? <LinkBtn to={
-                        {
-                            pathname: `/hub/${hubInfo.hubId}`,
-                            state: {
-                                hubInfo: hubInfo,
-                                userInfo: userInfo
-                            }
-                        }
-                    } context='접속' /> 
-                    : ''} */}
+                        } 
+                        context='접속' 
+                    /> 
                 </div>
             </footer>
         </div>)
