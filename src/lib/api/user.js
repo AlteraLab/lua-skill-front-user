@@ -9,7 +9,8 @@ export const getUserInfo = () =>{
     // https://backend-intro.vlpt.us/6/01.html / https://velopert.com/3401
     return axios.get(baseURL)
     .then(res=> {
-        console.log('getUserInfo -> ' + res);
+        console.log('Axios :: GetUserInfo =====');
+        console.log(res.data);
         return res;
     });
 }

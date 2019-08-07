@@ -7,9 +7,11 @@ import * as AuthApi from 'lib/api/auth';
 
 /*--------action type--------*/
 const KAKAO_AUTH = 'auth/KAKAO_AUTH'; // kakao 로그인
+const TOGGLE_AUTHENTICATED_TO_TRUE = 'auth/TOGGLE_AUTHENTICATED_TO_TRUE'; // authenticated to true
 
 /*--------create action--------*/
 export const kakaoAuth = createAction(KAKAO_AUTH, AuthApi.redirectWithAuth);
+export const toggleAuthenticatedToTrue = createAction(TOGGLE_AUTHENTICATED_TO_TRUE); // authenticated to true
 
 /*--------state definition--------*/
 const initialState = Map({
@@ -23,7 +25,13 @@ const initialState = Map({
 /*--------reducer--------*/
 export default handleActions({
 
-    // https://backend-intro.vlpt.us/6/01.html / https://velopert.com/3401
+    [TOGGLE_AUTHENTICATED_TO_TRUE]: (state, action) => {
+        return state.set('userState', Map(
+            {
+                isAuthenticated: true,
+            }
+        ))
+    },
 
     ...pender({
         type: KAKAO_AUTH,

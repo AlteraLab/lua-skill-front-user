@@ -4,6 +4,7 @@ import { withRouter } from 'react-router';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom'
 import * as userActions from '../store/modules/user';
+import * as authActions from '../store/modules/auth';
 import * as hubActions from '../store/modules/hub';
 import { SibaHeader } from '../components';
 import ip from 'ip';
@@ -18,17 +19,26 @@ import BasicBoard from '../components/BasicBoard/BasicBoard';
 
 class MainPage extends Component {
 
+    // 로그인 상태 -> isAuthcated 상태 true 로 변경
+    _toggleIsAuthenticatedToTrue = () => {
+        const { AuthActions } = this.props;
+        console.log('Execute _toggleIsAuthenticatedToTrue');
+        console.log(AuthActions);
+        AuthActions.toggleAuthenticatedToTrue();
+    }
+
     //HubBox 컴포넌트들을 렌더링
-    _renderHubBox = (hubBoxList, renderInfo, userInfo) => {
-        return hubBoxList.map(
+    _renderHubBox = () => {
+        // hubBoxList, renderInfo, userInfo
+        const { hubs, user } = this.props;
+
+        return hubs.map(
             hubBox => {
-                // if(renderInfo.items.size === 0){
-                //     /*return <img src={} id={}></img> */
-                // }
-                return  <HubBox hubInfo={hubBox} 
+                return  <HubBox 
                             key={hubBox.hubId} 
-                            userInfo={userInfo}/>
-                    
+                            hubInfo={hubBox} 
+                            userId={user.userId}
+                        />
             }
         )
     }
@@ -39,54 +49,26 @@ class MainPage extends Component {
     }
 
     render() {
-        const { user, hubs } = this.props;
+        const { user, hubs, isAuthenticated } = this.props;
+
+        if(user.userId !== null && isAuthenticated === false) {
+            this._toggleIsAuthenticatedToTrue();
+        }
+
         return (
             <Fragment>
                 <BasicNav user={user} />
                 <BasicBoard
                     title="내 IoT허브"
-                    renderInfo={{
-                        renderFunc: this._renderHubBox,
-                        items: hubs,
-                        userInfo: user
-                    }}
-                    type="hub">
-                    {<HubBox hubInfo={{
-                        hub_name: '거실 허브',
-                        external_ip: '203.250.32.29',
-                        hub_id: 2,
-                    }} userInfo={{
-                        user_name: 'gd',
-                        external_ip: '203.250.32.29',
-                        user_id: 2,
-                    }}/>}
-                    <HubBox hubInfo={{
-                        hub_name: '거실 허브',
-                        external_ip: '203.250.32.29',
-                        hub_id: 1,
-                    }} userInfo={{
-                        user_name: 'gd',
-                        external_ip: '203.250.32.29',
-                        user_id: 1,
-                    }}/>
-                    <HubBox hubInfo={{
-                        hub_name: '거실 허브',
-                        external_ip: '203.250.32.29',
-                        hub_id: 2,
-                    }} userInfo={{
-                        user_name: 'gd',
-                        external_ip: '203.250.32.29',
-                        user_id: 4,
-                    }}/>
-                    <HubBox hubInfo={{
-                        hub_name: '거실 허브',
-                        external_ip: '203.250.32.29',
-                        hub_id: 2,
-                    }} userInfo={{
-                        user_name: 'gd',
-                        external_ip: '203.250.32.29',
-                        user_id: 8,
-                    }}/>
+                    renderInfo={
+                        {
+                            renderFunc: this._renderHubBox,
+                            items: hubs,
+                            userInfo: user
+                        }
+                    }
+                    type="hub"
+                >
                 </BasicBoard>
                 <BasicFooter />
             </Fragment>
@@ -108,6 +90,7 @@ export default withRouter(
         }),
         dispatch => ({
             UserActions: bindActionCreators(userActions, dispatch),
+            AuthActions: bindActionCreators(authActions, dispatch),
         })
     )(MainPage)
 );

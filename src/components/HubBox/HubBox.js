@@ -6,9 +6,8 @@ import { LinkBtn } from '../';
 import { Route, Link } from 'react-router-dom';
 import { Dropdown } from 'semantic-ui-react'
 
-const HubBox = ({ hubInfo, userInfo }) => {
+const HubBox = ({ hubInfo, userId }) => {
     return (
-        
         <div className="HubBox" >
             <header>
                 <div className="hub-name">
@@ -64,7 +63,9 @@ const HubBox = ({ hubInfo, userInfo }) => {
                         <div className="short-info-item">
                             <MdTagFaces size={14} className="short-info-ico" />
                             <span className="short-info-label">
-                                {hubInfo.adminId === userInfo.userId ? '관리자' : '사용자'}
+
+                                {hubInfo.adminId === userId ? '관리자' : '사용자'}
+                                {/* {hubInfo.adminId === userInfo.user.userId ? '관리자' : '사용자'} */}
                             </span>
                         </div>
                         <div className="short-info-item">
@@ -73,7 +74,17 @@ const HubBox = ({ hubInfo, userInfo }) => {
                         </div>
                     </div>
 
-                    {hubInfo.adminId === userInfo.userId 
+                    <LinkBtn to={
+                        {
+                            pathname: `/hub/${hubInfo.hubId}`,
+                            state: {
+                                hubInfo: hubInfo,
+                                userId: userId
+                            }
+                        }
+                    } context='접속' /> 
+                    
+                    {/* {hubInfo.adminId === userInfo.userId 
                     ? <LinkBtn to={
                         {
                             pathname: `/hub/${hubInfo.hubId}`,
@@ -83,7 +94,7 @@ const HubBox = ({ hubInfo, userInfo }) => {
                             }
                         }
                     } context='접속' /> 
-                    : ''}
+                    : ''} */}
                 </div>
             </footer>
         </div>)
