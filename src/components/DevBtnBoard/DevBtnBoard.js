@@ -17,13 +17,18 @@ const DevAddButton = () => {
 }
 
 const DevBtnBoard = ({ children, hubInfo, title}) => {
+    console.log('In DevBtnBoard');
+    console.log(hubInfo);
+
     return (
         <article className="BasicBoard">
             <section className="basic-container">
                 <header className="basic-header">
                     <h3>
-                        <span>{title} {<DevAddButton />} </span>
-                        
+                        <span>
+                            {title} 
+                            {<DevAddButton />} 
+                        </span>
                     </h3>
                     
                 </header>
@@ -78,25 +83,43 @@ const DevBtnBoard = ({ children, hubInfo, title}) => {
                     </div>
 
                     <div className="box-row">
-                    <Link className="log-btn" to="/log">
-                    <div className="box-one">
-                        <img src={log} id={log} size={37}/><br/>
-                        로그 조회    
+                        <Link className="log-btn" 
+                            to={
+                                {
+                                    pathname: '/log',
+                                    state: {
+                                        hubMac: hubInfo.hubMac
+                                    }
+                                }
+                            }
+                        >
+                            <div className="box-one">
+                                <img src={log} id={log} size={37}/>
+                                <br/>
+                                로그 조회    
+                            </div>
+                        </Link>
+                        
+                        <Link className="set-btn" 
+                            to="/set"
+                        >
+                            <div className="box-two">
+                                <MdSettings size={37} />
+                                <br/>
+                                허브 설정
+                            </div>
+                        </Link>
+                        
+                        <Link className="friadd-btn" 
+                            to="/friadd"
+                        >
+                            <div className="box-three">
+                                <MdPersonAdd size={37} />
+                                <br/>
+                                친구 추가
+                            </div>
+                        </Link>
                     </div>
-                    </Link>
-                    <Link className="set-btn" to="/set">
-                    <div className="box-two">
-                        <MdSettings size={37} /><br/>
-                        허브 설정
-                    </div>
-                    </Link>
-                    <Link className="friadd-btn" to="/friadd">
-                    <div className="box-three">
-                        <MdPersonAdd size={37} /><br/>
-                        친구 추가
-                    </div>
-                    </Link>
-                </div>
                 </article>
             </section> 
             <footer>

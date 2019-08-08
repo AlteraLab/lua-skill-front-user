@@ -35,9 +35,9 @@ export const scanHub = () => {
     })
 }
 
-//허브 아이디 값 요청
-export const getHubLogs = (hubId) => {
-    const baseURL = `${API_BASE_URL}/hubs/${hubId}/logs`
+// 로그 조회
+export const getHubLogs = (hubMac) => {
+    const baseURL = `${API_BASE_URL}/hubs/${hubMac}/logs`
     return axios
         .get(baseURL)
         .then(res => {

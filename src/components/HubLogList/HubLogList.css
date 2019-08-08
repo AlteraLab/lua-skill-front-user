@@ -30,8 +30,9 @@ section {
 
 
 /*라디오버튼 숨김*/
-  input {
-      display: none;}
+input {
+    display: none;
+}
 
 label {
     display: inline-block;

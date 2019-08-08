@@ -21,24 +21,36 @@ class HubAdminPage extends Component {
 
     render() {
         
-        const { location, user } = this.props;
+        const { location, user, items } = this.props;
         const {hubInfo, userInfo} = location.state;
-
+        console.log(hubInfo);
+        console.log(hubInfo.mac_addr);
         return (
             <Fragment>
                 <BasicNav user={user} />
                 
-                <DevBtnBoard  title="허브 관리"
-                hubInfo={{
-                    hub_name: '거실 허브',
-                    external_ip: '203.250.32.29',
-                    hub_id: 2,
-                }} userInfo={{
-                    user_name: 'gd',
-                    external_ip: '203.250.32.29',
-                    user_id: 2,
-                }}> 
+                <DevBtnBoard  
+                    title="허브 관리"
+                    hubInfo={
+                        {
+                            hub_name: '거실 허브',
+                            external_ip: '203.250.32.29',
+                            hub_id: 2,
+
+                            // 소현아 아래 지우지마셈
+                            hubMac: hubInfo.mac_addr,
+                        }
+                    } 
+                    userInfo={
+                        {
+                            user_name: 'gd',
+                            external_ip: '203.250.32.29',
+                            user_id: 2,
+                        }
+                    }
+                > 
                 </DevBtnBoard>
+                
                 <BasicFooter />
             </Fragment>
         )

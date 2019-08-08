@@ -1,51 +1,92 @@
 import React ,{Component} from 'react';
 import './HubLogList.css';
 
+const HubLog = ( { recordedAt, hrdwrName, requsterName, content, logType } ) => {
+	return (
+		<div>
+			{recordedAt}
+		</div>
+	);
+};
+
 class HubLogList extends Component {
-
-    state ={
-        selected:'tab1'
+/* 
+- recordedAt: 1565246191000
+- hrdwrId: 1001
+- hrdwrName: "testDev2"
+- requesterName: "test"
+- content: "Test Content"
+- logType: false 
+*/
+    _setPrintLogWithAllLog = () => {
+        const { HubActions} = this.props;
+        HubActions.setPrintLogWithAllLog();
     }
-    
-	render() {
+
+    _setPrintLogWithTrueLog = () => {
+        const { HubActions } = this.props;
+        HubActions.setPrintLogWithTrueLog();
+    }
+
+    _setPrintLogWithFalseLog = () => {
+        const { HubActions } = this.props;
+        HubActions.setPrintLogWithFalseLog();
+    }
+
+    _renderLog = () => {
+        const { printLogs } = this.props;
+
+        return printLogs.map(
+            log => {
+                return <HubLog
+                            key={log.recordedAt}
+                            recordedAt={log.recordedAt}
+                            hrdwrName={log.hrdwrName}
+                            requsterName={log.requsterName}
+                            content={log.content}
+                            logType={log.logType}
+                        />
+            }
+        )
+    }
+
+    render() {
+
 		return (
-        <div className="main">
-            <div className="tab">
-    <input id="tab1" type="radio" name="tabs" value='tab1'
-    checked={this.state.selected === 'tab1'}
-    onChange={(e) => this.setState({ selected: e.target.value })} /> 
-    <label for="tab1">전체</label>
+            <div className="main">
+                <div className="tab">
+                    <input 
+                        id="tab1" 
+                        type="radio" 
+                        name="tabs" 
+                        value='tab1'
+                        onClick={this._setPrintLogWithAllLog} 
+                    /> 
+                    <label for="tab1">전체</label>
 
-    <input id="tab2" type="radio" name="tabs" value='tab2' 
-    checked={this.state.selected === 'tab2'} 
-    onChange={(e) => this.setState({ selected: e.target.value })} />
-    <label for="tab2">성공</label>
+                    <input 
+                        id="tab2" 
+                        type="radio" 
+                        name="tabs" 
+                        value='tab2' 
+                        onClick={this._setPrintLogWithTrueLog}
+                    />
+                    <label for="tab2">성공</label>
 
-    <input id="tab3" type="radio" name="tabs"  value='tab3' 
-    checked={this.state.selected === 'tab3'} 
-    onChange={(e) => this.setState({ selected: e.target.value })} />
-    <label for="tab3">실패</label>
-    </div>
+                    <input 
+                        id="tab3" 
+                        type="radio" 
+                        name="tabs"  
+                        value='tab3' 
+                        onClick={this._setPrintLogWithFalseLog}
+                    />
+                    <label for="tab3">실패</label>
+                </div>
+                <div>
+                    {this._renderLog()}
+                </div>                
 
-    <section id="content1">
-        <p> <h3 style={{marginRight:'20px'}}> 로그 타입</h3> type </p>
-        <p> <h3 style={{marginRight:'20px'}}> 내용 </h3> 로그로그로그 </p>
-        <p> <h3 style={{marginRight:'20px'}}> 하드웨어 아이디</h3> air </p>
-        <p> <h3 style={{marginRight:'20px'}}> 하드웨어 이름 </h3> 에어컨</p>
-        <p> <h3 style={{marginRight:'20px'}}> 요청자 이름 </h3> 홍길동</p>
-    </section>
-
-    <section id="content2">
-    <p> <h3 style={{marginRight:'20px'}}> 내용 </h3> 로그로그로그 </p>
-        <p> <h3 style={{marginRight:'20px'}}> 요청자 이름 </h3> 홍길동</p>
-    </section>
-
-    <section id="content3">
-        <p> <h3 style={{marginRight:'20px'}}> 하드웨어 아이디</h3> air </p>
-        <p> <h3 style={{marginRight:'20px'}}> 하드웨어 이름 </h3> 에어컨</p>
-    </section>
-
-</div>
+            </div>
 		)
 	}
 }
