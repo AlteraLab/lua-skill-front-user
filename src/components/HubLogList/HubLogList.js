@@ -1,10 +1,13 @@
 import React ,{Component} from 'react';
 import './HubLogList.css';
+import Moment from 'react-moment';
 
 const HubLog = ( { recordedAt, hrdwrName, requsterName, content, logType } ) => {
 	return (
 		<div>
-			{recordedAt}
+            <Moment format="YYYY-MM-DD HH:mm (UTCZ)">
+                {recordedAt}
+            </Moment>
 		</div>
 	);
 };
