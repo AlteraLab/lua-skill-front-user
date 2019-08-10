@@ -1,6 +1,5 @@
 import { createStore, applyMiddleware, compose } from 'redux';
 import createRootReducer from './modules';
-import { createLogger } from 'redux-logger';
 import penderMiddleware from 'redux-pender';
 import { routerMiddleware } from 'connected-react-router'
 
@@ -12,7 +11,6 @@ export default function configureStore(history) {
         compose(
             applyMiddleware(
                 routerMiddleware(history), // for dispatching history actions
-                //createLogger(),
                 penderMiddleware()
             ), //미들웨어 적용
             window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__() // 리덕스 개발도구 적용

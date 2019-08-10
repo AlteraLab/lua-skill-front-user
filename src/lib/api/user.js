@@ -6,7 +6,6 @@ export const getUserInfo = () =>{
 
     let baseURL = `${API_BASE_URL}/user`
 
-    // https://backend-intro.vlpt.us/6/01.html / https://velopert.com/3401
     return axios.get(baseURL)
     .then(res=> {
         console.log('Axios :: GetUserInfo =====');

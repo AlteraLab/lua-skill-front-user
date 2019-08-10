@@ -7,19 +7,25 @@ import Moment from 'react-moment';
 import log from '../../img/log.jpg';
 
 
-const DevAddButton = () => {
-    return (
-        <Link className="dev-add-btn" to="/dadd">
-            <img src={devices}  style={{position:'absolute', top:'-5px', marginLeft:'58%'}}
-            id="devices"></img>
+const DevAddButton = ({ to }) => {
+    return (        
+        <Link to={to} className="dev-add-btn">
+            <img 
+                src={devices}  
+                style={
+                    {
+                        position:'absolute', 
+                        top:'-5px', 
+                        marginLeft:'58%'
+                    }
+                }
+                id="devices"
+            ></img>
         </Link>
     )
 }
 
 const DevBtnBoard = ({ children, hubInfo, title}) => {
-    console.log('In DevBtnBoard');
-    console.log(hubInfo);
-
     return (
         <article className="BasicBoard">
             <section className="basic-container">
@@ -27,7 +33,21 @@ const DevBtnBoard = ({ children, hubInfo, title}) => {
                     <h3>
                         <span>
                             {title} 
-                            {<DevAddButton />} 
+                            {
+                                <DevAddButton
+                                    to={
+                                        {
+                                            pathname: `/dadd`,
+                                            state: {
+                                                hubInfo: {
+                                                    externalIp: hubInfo.externalIp,
+                                                    externalPort: hubInfo.externalPort
+                                                }
+                                            }
+                                        }
+                                    } 
+                                />
+                            } 
                         </span>
                     </h3>
                     
@@ -37,25 +57,28 @@ const DevBtnBoard = ({ children, hubInfo, title}) => {
                 <header>
                 <div className="hub-name">
                     <span className="title">
-                        <MdDeviceHub size={21} style={{
-                            position: 'relative',
-                            top: '3px',
-                            marginRight: '5px',
-                            borderRadius: '5px',
-                            backgroundColor: '#2A2C2B',
-                            color: 'white'
-                        }} />
-                        <strong>{hubInfo.hub_name}</strong>
-                        </span>
-                    {/* <span className="subtitle">{hubInfo.search_id}</span> */}
-                
+                        <MdDeviceHub 
+                            size={21} 
+                            style={
+                                {
+                                    position: 'relative',
+                                    top: '3px',
+                                    marginRight: '5px',
+                                    borderRadius: '5px',
+                                    backgroundColor: '#2A2C2B',
+                                    color: 'white'
+                                }
+                            } 
+                        />
+                        <strong>{hubInfo.hubName}</strong>
+                    </span>
                         </div>
                 </header>            
                 <section>
                     <article>
                         <div className="hub-row">
                         <div className="hub-label">연결된 NAT라우터</div>
-                        <div className="hub-content">{hubInfo.external_ip}</div>
+                        <div className="hub-content">{hubInfo.externalIp}</div>
                     </div>
                     <div className="hub-row">
                         <div className="hub-label">허브 MAC주소</div>
@@ -63,7 +86,7 @@ const DevBtnBoard = ({ children, hubInfo, title}) => {
                     </div>
                     <div className="hub-row">
                         <div className="hub-label">검색용 아이디</div>
-                        <div className="hub-content">{hubInfo.search_id}</div>
+                        <div className="hub-content">{hubInfo.searchId}</div>
                     </div>
                     <div className="hub-row">
                         <div className="hub-label">허브 상태</div>

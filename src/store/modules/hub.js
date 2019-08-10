@@ -1,7 +1,7 @@
 //Duck pattern
 
 import { createAction, handleActions } from 'redux-actions';
-import { Map, List, Record } from 'immutable';
+import { Map, List } from 'immutable';
 import { pender } from 'redux-pender';
 import * as HubApi from 'lib/api/hub';
 
@@ -91,8 +91,6 @@ export default handleActions({
         const failLogs = state.getIn(['hubLogList', 'failLogs']);
         return state.setIn(['hubLogList', 'printLogs'], failLogs);
     },
-
-// https://backend-intro.vlpt.us/6/01.html / https://velopert.com/3401
 
     ...pender({
         type: REGISTER_HUB,

@@ -15,42 +15,40 @@ import DevBtnBoard from '../components/DevBtnBoard/DevBtnBoard';
 
 class HubAdminPage extends Component {
 
-
     componentDidMount() {
     }
 
     render() {
         
-        const { location, user, items } = this.props;
-        const {hubInfo, userInfo} = location.state;
-        console.log(hubInfo);
-        console.log(hubInfo.mac_addr);
+        const { location, user } = this.props;
+        const { hubInfo } = location.state;
         return (
             <Fragment>
                 <BasicNav user={user} />
-                
                 <DevBtnBoard  
                     title="허브 관리"
                     hubInfo={
                         {
-                            hub_name: '거실 허브',
-                            external_ip: '203.250.32.29',
-                            hub_id: 2,
+                            adminId: hubInfo.adminId,
+                            role: hubInfo.role,
 
-                            // 소현아 아래 지우지마셈
-                            hubMac: hubInfo.mac_addr,
-                        }
-                    } 
-                    userInfo={
-                        {
-                            user_name: 'gd',
-                            external_ip: '203.250.32.29',
-                            user_id: 2,
+                            hubId: hubInfo.hubId,
+                            hubName: hubInfo.hub_name,
+                            hubDescript: hubInfo.hub_descript,
+                            searchId: hubInfo.search_id,
+                            state: hubInfo.state,
+
+                            lastUsedTime: hubInfo.lastUsedTime,
+                            updatedAt: hubInfo.updatedAt,
+                            createdAt: hubInfo.createdAt,
+
+                            externalIp: hubInfo.external_ip,
+                            externalPort: hubInfo.external_port,
+                            hubMac: hubInfo.mac_addr
                         }
                     }
                 > 
                 </DevBtnBoard>
-                
                 <BasicFooter />
             </Fragment>
         )

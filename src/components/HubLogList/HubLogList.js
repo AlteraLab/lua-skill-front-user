@@ -6,6 +6,9 @@ const HubLog = ( { recordedAt, hrdwrName, requsterName, content, logType } ) => 
 	return (
 		<div>
             <Moment format="YYYY-MM-DD HH:mm (UTCZ)">
+                {/* 
+                    실제로 꾸며줄때는 hrdwrName / requsterName / content / logType 등을 이용해서 꾸며주면됨
+                */}
                 {recordedAt}
             </Moment>
 		</div>
@@ -22,7 +25,7 @@ class HubLogList extends Component {
 - logType: false 
 */
     _setPrintLogWithAllLog = () => {
-        const { HubActions} = this.props;
+        const { HubActions } = this.props;
         HubActions.setPrintLogWithAllLog();
     }
 

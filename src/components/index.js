@@ -13,6 +13,8 @@ import WelcomeBoard from 'components/WelcomeBoard/WelcomeBoard'
 import DeviceBox from 'components/DeviceBox/DeviceBox'
 import DevBtnBoard from 'components/DevBtnBoard/DevBtnBoard'
 import HubLogList from 'components/HubLogList/HubLogList'
+import ScanDevList from 'components/ScanDevList/ScanDevList'
+import ScanDev from 'components/ScanDev/ScanDev'
 
 export {
     PrivateRoute,
@@ -29,5 +31,7 @@ export {
     SubmitBtn,
     DeviceBox,
     UtteranceBox,
-    WelcomeBoard
+    WelcomeBoard,
+    ScanDevList,
+    ScanDev
 }
