@@ -123,8 +123,8 @@ export default handleActions({
         type: GET_HUB_LOGS,
         onSuccess: (state, action) => {
             const logs = action.payload.data.data.logs;
-            const failLogs = logs.filter((log) => log.logType === false);
-            const successLogs = logs.filter((log) => log.logType === true);
+            const failLogs = logs.filter((log) => log.logType !== false);
+            const successLogs = logs.filter((log) => log.logType !== true);
             return state.set('hubLogList', Map({
                 logs: List(logs),
                 successLogs: List(failLogs),

@@ -15,6 +15,8 @@ import DevBtnBoard from 'components/DevBtnBoard/DevBtnBoard'
 import HubLogList from 'components/HubLogList/HubLogList'
 import ScanDevList from 'components/ScanDevList/ScanDevList'
 import ScanDev from 'components/ScanDev/ScanDev'
+import ModalPortal from 'components/ModalPortal/ModalPortal'
+import DevAddResModal from 'components/DevAddResModal/DevAddResModal'
 
 export {
     PrivateRoute,
@@ -33,5 +35,7 @@ export {
     UtteranceBox,
     WelcomeBoard,
     ScanDevList,
-    ScanDev
+    ScanDev,
+    ModalPortal,
+    DevAddResModal
 }

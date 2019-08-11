@@ -10,7 +10,8 @@ import {
     BasicNav,
     BasicBoard,
     BasicFooter,
-    LinkBtn
+    LinkBtn,
+    DevAddResModal
 } from '../components';
 import ScanDevList from '../components/ScanDevList/ScanDevList';
 
@@ -23,8 +24,8 @@ class DevAddPage extends Component {
     }
 
     render() {
-        const { user, scanDevs, DevActions } = this.props;
-        
+        const { user, scanDevs, DevActions, isModal, isResult } = this.props;
+
         return (
             <Fragment>
                 <BasicNav user={user} />
@@ -39,6 +40,15 @@ class DevAddPage extends Component {
                         scanDevs={scanDevs}
                         DevActions={DevActions}
                     />
+                    {
+                        isModal && (
+                                        <DevAddResModal
+                                            isResult={isResult}
+                                            _handleIsModal={DevActions.setIsModalWithFalse}
+                                        />
+                                    )
+                    }
+                    
                 </BasicBoard>
                 <BasicFooter />
             </Fragment>
@@ -58,7 +68,8 @@ export default withRouter(
             },
             hubs: state.user.getIn(['userInfo', 'hubs']),
             scanDevs: state.dev.getIn(['dev', 'scanDevs']),
-            // scanDevs: state.dev.get('scanDevs'),
+            isModal: state.dev.get('isModal'),
+            isResult: state.dev.get('isResult'),
         }),
         // props 로 넣어줄 액션 생성함수
         dispatch => ({
