@@ -1,6 +1,6 @@
 const HISTORY_TYPE = 'hash';
 
-export const API_BASE_URL = 'http://localhost:8083';
+export const API_BASE_URL = 'http://110.13.78.125:8083';
 //export const API_BASE_URL = 'http://110.13.78.125:8083';
 //http://39.117.253.166:3000/
 

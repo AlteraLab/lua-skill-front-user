@@ -1,10 +1,8 @@
-import React, { Component } from 'react'
+import React from 'react'
 import './HubBox.css'
 import { MdDeviceHub, MdTagFaces, MdGroup } from 'react-icons/md';
 import Moment from 'react-moment';
 import { LinkBtn } from '../';
-import { Route, Link } from 'react-router-dom';
-import { Dropdown } from 'semantic-ui-react'
 
 const HubBox = ({ hubInfo, userId }) => {
     return (

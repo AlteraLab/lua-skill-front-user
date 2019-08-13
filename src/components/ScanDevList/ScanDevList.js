@@ -1,8 +1,8 @@
-import React ,{Component} from 'react';
+import React from 'react';
 import './ScanDevList.css';
 import ScanDev from '../ScanDev/ScanDev';
 
-const ScanDevList = ( { scanDevs, DevActions } ) => {
+const ScanDevList = ( { scanDevs, DevActions, externalIp, externalPort } ) => {
 	return (
 		<div>
 			{
@@ -12,6 +12,8 @@ const ScanDevList = ( { scanDevs, DevActions } ) => {
 									key={dev.address}
 									scanDev={dev}
 									DevActions={DevActions}
+									externalIp={externalIp}
+									externalPort={externalPort}
 								/>
 					}
 				)

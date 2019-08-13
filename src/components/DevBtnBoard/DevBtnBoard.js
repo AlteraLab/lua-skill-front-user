@@ -5,6 +5,7 @@ import devices from '../../img/devices.jpg';
 import { MdDeviceHub , MdPersonAdd, MdSettings, MdDevicesOther} from 'react-icons/md';
 import Moment from 'react-moment';
 import log from '../../img/log.jpg';
+import { connectDev } from '../../store/modules/dev';
 
 
 const DevAddButton = ({ to }) => {
@@ -25,7 +26,84 @@ const DevAddButton = ({ to }) => {
     )
 }
 
-const DevBtnBoard = ({ children, hubInfo, title}) => {
+const Dev = ({ connectedDev }) => {
+    const devType = connectedDev.devType;
+    console.log('connectDev')
+    console.log(connectedDev)
+    return (
+        <Link to={
+            {
+                pathname: '/devInfo',
+                state: {
+                    devType: {devType}
+                }
+            }
+        }>
+            <div className="devlist">
+                {connectedDev.name}
+                <br/>
+                {/* {connectedDev.address} */}
+                <br/>
+                {/* {connectedDev.devType} */}
+            </div>
+        </Link>
+    )
+}
+
+const DevRowList = ({ connectedDevs }) => {
+    return (
+        <div className="dev-row">
+            {
+                connectedDevs.map(
+                    dev => {
+                        return <Dev
+                                    key={dev.address}
+                                    connectedDev={dev}
+                                />
+                    }
+                )
+            }
+        </div>
+    )
+}
+
+const DevColumnList = ({ connectedDevs }) => {
+    // 2차원 배열로 만들어서, 2차원 배열의 각 요소를 넘겨줘야겠다!
+    // Dimensional Array ConnectedDevs : connectedDevs(1차원 배열) 을 2차원 배열 형태로 만든 버전
+    let dimenArrConnectedDevs = [];
+    let i = 0;
+    let devs = [];
+    for(const dev of connectedDevs) {
+        devs.push(dev)
+        i++;
+        if(i === 2) {
+            dimenArrConnectedDevs.push(devs);
+            i = 0;
+            devs = [];
+        }
+    }
+    if(i === 1){
+        dimenArrConnectedDevs.push(devs);
+    }
+
+    let index = 0;
+    return (
+        <div className="dev-column">
+            {
+                dimenArrConnectedDevs.map(
+                    devs => {
+                        return <DevRowList
+                                    key={index++}
+                                    connectedDevs={devs}
+                                />
+                    }
+                )
+            }
+        </div>
+    )
+}
+
+const DevBtnBoard = ({ children, hubInfo, title, connectedDevs }) => {
     return (
         <article className="BasicBoard">
             <section className="basic-container">
@@ -144,7 +222,8 @@ const DevBtnBoard = ({ children, hubInfo, title}) => {
                         </Link>
                     </div>
                 </article>
-            </section> 
+            </section>
+
             <footer>
                 <div className="device-list">
                     <span className="devlist-title">
@@ -152,55 +231,10 @@ const DevBtnBoard = ({ children, hubInfo, title}) => {
                         <strong style={{fontSize:'16px',paddingLeft:'6px'}}>
                             디바이스 목록</strong>
                    </span>
-                        
-                    <div className="dev-column">
-                        <div className="dev-row">
-                            <Link to="/devInfo">
-                                <div className="devlist">
-                                    디바이스1
-                                </div>
-                            </Link>
-                            
-                            <div className="devlist">
-                                디바이스2
-                            </div>
-                        </div>
-                        
-                        <div className="dev-row">
-                            <div className="devlist">
-                            디바이스3
-                            </div>
-                            <div className="devlist">
-                                디바이스4
-                            </div>
-                        </div>
-                        <div className="dev-row">
-                            <div className="devlist">
-                            디바이스5
-                            </div>
-                            <div className="devlist">
-                                디바이스6
-                            </div>
-                        </div>
-                        <div className="dev-row">
-                            <div className="devlist">
-                            디바이스7
-                            </div>
-                            <div className="devlist">
-                                디바이스8
-                            </div>
-                        </div>
-                        <div className="dev-row">
-                            <div className="devlist">
-                            디바이스9
-                            </div>
-                            <div className="devlist">
-                                디바이스10
-                            </div>
-                        </div>
-                        
-                    </div>
-
+                
+                    <DevColumnList
+                        connectedDevs={connectedDevs}
+                    />
                 </div>
             </footer>
                 </div>

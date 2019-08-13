@@ -2,7 +2,6 @@ import React from 'react';
 import './BasicBoard.css';
 import { Link } from 'react-router-dom';
 import { MdAdd } from 'react-icons/md';
-import devices from '../../img/devices.jpg';
 
 const HubAddButton = () => {
     return (

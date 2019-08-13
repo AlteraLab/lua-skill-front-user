@@ -2,19 +2,13 @@ import React, { Component, Fragment } from 'react';
 import { bindActionCreators } from 'redux';
 import { withRouter } from 'react-router';
 import { connect } from 'react-redux';
-import { Redirect } from 'react-router-dom'
 import * as userActions from '../store/modules/user';
 import * as authActions from '../store/modules/auth';
-import * as hubActions from '../store/modules/hub';
-import { SibaHeader } from '../components';
-import ip from 'ip';
-import publicIp from 'public-ip';
 import {
     BasicNav,
     BasicFooter,
     HubBox,
 } from '../components';
-import { Link } from 'react-router-dom';
 import BasicBoard from '../components/BasicBoard/BasicBoard';
 
 class MainPage extends Component {

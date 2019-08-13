@@ -2,11 +2,7 @@ import React, { Component, Fragment } from 'react';
 import { bindActionCreators } from 'redux';
 import { withRouter } from 'react-router';
 import { connect } from 'react-redux';
-import { Redirect } from 'react-router-dom'
 import * as hubActions from '../store/modules/hub';
-import { SibaHeader } from '../components';
-import ip from 'ip';
-import publicIp from 'public-ip';
 import {
     BasicNav,
     BasicBoard,

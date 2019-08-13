@@ -4,8 +4,6 @@ import { withRouter } from 'react-router';
 import { connect } from 'react-redux';
 import * as userActions from '../store/modules/user';
 import * as hubActions from '../store/modules/hub';
-import ip from 'ip';
-import publicIp from 'public-ip';
 import {
     BasicNav,
     BasicBoard,
@@ -15,7 +13,6 @@ import {
     LinkBtn,
     SubmitBtn
 } from '../components';
-import scanBtnImg from '../img/scan-button-img.jpg';
 
 class HubAddPage extends Component {
 
@@ -67,7 +64,6 @@ class HubAddPage extends Component {
         const { user, scanHubInfo } = this.props;
 
         const {
-            status,
             external_ip,
             mac_addr
         } = scanHubInfo;

@@ -5,7 +5,8 @@ import { connect } from 'react-redux';
 import * as userActions from '../store/modules/user';
 import * as hubActions from '../store/modules/hub';
 import * as devActions from '../store/modules/dev';
-
+import { css } from '@emotion/core';
+import { RingLoader } from 'react-spinners';
 import {
     BasicNav,
     BasicBoard,
@@ -14,6 +15,12 @@ import {
     DevAddResModal
 } from '../components';
 import ScanDevList from '../components/ScanDevList/ScanDevList';
+
+const override = css`
+    display: block;
+    margin: 0 auto;
+    border-color: red;
+`;
 
 class DevAddPage extends Component {
 
@@ -24,11 +31,12 @@ class DevAddPage extends Component {
     }
 
     render() {
-        const { user, scanDevs, DevActions, isModal, isResult } = this.props;
+        const { isLoading, user, scanDevs, DevActions, isModal, isResult, location } = this.props;
+        const { hubInfo } = location.state;
 
         return (
             <Fragment>
-                <BasicNav user={user} />
+                <BasicNav user={user} />    
                 <BasicBoard 
                     title="새로운 디바이스 추가하기"
                 >
@@ -39,6 +47,8 @@ class DevAddPage extends Component {
                     <ScanDevList
                         scanDevs={scanDevs}
                         DevActions={DevActions}
+                        externalIp={hubInfo.externalIp}
+                        externalPort={hubInfo.externalPort}
                     />
                     {
                         isModal && (
@@ -48,7 +58,15 @@ class DevAddPage extends Component {
                                         />
                                     )
                     }
-                    
+                    <div className='sweet-loading'>
+                        <RingLoader
+                            css={override}
+                            sizeUnit={"px"}
+                            size={150}
+                            color={'#123abc'}
+                            loading={isLoading}
+                        />
+                    </div> 
                 </BasicBoard>
                 <BasicFooter />
             </Fragment>
@@ -70,6 +88,7 @@ export default withRouter(
             scanDevs: state.dev.getIn(['dev', 'scanDevs']),
             isModal: state.dev.get('isModal'),
             isResult: state.dev.get('isResult'),
+            isLoading: state.dev.get('isLoading'),
         }),
         // props 로 넣어줄 액션 생성함수
         dispatch => ({

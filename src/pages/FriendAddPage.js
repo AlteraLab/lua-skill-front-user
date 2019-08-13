@@ -6,8 +6,7 @@ import * as userActions from '../store/modules/user';
 import {
     BasicNav,
     BasicFooter,
-    BasicBoard,
-    LinkBtn
+    BasicBoard
 } from '../components';
 
 class FriendAddPage extends Component {
