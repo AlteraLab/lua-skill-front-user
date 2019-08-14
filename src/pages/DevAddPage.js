@@ -89,10 +89,7 @@ export default withRouter(
             scanDevs: state.dev.getIn(['dev', 'scanDevs']),
             isModal: state.dev.get('isModal'),
             isResult: state.dev.get('isResult'),
-<<<<<<< HEAD
             isLoading: state.dev.get('isLoading'),
-=======
->>>>>>> upstream/feature
         }),
         // props 로 넣어줄 액션 생성함수
         dispatch => ({

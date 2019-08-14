@@ -6,24 +6,6 @@ import Moment from 'react-moment';
 import log from '../../img/log.jpg';
 import { connectDev } from '../../store/modules/dev';
 
-const DevAddButton = ({ to }) => {
-    return (        
-        <Link to={to} className="dev-add-btn">
-            <img 
-                src={devices}  
-                style={
-                    {
-                        position:'absolute', 
-                        top:'-5px', 
-                        marginLeft:'58%'
-                    }
-                }
-                id="devices"
-            ></img>
-        </Link>
-    )
-}
-
 const Dev = ({ connectedDev }) => {
     const devType = connectedDev.devType;
     console.log('connectDev')
@@ -109,7 +91,7 @@ const DevBtnBoard = ({ children, hubInfo, title, connectedDevs }) => {
                     <h3>
                         <span>
                             {title} 
-                            {
+                            {/* {
                                 <DevAddButton
                                     to={
                                         {
@@ -123,7 +105,7 @@ const DevBtnBoard = ({ children, hubInfo, title, connectedDevs }) => {
                                         }
                                     } 
                                 />
-                            } 
+                            }  */}
                         </span>
                     </h3>
                 </header>
@@ -232,9 +214,38 @@ const DevBtnBoard = ({ children, hubInfo, title, connectedDevs }) => {
                                 <span className="devlist-title">
                                     <MdDevicesOther size={25} style={{position:'relative', top:'3px'}}/>
                                     <strong style={{fontSize:'16px',paddingLeft:'6px'}}>
-                                        디바이스 목록</strong>
+                                        연결 디바이스</strong>
                                 </span>
-                            
+                                <Link 
+                                    to={
+                                        {
+                                            pathname: `/dadd`,
+                                            state: {
+                                                hubInfo: {
+                                                    externalIp: hubInfo.externalIp,
+                                                    externalPort: hubInfo.externalPort
+                                                }
+                                            }
+                                        }
+                                    }
+                                    style={
+                                        {
+                                            marginLeft:'auto', 
+                                            color:'black'
+                                        }
+                                    }
+                                >
+                                    <MdAddCircleOutline 
+                                        size={25} 
+                                        style={
+                                            {
+                                                position:'relative',
+                                                bottom:'2px',
+                                                marginLeft:'auto'
+                                            }
+                                        }
+                                    />
+                                </Link>
                                 <DevColumnList
                                     connectedDevs={connectedDevs}
                                 />

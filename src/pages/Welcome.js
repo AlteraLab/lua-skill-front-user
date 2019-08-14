@@ -7,6 +7,7 @@ import queryString from 'query-string'
 import {
     WelcomeBoard,
     UtteranceBox,
+    BasicFooter
 } from '../components';
 
 class Welcome extends Component {
