@@ -5,9 +5,10 @@ class ScanDev extends Component {
 
 	_connectDev = (e) => {
 		e.preventDefault();
-		const { scanDev, DevActions } = this.props;
-		DevActions.setRequestDev(scanDev.address);
-		DevActions.connectDev(scanDev.address);
+		const { scanDev, DevActions, externalIp, externalPort } = this.props;
+		//DevActions.setRequestDev(scanDev.address);
+		DevActions.setRequestDev(scanDev);
+		DevActions.connectDev(externalIp, externalPort, scanDev.address);
 	}
 
 	render() {

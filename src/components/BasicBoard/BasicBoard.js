@@ -30,7 +30,11 @@ const BasicBoard = ({ children, title, renderInfo, type }) => {
                     {type==='hub'?<HubAddButton />:''}
                 </header>
                 <div className="basic-field">
-                    {renderInfo ? renderInfo.renderFunc(renderInfo.items, renderInfo.userInfo):''}
+                    {
+                        renderInfo ? 
+                        renderInfo.renderFunc(renderInfo.items, renderInfo.userInfo)
+                        :''
+                    }
                     {children}
                 </div>
                 

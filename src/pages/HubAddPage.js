@@ -13,7 +13,6 @@ import {
     LinkBtn,
     SubmitBtn
 } from '../components';
-import scanBtnImg from '../img/scan-button-img.jpg';
 
 class HubAddPage extends Component {
 
@@ -65,7 +64,6 @@ class HubAddPage extends Component {
         const { user, scanHubInfo } = this.props;
 
         const {
-            status,
             external_ip,
             mac_addr
         } = scanHubInfo;

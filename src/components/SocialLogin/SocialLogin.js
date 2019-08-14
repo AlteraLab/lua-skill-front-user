@@ -1,6 +1,5 @@
 import React from 'react';
 import './SocialLogin.css'
-import { Container, Header, Button } from 'semantic-ui-react';
 import kakaoLogo from '../../img/kakao-logo.png';
 import siba from '../../img/siba.jpg';
 

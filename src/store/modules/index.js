@@ -13,5 +13,5 @@ export default (history) => combineReducers({
     user,
     hub,
     dev,
-    pender: penderReducer, //pender 리듀서 추가
+    pender: penderReducer,
 });

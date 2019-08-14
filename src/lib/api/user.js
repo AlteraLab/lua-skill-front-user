@@ -8,7 +8,8 @@ export const getUserInfo = () =>{
 
     return axios.get(baseURL)
     .then(res=> {
-        console.log(res);
+        console.log('Axios :: GetUserInfo =====');
+        console.log(res.data);
         return res;
     });
 }

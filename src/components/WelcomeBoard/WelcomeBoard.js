@@ -1,6 +1,6 @@
 import React from 'react';
 import './WelcomeBoard.css'
-import { MdMenu, MdArrowBack} from 'react-icons/md';
+import { MdMenu, MdArrowBack } from 'react-icons/md';
 
 const WelcomeBoard = ({ children }) => {
     return (

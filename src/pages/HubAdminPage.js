@@ -4,28 +4,31 @@ import { withRouter } from 'react-router';
 import { connect } from 'react-redux';
 import * as userActions from '../store/modules/user';
 import * as hubActions from '../store/modules/hub';
+import * as devActions from '../store/modules/dev';
 import {
     BasicNav,
     BasicFooter,
-    DevBtnBoard
 } from '../components';
+import DevBtnBoard from '../components/DevBtnBoard/DevBtnBoard';
 
 class HubAdminPage extends Component {
 
-
     componentDidMount() {
+        const { DevActions, location } = this.props;
+        const { hubInfo } = location.state;
+        DevActions.requestConnectedDevs(hubInfo.external_ip, hubInfo.external_port);
     }
 
     render() {
         
-        const { location, user } = this.props;
-        const {hubInfo} = location.state;
+        const { location, user, connectedDevs } = this.props;
+        const { hubInfo } = location.state;
         return (
             <Fragment>
                 <BasicNav user={user} />
-                
                 <DevBtnBoard  
                     title="허브 관리"
+                    connectedDevs={connectedDevs}
                     hubInfo={
                         {
                             adminId: hubInfo.adminId,
@@ -42,17 +45,10 @@ class HubAdminPage extends Component {
 
                             externalIp: hubInfo.external_ip,
                             externalPort: hubInfo.external_port,
-                            hubMac: hubInfo.mac_addr
-                        }
-                    } 
-                    userInfo={
-                        {
-                            user_name: 'gd',
-                            external_ip: '203.250.32.29',
-                            user_id: 2,
+                            hubMac: hubInfo.mac_addr,
                         }
                     }
-                > 
+                >
                 </DevBtnBoard>
 
                 <BasicFooter />
@@ -71,11 +67,13 @@ export default withRouter(
                 name: state.user.getIn(['userInfo', 'user', 'name']),
                 profileImage: state.user.getIn(['userInfo', 'user', 'profileImage']),
             },
+            connectedDevs: state.dev.getIn(['dev', 'connectedDevs']),
         }),
         // props 로 넣어줄 액션 생성함수
         dispatch => ({
             UserActions: bindActionCreators(userActions, dispatch),
             HubActions: bindActionCreators(hubActions, dispatch),
+            DevActions: bindActionCreators(devActions, dispatch),
         })
     )(HubAdminPage)
 );

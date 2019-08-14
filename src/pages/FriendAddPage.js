@@ -5,9 +5,8 @@ import { connect } from 'react-redux';
 import * as userActions from '../store/modules/user';
 import {MdClear,MdSearch} from 'react-icons/md'
 import {
-    BasicFooter
+    BasicFooter,
 } from '../components';
-import { Link } from 'react-router-dom';
 import '../components/FriendAdd/FriendAdd.css';
 
 class FriendAddPage extends Component {

@@ -1,10 +1,10 @@
-import React, { Component } from 'react'
+import React from 'react'
 import './HubBox.css'
 import { MdDeviceHub, MdTagFaces, MdGroup } from 'react-icons/md';
 import Moment from 'react-moment';
 import { LinkBtn } from '../';
 
-const HubBox = ({ hubInfo, userInfo }) => {
+const HubBox = ({ hubInfo, userId }) => {
     return (
         <div className="HubBox" >
             <header>
@@ -60,7 +60,7 @@ const HubBox = ({ hubInfo, userInfo }) => {
                         <div className="short-info-item">
                             <MdTagFaces size={14} className="short-info-ico" />
                             <span className="short-info-label">
-                                {hubInfo.adminId === userInfo.userId ? '관리자' : '사용자'}
+                                {hubInfo.adminId === userId ? '관리자' : '사용자'}
                             </span>
                         </div>
                         <div className="short-info-item">
@@ -68,16 +68,19 @@ const HubBox = ({ hubInfo, userInfo }) => {
                             <span className="short-info-label">4</span>
                         </div>
                     </div>
-                        {hubInfo.adminId === userInfo.userId ? 
-                            <LinkBtn to={
-                                {
-                                    pathname: `/hub/${hubInfo.hubId}`,
-                                    state: {
-                                        hubInfo: hubInfo,
-                                        userInfo: userInfo
-                                    }
-                                }}
-                            context='접속' /> : ''}
+                    
+                    <LinkBtn 
+                        to={
+                            {
+                                pathname: `/hub/${hubInfo.hubId}`,
+                                state: {
+                                    hubInfo: hubInfo,
+                                    userId: userId
+                                }
+                            }
+                        } 
+                        context='접속' 
+                    /> 
                 </div>
             </footer>
         </div>)

@@ -2,6 +2,7 @@ import { createStore, applyMiddleware, compose } from 'redux';
 import createRootReducer from './modules';
 import penderMiddleware from 'redux-pender';
 import { routerMiddleware } from 'connected-react-router'
+// $ npm install react-loader-spinner --save
 
 //리덕스 스토어 생성 함수 / root.js 에서 사용됨
 export default function configureStore(history) {

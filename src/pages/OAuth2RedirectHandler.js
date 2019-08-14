@@ -1,7 +1,4 @@
-import React, { Component, Fragment } from 'react';
-import { SocialLoginContainer } from 'containers';
-import { withRouter } from 'react-router';
-import { connect } from 'react-redux';
+import React, { Component } from 'react';
 import  { Redirect } from 'react-router-dom'
 import { ACCESS_TOKEN } from '../constants';
 import { parse } from 'query-string'
