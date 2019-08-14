@@ -9,7 +9,6 @@ import {
     BasicFooter,
     HubLogList
 } from '../components';
-import '../components/HubLogList/HubLogList.css';
 
 class HubLogPage extends Component {
     

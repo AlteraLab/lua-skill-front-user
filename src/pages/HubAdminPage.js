@@ -33,7 +33,6 @@ class HubAdminPage extends Component {
                         {
                             adminId: hubInfo.adminId,
                             role: hubInfo.role,
-
                             hubId: hubInfo.hubId,
                             hubName: hubInfo.hub_name,
                             hubDescript: hubInfo.hub_descript,
@@ -50,8 +49,8 @@ class HubAdminPage extends Component {
                         }
                     }
                 >
-
                 </DevBtnBoard>
+
                 <BasicFooter />
             </Fragment>
         )

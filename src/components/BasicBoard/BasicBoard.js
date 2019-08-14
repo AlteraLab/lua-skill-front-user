@@ -19,7 +19,6 @@ const BasicBoard = ({ children, title, renderInfo, type }) => {
                 <header className="basic-header">
                     <h3>
                         <span>{title} </span>
-                        
                         {
                             type==='hub'? 
                             <span 

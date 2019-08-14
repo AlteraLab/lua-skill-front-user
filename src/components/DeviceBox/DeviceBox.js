@@ -1,57 +1,65 @@
 import React from 'react'
 import './DeviceBox.css'
-import { MdDeviceHub} from 'react-icons/md';
+import { MdDevicesOther, MdInfo} from 'react-icons/md';
 
 
 const DeviceBox = ({ devInfo}) => {
     return (
-        
         <div className="DeviceBox" >
+            <div className="BigTitle">
+                <h3>
+                    <span>디바이스 상세 정보</span>
+                    <MdInfo size={25} style={{position:'relative', float:'right'}} />
+                </h3> 
+            </div>
             <header>
                 <div className="dev-name">
                     <span className="dtitle">
-                    <MdDeviceHub size={17} style={{
-                            position: 'relative',
-                            top: '2px',
-                            marginRight: '5px',
-                            borderRadius: '5px',
-                            backgroundColor: '#2A2C2B',
-                            color: 'white'
-                        }} />
+                        <MdDevicesOther size={20} style={{
+                                position: 'relative',
+                                top: '4px',
+                                marginRight: '5px'
+                            }} />
                         <strong>{devInfo.dev_name}</strong>
-                        </span>
-                    {/* <span className="subtitle">{hubInfo.search_id}</span> */}
-                
+                    </span>
+                </div>           
+            </header>            
+            <section>
+                <article>
+                    <div className="dev-row">
+                        <div className="dev-label">* 모델명</div>
+                        <div className="dev-content">{devInfo.dev_model}</div>
+                    </div>
+                    <div className="dev-row">
+                        <div className="dev-label">* 상태</div>
+                        <div className="dev-content">
+                            <div className="dev-info">
+                                <div className="dev-state on">
+                                    <span><strong>on</strong></span>
+                                </div>
+                            </div>
                         </div>
-                        
-                </header>            
-                <section>
-                    <article>
-                        <div className="dev-row">
-                        <div className="dev-label">모델명</div>
-                        <div className="dev-content">LG TV</div>
                     </div>
                     <div className="dev-row">
-                        <div className="dev-label">디바이스 상태</div>
-                        <div className="dev-content">ON</div>
+                        <div className="dev-label">* 디바이스 타입</div>
+                        <div className="dev-content">{devInfo.dev_type}</div>
                     </div>
                     <div className="dev-row">
-                        <div className="dev-label">디바이스 타입</div>
-                        <div className="dev-content">(제어, 센싱, 복합)</div>
+                        <div className="dev-label">* 디바이스 아이디</div>
+                        <div className="dev-content">{devInfo.dev_id}</div>
                     </div>
                     <div className="dev-row division">
-                        <div className="dev-label">제조사</div>
-                        <div className="dev-content">LG</div>
+                        <div className="dev-label">* 제조사</div>
+                        <div className="dev-content">{devInfo.dev_make}</div>
                     </div>
                     <div className="dev-row division">
-                        <div className="dev-label">MAC 주소</div>
-                        <div className="dev-content">12121212</div>
-                    </div>
-                    
-                    </article>
+                        <div className="dev-label">* MAC 주소</div>
+                        <div className="dev-content">{devInfo.dev_mac}</div>
+                    </div>    
+                </article>
             </section>
-            
-        </div>)
+        </div>
+        )
 }
 
 export default DeviceBox;

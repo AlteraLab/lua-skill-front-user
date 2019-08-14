@@ -3,7 +3,6 @@ import { bindActionCreators } from 'redux';
 import { withRouter } from 'react-router';
 import { connect } from 'react-redux';
 import * as devActions from '../store/modules/dev';
-
 import {
     BasicNav,
     BasicBoard,
@@ -26,21 +25,17 @@ class DevInfoPage extends Component {
                 <BasicNav user={user} />
                     <BasicBoard title="디바이스 1">
                         {
-                            <DeviceBox 
+                            <DeviceBox
                                 devInfo={
                                     {
-                                        dev_name: '디바이스',
-                                        external_ip: '203.250.32.29',
-                                        dev_id: 128736,
+                                            dev_name: '에어컨',
+                                            dev_model:'LG airconditioner',
+                                            dev_type:'(센싱, 제어, 복합)',
+                                            dev_mac:'akakaka',
+                                            dev_make:'LG',
+                                            dev_id: 128736
                                     }
                                 } 
-                                userInfo={
-                                    {
-                                        user_name: 'gd',
-                                        external_ip: '203.250.32.29',
-                                        user_id: 2,
-                                    }
-                                }
                             />
                         }
                     </BasicBoard>

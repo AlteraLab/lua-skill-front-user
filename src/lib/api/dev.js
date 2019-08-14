@@ -5,8 +5,6 @@ import {API_BASE_URL} from '../../constants';
 export const scanDev = (hubIp, hubPort) => {
 	let hubURL = `http://${hubIp}:${hubPort}/hub/scan`
 	//let hubURL = `http://localhost:8083/hub/scan`
-	console.log('HubIp ', hubIp);
-	console.log('hubPort ', hubPort);
 	return axios.get(hubURL)
 	.then(res => {
 		console.log('Axios :: Scan Devs =====');
@@ -19,8 +17,6 @@ export const scanDev = (hubIp, hubPort) => {
 export const connectDev = (hubIp, hubPort, macAddr) => {
 	let hubURL = `http://${hubIp}:${hubPort}/hub/connect/${macAddr}`;
 	//let hubURL = `http://localhost:8083/hub/connect/${macAddr}`;
-	console.log('HubIp ', hubIp);
-	console.log('hubPort ', hubPort);
 	return axios.post(hubURL)
 	.then(res => {
 		console.log('Axios :: Connect Dev =====');

@@ -5,7 +5,6 @@ import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom'
 import queryString from 'query-string'
 import {
-    BasicFooter,
     WelcomeBoard,
     UtteranceBox,
 } from '../components';

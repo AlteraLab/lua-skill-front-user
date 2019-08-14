@@ -13,6 +13,5 @@ export default (history) => combineReducers({
     user,
     hub,
     dev,
-    pender: penderReducer, // pender redux 추가, 비동기 리덕스 액션을 관리할 때 필요
+    pender: penderReducer,
 });
-// pender : https://velopert.com/3401

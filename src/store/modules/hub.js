@@ -5,6 +5,7 @@ import { Map, List } from 'immutable';
 import { pender } from 'redux-pender';
 import * as HubApi from 'lib/api/hub';
 
+
 /*--------action type--------*/
 const REGISTER_HUB = 'hub/REGISTER_HUB';
 const SCAN_HUB = 'hub/SCAN_HUB';

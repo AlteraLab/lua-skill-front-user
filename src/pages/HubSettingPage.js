@@ -8,7 +8,7 @@ import {
     BasicNav,
     BasicBoard,
     BasicFooter,
-    LinkBtn,
+    LinkBtn
 } from '../components';
 
 class HubSettingPage extends Component {

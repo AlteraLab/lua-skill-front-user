@@ -19,27 +19,26 @@ const HubBox = ({ hubInfo, userId }) => {
                             color: 'white'
                         }} />
                         <strong>{hubInfo.hub_name}</strong>
-                        </span>
+                    </span>
                     {/* <span className="subtitle">{hubInfo.search_id}</span> */}
-                
-                        </div>
-                        <div className="hub-info">
-                            <div className="hub-info-item">
-                                <div className="hub-state on">
-                                    <span><strong>on</strong></span>
-                                </div>
+                    </div>
+                    <div className="hub-info">
+                        <div className="hub-info-item">
+                            <div className="hub-state on">
+                                <span><strong>on</strong></span>
+                            </div>
                         </div>
                     </div>
-                </header>            
-                <section>
-                    <article>
-                        <div className="hub-row">
+            </header>            
+            <section>
+                <article>
+                    <div className="hub-row">
                         <div className="hub-label">연결된 NAT라우터</div>
                         <div className="hub-content">{hubInfo.external_ip}</div>
                     </div>
                     <div className="hub-row">
                         <div className="hub-label">허브 MAC주소</div>
-                        <div className="hub-content">{'b8:27:eb:96:e5:b4'.toUpperCase()}</div>
+                        <div className="hub-content">{hubInfo.mac_address}</div>
                     </div>
                     <div className="hub-row">
                         <div className="hub-label">검색용 아이디</div>
@@ -47,13 +46,13 @@ const HubBox = ({ hubInfo, userId }) => {
                     </div>
                     <div className="hub-row division">
                         <div className="hub-label">허브 생성시간</div>
-                        <div className="hub-content">
-                            <Moment format="YYYY-MM-DD HH:mm (UTCZ)">
-                                {hubInfo.createdAt}
-                            </Moment>
-                        </div>
+                            <div className="hub-content">
+                                <Moment format="YYYY-MM-DD HH:mm (UTCZ)">
+                                    {hubInfo.createdAt}
+                                </Moment>
+                            </div>
                     </div>
-                    </article>
+                </article>
             </section>
             <footer>
                 <div className="wrap-btn">
@@ -69,7 +68,7 @@ const HubBox = ({ hubInfo, userId }) => {
                             <span className="short-info-label">4</span>
                         </div>
                     </div>
-
+                    
                     <LinkBtn 
                         to={
                             {

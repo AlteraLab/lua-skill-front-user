@@ -57,7 +57,6 @@ class HubLogList extends Component {
     }
 
     render() {
-
 		return (
             <div className="main">
                 <div className="tab">
@@ -91,7 +90,106 @@ class HubLogList extends Component {
                 <div>
                     {this._renderLog()}
                 </div>                
-
+                <div className="LogList">
+                    <header>
+                        <div className="number">
+                            <strong>#</strong>
+                        </div>
+                        <div className="logtitle">
+                            <strong>logs</strong>
+                        </div>
+                        <div className="logstitle">
+                            <strong>content</strong>
+                        </div>
+                        {/* <div className="log-state">
+                            <strong>state</strong>
+                        </div>  */}
+                    </header>
+                    <section>
+                        <article>
+                            <div className="log-row">
+                                <div className="order">1</div>
+                                <div className="llabel">recordeAt</div>
+                                <div className="ccontent">19203922</div>
+                            </div>
+                            <div className="log-row">
+                                <div className="order">2</div>
+                                <div className="llabel">hrdwrName</div>
+                                <div className="ccontent">sadasda</div>
+                            </div>
+                            <div className="log-row">
+                                <div className="order">3</div>
+                                <div className="llabel">요청자 이름</div>
+                                <div className="ccontent">ffgtr</div>
+                            </div>
+                            <div className="log-row">
+                                <div className="order">4</div>
+                                <div className="llabel">content</div>
+                                <div className="ccontent">19203922</div>
+                            </div>
+                            <div className="log-row">
+                                <div className="order">5</div>
+                                <div className="llabel">logType</div>
+                                <div className="ccontent">sdds</div>
+                            </div>
+                        </article>
+                        
+                        <article>
+                            <div className="log-row">
+                                <div className="order">1</div>
+                                <div className="llabel">recordeAt</div>
+                                <div className="content">19203922</div>
+                            </div>
+                            <div className="log-row">
+                                <div className="order">2</div>
+                                <div className="llabel">hrdwrName</div>
+                                <div className="ccontent">sadasda</div>
+                            </div>
+                            <div className="log-row">
+                                <div className="order">3</div>
+                                <div className="llabel">요청자 이름</div>
+                                <div className="ccontent">ffgtr</div>
+                            </div>
+                            <div className="log-row">
+                                <div className="order">4</div>
+                                <div className="llabel">content</div>
+                                <div className="ccontent">19203922</div>
+                            </div>
+                            <div className="log-row">
+                                <div className="order">5</div>
+                                <div className="llabel">logType</div>
+                                <div className="ccontent">sdds</div>
+                            </div>
+                        </article>
+                        <article>
+                            <div className="log-row">
+                                <div className="order">1</div>
+                                <div className="llabel">recordeAt</div>
+                                <div className="ccontent">19203922</div>
+                            </div>
+                            <div className="log-row">
+                                <div className="order">2</div>
+                                <div className="llabel">hrdwrName</div>
+                                <div className="ccontent">sadasda</div>
+                            </div>
+                            <div className="log-row">
+                                <div className="order">3</div>
+                                <div className="llabel">요청자 이름</div>
+                                <div className="ccontent">ffgtr</div>
+                            </div>
+                            <div className="log-row">
+                                <div className="order">4</div>
+                                <div className="llabel">content</div>
+                                <div className="ccontent">19203922</div>
+                            </div>
+                            <div className="log-row">
+                                <div className="order">5</div>
+                                <div className="llabel">logType</div>
+                                <div className="ccontent">sdds</div>
+                            </div>
+                        </article>
+                    </section>
+                </div>
             </div>
 		)
 	}
