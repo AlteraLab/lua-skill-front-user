@@ -1,22 +1,21 @@
 .DevBtnBoard {
     display: flex;
-    min-height: 150vh;
-    padding: 60px 0;
+    min-height: 125vh;
+    padding: 50px 0;
 }
 
 
 
 @media only screen and (min-width:768px) {
     .DevBtnBoard {
-        min-height: 50vh;
+        min-height: 100vh;
         overflow: auto;
     }
-    
 }
 
 @media only screen and (min-width:1024px) {
     .DevBtnBoard {
-        min-height: 98.5vh;
+        min-height: 100vh;
         overflow: auto;
     }
 }
@@ -50,8 +49,8 @@
 
 .DevBtnBoard .basic-header{
     border-bottom: 1px solid #666;
-    padding-bottom: 14px;
-    margin-bottom : 5px;
+    padding-bottom: 13px;
+    margin-bottom : 7px;
 }
 
 .HubMInfo {
@@ -109,10 +108,21 @@
 
 .HubMInfo .title{
     padding: 4px 0;
-    font-size: 17px;
-    margin: 4px 5px 0 10px;
+    font-size: 16px;
+    margin: 3px 5px 0 10px;
     color: rgb(51,51,51);
     
+}
+
+.HubMInfo .hubdelete {
+    border:1px solid #eee;
+    width:50px;
+    height: 30px;
+    margin-left: auto;
+    margin-top:5px;
+    text-align: center;
+    padding: 5px;
+    font-weight: bolder;
 }
 
 .HubMInfo .subtitle{
@@ -162,10 +172,14 @@
 .HubMInfo article{
     display: flex;
     flex-direction: column;
-    margin-bottom: 15px;
+    margin-bottom: 5px;
 }
 
-
+.HubMInfo footer {
+    display: flex;
+    flex-direction: column;
+    margin-top:7px;
+}
 .HubMInfo .hub-row{
     display: flex;
     flex-direction: row;
@@ -173,15 +187,13 @@
 }
 .HubMInfo .box-row{
     border: 1px solid #eee;
-    border-radius: 20px;
     display: flex;
     flex-direction: row;
-    margin-bottom: 15px;
+    margin: 15px 0;
 
 }
 .HubMInfo .box-row :hover {
     background-color: #F2F2F2;
-    border-radius: 20px;
 }
 .HubMInfo .log-btn {
     width:35%;
@@ -202,7 +214,7 @@
 
 .HubMInfo .friadd-btn {
     width:35%;
-    height: 45%;
+    height: 40%;
     padding: 14px;
     text-align:center;
     color: black;
@@ -228,24 +240,29 @@
 .HubMInfo .dev-column {
     display: flex;
     flex-direction: column;
-    padding: 5px 11px 0px 11px;
+    padding: 5px 11px ;
     border-bottom: 1px solid rgb(234,234,234);
 }
 .HubMInfo .dev-row {
     display: flex;
     flex-direction: row;
-    padding: 7px 10px;
+    
 }
 .HubMInfo .devlist {
     color: black;
-    padding: 5px 30px;
+    flex: 2;
+    text-align: center;
+    padding: 10px;
+    height: 40px;
 }
 
 .HubMInfo .devlist-title {
     margin: 0 5px 0 10px;
-    padding-bottom: 7px;
+    padding-bottom: 5px;
+    display: flex;
     border-bottom: 1px solid rgb(234,234,234);
 }
 .HubMInfo .dev-row :hover {
     background-color: #F2F2F2;
+    border: 1px solid #eee;
 }

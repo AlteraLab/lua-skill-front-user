@@ -9,84 +9,178 @@
     margin: auto;
     width: 100%;
 }
-.HubLogPage {
+.main {
     padding: 0; 
     text-align: center;
     overflow: hidden; 
-    margin: auto;
+    width:100%;
+    margin: 0 auto;
 }
-
-.HubLogPage section {
-    padding: 10px 5px 0;
-    
+section {
+    display: none;
+    padding: 20px 0 0;
 }
-
-/* 
-.HubLogPage section p{
+section p{
     display: flex;
 }
-
-.HubLogPage p h3 {
+p h3 {
     margin-right: 15px;
-} */
-.logtable section{
-    display: flex;
-    flex-direction: column;
 }
-
-.logtable .log-row {
-    display: flex;
-    flex-direction: row;
-}
-
-.logtable .log-label {
-    width: 30%;
-    white-space: pre;
-    float: left;
-    text-align: left;
-    padding-left: 6px;
-}
-.logtable .log-content{
-    float: right;
-    text-align: right;
-    width: 90%;
-    margin-right: 20px;
-    white-space: pre;
-}
-
 /*라디오버튼 숨김*/
-.tab input {
+input {
     display: none;
 }
 
-.tab label {
+label {
     display: inline-block;
     margin: 0 0 -1px;
     width: 100px;
     padding: 10px  10px;
     text-align: center;
     color: #bbb;
-    border: 1px solid transparent;
-}
+    border: 1px solid transparent;}
 
-.tab label:hover {
-    color: black;
-    font-weight: bolder;
-    font-size: 16px;
-    cursor: pointer;
-}
+label:hover {
+    color: #1E70BF;
+    cursor: pointer;}
 
-
-.tab input:checked + label {
+/*input 클릭시, label 스타일*/
+input:checked + label {
     font-weight: bold;
     color: #555;
     border: 1px solid #ddd;
     border-top: 2px solid #E1E0DA;
-    border-bottom: 1px solid #ffffff;
-}
+    border-bottom: 1px solid #ffffff;}
 
 #tab1:checked ~ #content1,
 #tab2:checked ~ #content2,
 #tab3:checked ~ #content3{
     display: block;}
 
+    .LogList {
+        flex: 0 0 100%; /*grow, shrink, basis*/
+    }
+    
+    
+    
+    .LogList {
+        height: auto;
+        margin-bottom: 13px;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    
+    .LogList header{
+        padding: 0;
+        display: flex;
+        flex-direction: row;
+        height: 30px;
+        width:100%;
+        text-align: left;
+        color: rgb(51,51,51);
+        margin:5px;
+        border-bottom:1px solid #666;
+    }
+    .number{
+        padding: 2px 0;
+        font-size: 16px;
+        text-align: left;
+        width: 15%;
+        margin: 5px;
+    }
+    
+    
+     .logtitle{
+        padding: 2px 0;
+        font-size: 16px;
+        text-align: left;
+        width: 40%;
+        margin: 5px;
+    }
+    
+     .logstitle{
+        padding: 2px 0;
+        text-align: left;
+        width: 55%;
+        margin: 5px;
+        font-size: 16px;
+    }
+    
+    
+    
+    /* .BoxMotion .log-state{
+        text-align: left;
+        width: 30%; 
+        font-size: 15px;
+        margin: 7px;
+        padding: 4px 10px;
+        
+    }
+    
+    .BoxMotion .off{
+        color: rgb(255,86,64);
+        border: 1px solid #eee;
+        width:50px;
+        text-align: center;
+        font-size: 12px;
+        height:20px;
+        margin: 0;
+    }
+    
+    .BoxMotion .on{
+        border: 1px solid #eee;
+        color: green;
+        width:70px;
+        text-align: center;
+        height:20px;
+        font-size: 12px;
+        margin: 0;
+    } */
+    
+    .LogList section{
+        font-family: 'Noto Sans KR', sans-serif;
+        font-size: 13px;
+        text-align: left;
+        padding: 0;
+        width:100%;
+    }
+    .LogList article{
+        display: flex;
+        flex-direction: column;
+        width:100%;
+        margin-bottom: 2px;
+        border-bottom: 1px solid #eee;
+    }
+    
+    
+    .LogList .log-row{
+        display: flex;
+        flex-direction: row;
+        width:100%;
+        height:20px;
+        margin-bottom:5px;
+    }
+    .LogList .order{
+        width: 15%;
+        color: #666666;
+        white-space: pre;
+        margin: 3px;
+        float: left;
+    }
+    .LogList.llabel{
+        width: 40%;
+        color: #666666;
+        margin: 3px;
+        float: left;
+        white-space: pre;
+    }
+    
+    .LogList .ccontent{
+        width: 40%;
+        margin-left: 50px;
+        float:left;
+        color: #666666;
+        white-space: pre;
+    }
+    

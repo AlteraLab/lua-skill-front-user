@@ -4,16 +4,11 @@ import { withRouter } from 'react-router';
 import { connect } from 'react-redux';
 import * as userActions from '../store/modules/user';
 import * as hubActions from '../store/modules/hub';
-import ip from 'ip';
-import publicIp from 'public-ip';
 import {
     BasicNav,
     BasicBoard,
-    InputContainer,
-    InputItem,
     BasicFooter,
-    LinkBtn,
-    SubmitBtn
+    LinkBtn
 } from '../components';
 
 class HubSettingPage extends Component {

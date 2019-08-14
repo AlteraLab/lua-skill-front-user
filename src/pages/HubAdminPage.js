@@ -18,26 +18,43 @@ class HubAdminPage extends Component {
 
     render() {
         
-        const { location } =this.props;
-        const {hubInfo, userInfo} = location.state;
-
+        const { location, user } = this.props;
+        const {hubInfo} = location.state;
         return (
             <Fragment>
-                <BasicNav user={userInfo} />
+                <BasicNav user={user} />
                 
-                <DevBtnBoard  title="허브 관리"
-                hubInfo={{
-                    hub_name: '거실 허브',
-                    external_ip: '203.250.32.29',
-                    hub_id: 2,
-                }} userInfo={{
-                    user_name: 'gd',
-                    external_ip: '203.250.32.29',
-                    user_id: 2,
-                }}> 
-                    {hubInfo.adminId}
-                    
+                <DevBtnBoard  
+                    title="허브 관리"
+                    hubInfo={
+                        {
+                            adminId: hubInfo.adminId,
+                            role: hubInfo.role,
+                            hubId: hubInfo.hubId,
+                            hubName: hubInfo.hub_name,
+                            hubDescript: hubInfo.hub_descript,
+                            searchId: hubInfo.search_id,
+                            state: hubInfo.state,
+
+                            lastUsedTime: hubInfo.lastUsedTime,
+                            updatedAt: hubInfo.updatedAt,
+                            createdAt: hubInfo.createdAt,
+
+                            externalIp: hubInfo.external_ip,
+                            externalPort: hubInfo.external_port,
+                            hubMac: hubInfo.mac_addr
+                        }
+                    } 
+                    userInfo={
+                        {
+                            user_name: 'gd',
+                            external_ip: '203.250.32.29',
+                            user_id: 2,
+                        }
+                    }
+                > 
                 </DevBtnBoard>
+
                 <BasicFooter />
             </Fragment>
         )
@@ -50,6 +67,10 @@ export default withRouter(
         // props 로 넣어줄 스토어 상태값
         state => ({
             isAuthenticated: state.auth.getIn(['userState', 'isAuthenticated']),
+            user: {
+                name: state.user.getIn(['userInfo', 'user', 'name']),
+                profileImage: state.user.getIn(['userInfo', 'user', 'profileImage']),
+            },
         }),
         // props 로 넣어줄 액션 생성함수
         dispatch => ({

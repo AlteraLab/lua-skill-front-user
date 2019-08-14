@@ -5,57 +5,70 @@ import { connect } from 'react-redux';
 import * as userActions from '../store/modules/user';
 import {MdClear,MdSearch} from 'react-icons/md'
 import {
-    BasicNav,
-    BasicFooter,
-    BasicBoard
+    BasicFooter
 } from '../components';
 import { Link } from 'react-router-dom';
 import '../components/FriendAdd/FriendAdd.css';
 
 class FriendAddPage extends Component {
 
-    componentDidMount(){
-
-    }
-    state = {
-        id: ''
-    }
-    
-    handleChange = (e) => {
+    constructor(props) {
+        super(props);
+        this.state = {
+          isOpen: false
+        }
+        this._menuToggle = this._menuToggle.bind(this);
+        this._handleDocumentClick = this._handleDocumentClick.bind(this);
+      }
+      componentDidMount() {
+        document.addEventListener('click', this._handleDocumentClick, false);
+      }
+      componentWillUnmount() {
+        document.removeEventListener('click', this._handleDocumentClick, false);
+      }
+      _handleDocumentClick(e) {
+        if (!this.refs.root.contains(e.target) && this.state.isOpen === true) {
+          this.setState({
+          isOpen: false
+        });
+        };
+      }
+      _menuToggle(e) {
+        e.stopPropagation();
         this.setState({
-        [e.target.id]: e.target.value
-        })
-    }
+          isOpen: !this.state.isOpen
+        });
+      }
 
     render() {
+        
+    let menuStatus = this.state.isOpen ? 'isopen' : '';
         return (
             <Fragment>
-                <div className="FriendAddPage">
-                    {/* <p style={{paddingTop:'400px'}}></p> */}
-                    <div className="main">
+                <div className="main">
+        
+        <div className={menuStatus} id='menu'>
                         <header>
                             <div className="fri-title">             
-                                <h3 style={{padding:'14px',margin:'0'}}>
+                                <h3 style={{color:"black",padding:'14px'}}>
                                     카카오톡 ID로 친구 추가</h3>
-                                <Link to='/main' style={{marginLeft:'auto',color:'black'}}>
-                                    <div className="">
-                                    <MdClear size={50} 
-                                    style={{padding:'14px 10px',marginLeft:'auto',color:'black'}}/> 
-                                    </div>
-                                </Link>
+                                    <MdClear size={40} 
+                                    style={{marginTop:'15px',marginRight:'5px',marginLeft:'auto',color:'black'}}/> 
                             </div>
                         </header>
                         <section>
                             <article>
                                 <div className="incontent">
                                     <label>
-                                        <h4 style={{fontWeight:'bolder'}}>친구 카카오톡 ID</h4> 
+                                        <h4 >친구 카카오톡 ID</h4> 
                                     </label>
                                     <form >
-                                        <MdSearch size={35} style={{padding:'7px 4px 0', zIndex:'5'}} />
+                                        <MdSearch size={35} 
+                                        style={{color:'black',padding:'7px 4px 0',position:'relative'}} />
                                         <input type="text" name="id" placeholder="ID" 
                                         value={this.state.id} onChange={this.handleChange} />
                                     </form> 
+                                    
                                     <div className="incontent2">
                                         <p id="one">
                                             아이디로 친구를 추가하세요</p>    
@@ -66,8 +79,8 @@ class FriendAddPage extends Component {
                                 </div>
                             </article>
                         </section>
-                    </div>
-                </div>    
+                        </div>
+      </div>    
                 <BasicFooter />
             </Fragment>
         )
