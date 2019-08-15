@@ -31,8 +31,6 @@ class HubAddPage extends Component {
         } = this.props;
         
         //form validation 우선적으로 수행해야
-
-
         HubActions.registerHub({
             external_ip: scanHubInfo.external_ip,
             external_port: scanHubInfo.external_port,

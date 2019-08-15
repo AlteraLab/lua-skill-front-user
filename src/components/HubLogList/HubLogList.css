@@ -27,7 +27,7 @@ p h3 {
     margin-right: 15px;
 }
 /*라디오버튼 숨김*/
-input {
+.tab input {
     display: none;
 }
 
@@ -45,7 +45,7 @@ label:hover {
     cursor: pointer;}
 
 /*input 클릭시, label 스타일*/
-input:checked + label {
+.tab input:checked + label {
     font-weight: bold;
     color: #555;
     border: 1px solid #ddd;

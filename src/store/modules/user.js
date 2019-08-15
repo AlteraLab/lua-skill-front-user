@@ -28,7 +28,6 @@ const initialState = Map({
         })
     }),
     page: '1',
-
 });
 
 /*--------reducer--------*/
@@ -47,9 +46,4 @@ export default handleActions({
             }));
         },
     }),
-
-    // ...pender({
-    //     type:GET_USER_ID,
-    // })
-
 }, initialState);

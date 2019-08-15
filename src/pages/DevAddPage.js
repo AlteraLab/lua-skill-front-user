@@ -41,10 +41,19 @@ class DevAddPage extends Component {
                 <BasicBoard 
                     title="새로운 디바이스 추가하기"
                 >
-                    <LinkBtn 
+                    {/* <LinkBtn 
                         to='./main' 
                         context="이전"
-                    />
+                    /> */}
+                    <div className='sweet-loading'>
+                        <RingLoader
+                            css={override}
+                            sizeUnit={"px"}
+                            size={150}
+                            color={'#123abc'}
+                            loading={isLoading}
+                        />
+                    </div> 
                     <ScanDevList
                         scanDevs={scanDevs}
                         DevActions={DevActions}
@@ -59,15 +68,6 @@ class DevAddPage extends Component {
                                         />
                                     )
                     }
-                    <div className='sweet-loading'>
-                        <RingLoader
-                            css={override}
-                            sizeUnit={"px"}
-                            size={150}
-                            color={'#123abc'}
-                            loading={isLoading}
-                        />
-                    </div> 
                 </BasicBoard>
                 <BasicFooter />
             </Fragment>

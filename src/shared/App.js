@@ -52,7 +52,7 @@ class App extends Component {
           <Route path="/set" component={HubSettingPage} />
           <Route path="/dadd" component={DevAddPage} />
           <Route path="/devInfo" component={DevInfoPage} />
-          <Route path="/friadd" component={FriendAddPage} />
+          {/* <Route path="/friadd" component={FriendAddPage} /> */}
           <Route path="/log" component={HubLogPage} />
           <Route path="/hub" component={DynamicRoute} />
           <Route path="/oauth2/redirect" component={OAuth2RedirectHandler} />

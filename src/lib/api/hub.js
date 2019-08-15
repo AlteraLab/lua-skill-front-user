@@ -45,3 +45,14 @@ export const getHubLogs = (hubMac) => {
             return res;
         });
 }
+
+// 유저 검색 및 추가
+export const searchUser = (hubIp, userEmail) => {
+    const baseURL = `${API_BASE_URL}/${hubIp}/${userEmail}`
+    return axios
+        .post(baseURL)
+        .then(res => {
+            console.log(res);
+            return res;
+        });
+}
