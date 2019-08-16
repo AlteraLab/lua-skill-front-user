@@ -37,6 +37,7 @@ class MainPage extends Component {
     componentDidMount() {
         const { UserActions } = this.props;
         UserActions.getUserInfo(); //사용자의 기본정보 요청
+        UserActions.setIsRedirectToMainWithFalse();
         
     }
 

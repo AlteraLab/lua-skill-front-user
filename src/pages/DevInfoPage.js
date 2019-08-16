@@ -23,12 +23,11 @@ class DevInfoPage extends Component {
         return (
             <Fragment>
                 <BasicNav user={user} />
-                    <BasicBoard title="디바이스 1">
                         {
                             <DeviceBox
                                 devInfo={
                                     {
-                                            dev_name: '에어컨',
+                                            dev_name: '디바이스1',
                                             dev_model:'LG airconditioner',
                                             dev_type:'(센싱, 제어, 복합)',
                                             dev_mac:'akakaka',
@@ -38,7 +37,6 @@ class DevInfoPage extends Component {
                                 } 
                             />
                         }
-                    </BasicBoard>
                 <BasicFooter />
             </Fragment>
         )

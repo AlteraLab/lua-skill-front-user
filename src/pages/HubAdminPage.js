@@ -44,24 +44,27 @@ class HubAdminPage extends Component {
         }
     }
 
-    _handleIsModal = () => {
+    _handleIsModalAboutNotAdmin = () => {
         const { HubActions } = this.props;
         HubActions.setIsModalWithFalse();
     }
 
+    _handleIsModalAboutHubDelete = () => {
+        const { UserActions, msg } = this.props;
+        UserActions.setIsModalWithFalse();
+        if(msg === `허브를 삭제했습니다.`) {
+            UserActions.setIsRedirectToMainWithTrue();
+        }
+    }
+
     _handleDeleteHub = () => {
-        console.log('_handleDeleteHub');
-        console.log('_handleDeleteHub');
-        console.log('_handleDeleteHub');
-        console.log('_handleDeleteHub');
-        console.log('_handleDeleteHub');
-        console.log('_handleDeleteHub');
-        console.log('_handleDeleteHub');
-        console.log('_handleDeleteHub');
+        const { UserActions, location } = this.props;
+        const { hubInfo } = location.state;
+        UserActions.deleteHub(hubInfo.hubId);
     }
 
     render() {
-        const { location, user, connectedDevs, HubActions, isGroupPage, isModal } = this.props;
+        const { location, user, connectedDevs, HubActions, isGroupPage, isModalAboutNotAdmin, isModalAboutHubDelete, isLoadAboutHubDelete, msg, isRediectToMain } = this.props;
         const { hubInfo } = location.state;
         return isGroupPage ? 
         (
@@ -73,6 +76,9 @@ class HubAdminPage extends Component {
         : 
         (
             <Fragment>
+                {
+                    isRediectToMain && <Redirect to='/main' />
+                }
                 <BasicNav user={user} />
                 <DevBtnBoard
                     title="허브 관리"
@@ -98,12 +104,16 @@ class HubAdminPage extends Component {
                             hubMac: hubInfo.mac_addr,
                         }
                     }
-                    isModal={isModal}
+                    isModalAboutNotAdmin={isModalAboutNotAdmin}
+                    isModalAboutHubDelete={isModalAboutHubDelete}
+                    isLoadAboutHubDelete={isLoadAboutHubDelete}
+                    msg={msg}
                     _handleMethods={
                         {
                             _handleGroupUserPage: this._handleGroupUserPage,
-                            _handleIsModal: this._handleIsModal,
                             _handleDeleteHub: this._handleDeleteHub,
+                            _handleIsModalAboutNotAdmin: this._handleIsModalAboutNotAdmin,
+                            _handleIsModalAboutHubDelete: this._handleIsModalAboutHubDelete,
                         }
                     }
                 >
@@ -127,7 +137,11 @@ export default withRouter(
             },
             connectedDevs: state.dev.getIn(['dev', 'connectedDevs']),
             isGroupPage: state.hub.getIn(['isGroupPage']),
-            isModal: state.hub.getIn(['isModal']),
+            isModalAboutNotAdmin: state.hub.getIn(['isModal']),
+            isModalAboutHubDelete: state.user.getIn(['isModal']),
+            isLoadAboutHubDelete: state.user.getIn(['isLoad']),
+            msg: state.user.getIn(['msg']),
+            isRediectToMain: state.user.getIn(['isRediectToMain']),
         }),
         // props 로 넣어줄 액션 생성함수
         dispatch => ({

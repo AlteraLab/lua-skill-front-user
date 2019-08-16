@@ -5,10 +5,19 @@ import { MdDeviceHub, MdPersonAdd, MdSettings, MdDevicesOther, MdAddCircleOutlin
 import Moment from 'react-moment';
 import log from '../../img/log.jpg';
 import { connectDev } from '../../store/modules/dev';
-import { NotAdminModal } from '..';
+import { css } from '@emotion/core';
+import { RingLoader } from 'react-spinners';
 import {
-    LinkBtn,
+    NotAdminModal,
+    HubDeleteModal,
 } from '..';
+
+
+const override = css`
+                    display: block;
+                    margin: 0 auto;
+                    border-color: red;
+                `;
 
 const Dev = ({ connectedDev }) => {
     const devType = connectedDev.devType;
@@ -51,36 +60,13 @@ const DevRowList = ({ connectedDevs }) => {
     )
 }
 
-const RedirectToDevAddPage = ({ hubInfo }) => {
-    return (
-        <Redirect
-            to={
-                {
-                    pathname: `/dadd`,
-                    state: {
-                        hubInfo: {
-                            externalIp: hubInfo.externalIp,
-                            externalPort: hubInfo.externalPort
-                        }
-                    }
-                }
-            }
-            style={
-                {
-                    marginLeft: 'auto',
-                    color: 'black'
-                }
-            }
-        />
-    )
-}
-
 const DevColumnList = ({ connectedDevs }) => {
     // 2차원 배열로 만들어서, 2차원 배열의 각 요소를 넘겨줘야겠다!
     // Dimensional Array ConnectedDevs : connectedDevs(1차원 배열) 을 2차원 배열 형태로 만든 버전
     let dimenArrConnectedDevs = [];
     let i = 0;
     let devs = [];
+
     for (const dev of connectedDevs) {
         devs.push(dev)
         i++;
@@ -111,11 +97,9 @@ const DevColumnList = ({ connectedDevs }) => {
     )
 }
 
-const DevBtnBoard = ({ children, hubInfo, title, connectedDevs, HubActions, isModal, _handleMethods, userId }) => {
+const DevBtnBoard = ({ children, hubInfo, title, connectedDevs, HubActions, isModalAboutNotAdmin, isModalAboutHubDelete, isLoadAboutHubDelete, _handleMethods, userId, msg }) => {
 
     const isAdmin = (hubInfo.adminId === userId) ? true : false;
-    console.log('sdfsdfdsafjdslfjasdlfkjsoifewjoiwejflkeasjflkfjdsklfjsdlkfjsdklfjds');
-    console.log(hubInfo.adminId + ', ' + userId + ' = ' + isAdmin);
     return (
         <article className="DevBtnBoard">
             <section className="basic-container">
@@ -164,7 +148,7 @@ const DevBtnBoard = ({ children, hubInfo, title, connectedDevs, HubActions, isMo
                                         onClick={HubActions.setIsModalWithTrue}
                                     >
                                         삭제
-                                </div>
+                                   </div>
                                 )
                             }
                             
@@ -200,11 +184,28 @@ const DevBtnBoard = ({ children, hubInfo, title, connectedDevs, HubActions, isMo
                                         </Moment>
                                     </div>
                                 </div>
+                                
+                                <div className='sweet-loading'>
+                                    <RingLoader
+                                        css={override}
+                                        sizeUnit={"px"}
+                                        size={150}
+                                        color={'#123abc'}
+                                        loading={isLoadAboutHubDelete}
+                                    />
+                                </div> 
 
                                 {
-                                    isModal && <NotAdminModal
-                                        _handleIsModal={_handleMethods._handleIsModal}
-                                    />
+                                    isModalAboutHubDelete && <HubDeleteModal
+                                                                _handleIsModal={_handleMethods._handleIsModalAboutHubDelete}
+                                                                msg={msg}
+                                                             />
+                                }
+
+                                {
+                                    isModalAboutNotAdmin && <NotAdminModal
+                                                                _handleIsModal={_handleMethods._handleIsModalAboutNotAdmin}
+                                                            />
                                 }
 
                                 <div className="box-row">
@@ -268,35 +269,49 @@ const DevBtnBoard = ({ children, hubInfo, title, connectedDevs, HubActions, isMo
 
                         <footer>
                             <div className="device-list">
-                                <span className="devlist-title">
+                                <div className="devlist-title">
                                     <MdDevicesOther size={25} style={{ position: 'relative', top: '3px' }} />
                                     <strong style={{ fontSize: '16px', paddingLeft: '6px' }}>
                                         연결 디바이스</strong>
-                                </span>
+                                
 
-                                {/* 디바이스 추가 페이지 블로킹 */}
-                                {
-                                    isAdmin ?
-                                        (
-                                            <Link
-                                                to={
-                                                    {
-                                                        pathname: `/dadd`,
-                                                        state: {
-                                                            hubInfo: {
-                                                                externalIp: hubInfo.externalIp,
-                                                                externalPort: hubInfo.externalPort
+                                    {/* 디바이스 추가 페이지 블로킹 */}
+                                    {
+                                        isAdmin ?
+                                            (
+                                                <Link
+                                                    to={
+                                                        {
+                                                            pathname: `/dadd`,
+                                                            state: {
+                                                                hubInfo: {
+                                                                    externalIp: hubInfo.externalIp,
+                                                                    externalPort: hubInfo.externalPort
+                                                                }
                                                             }
                                                         }
                                                     }
-                                                }
-                                                style={
-                                                    {
-                                                        marginLeft: 'auto',
-                                                        color: 'black'
+                                                    style={
+                                                        {
+                                                            marginLeft: 'auto',
+                                                            color: 'black'
+                                                        }
                                                     }
-                                                }
-                                            >
+                                                >
+                                                    <MdAddCircleOutline
+                                                        size={25}
+                                                        style={
+                                                            {
+                                                                position: 'relative',
+                                                                bottom: '2px',
+                                                                marginLeft: 'auto'
+                                                            }
+                                                        }
+                                                    />
+                                                </Link>
+                                            )
+                                            :
+                                            (
                                                 <MdAddCircleOutline
                                                     size={25}
                                                     style={
@@ -306,25 +321,11 @@ const DevBtnBoard = ({ children, hubInfo, title, connectedDevs, HubActions, isMo
                                                             marginLeft: 'auto'
                                                         }
                                                     }
+                                                    onClick={HubActions.setIsModalWithTrue}
                                                 />
-                                            </Link>
-                                        )
-                                        :
-                                        (
-                                            <MdAddCircleOutline
-                                                size={25}
-                                                style={
-                                                    {
-                                                        position: 'relative',
-                                                        bottom: '2px',
-                                                        marginLeft: 'auto'
-                                                    }
-                                                }
-                                                onClick={HubActions.setIsModalWithTrue}
-                                            />
-                                        )
-                                }
-
+                                            )
+                                    }
+                                </div>
                                 <DevColumnList
                                     connectedDevs={connectedDevs}
                                 />
