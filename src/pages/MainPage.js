@@ -14,7 +14,7 @@ import BasicBoard from '../components/BasicBoard/BasicBoard';
 class MainPage extends Component {
 
     // 로그인 상태 -> isAuthcated 상태 true 로 변경
-    _toggleIsAuthenticatedToTrue = () => {
+    _toggleIsAuthenticatedToTrue = () => {  
         const { AuthActions } = this.props;
         AuthActions.toggleAuthenticatedToTrue();
     }
