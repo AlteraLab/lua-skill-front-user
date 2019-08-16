@@ -26,6 +26,12 @@ const override = css`
 class DevAddPage extends Component {
 
     componentDidMount() {
+        // const { DevActions, location } = this.props;
+        // const { hubInfo } = location.state;
+        // DevActions.scanDev(hubInfo.externalIp, hubInfo.externalPort);
+    }
+
+    _getScanDevs = () => {
         const { DevActions, location } = this.props;
         const { hubInfo } = location.state;
         DevActions.scanDev(hubInfo.externalIp, hubInfo.externalPort);
@@ -41,6 +47,11 @@ class DevAddPage extends Component {
                 <BasicBoard 
                     title="새로운 디바이스 추가하기"
                 >
+                    <button
+                        onClick={this._getScanDevs}
+                    >
+                        Scan
+                    </button>
                     {/* <LinkBtn 
                         to='./main' 
                         context="이전"
