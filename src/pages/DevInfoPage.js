@@ -23,20 +23,20 @@ class DevInfoPage extends Component {
         return (
             <Fragment>
                 <BasicNav user={user} />
-                {
-                    <DeviceBox
-                        devInfo={
-                            {
-                                    dev_name: '디바이스 1',
-                                    dev_model:'LG airconditioner',
-                                    dev_type:'(센싱, 제어, 복합)',
-                                    dev_mac:'akakaka',
-                                    dev_make:'LG',
-                                    dev_id: 128736
-                            }
-                        } 
-                    />
-                }
+                        {
+                            <DeviceBox
+                                devInfo={
+                                    {
+                                            dev_name: '디바이스 1',
+                                            dev_model:'LG airconditioner',
+                                            dev_type:'(센싱, 제어, 복합)',
+                                            dev_mac:'akakaka',
+                                            dev_make:'LG',
+                                            dev_id: 128736
+                                    }
+                                } 
+                            />
+                        }
                 <BasicFooter />
             </Fragment>
         )

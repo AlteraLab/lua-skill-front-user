@@ -1,6 +1,7 @@
 import React from 'react';
 import './DevBtnBoard.css';
 import { Link, Redirect } from 'react-router-dom';
+<<<<<<< HEAD
 import { MdDeviceHub, MdPersonAdd, MdSettings, 
         MdDevicesOther, MdAddCircleOutline, MdDescription 
 } from 'react-icons/md';
@@ -13,6 +14,20 @@ import {NotAdminModal,
 import { css } from '@emotion/core';
 import { RingLoader } from 'react-spinners';
 
+=======
+import { MdDeviceHub, MdPersonAdd, MdSettings, MdDevicesOther, MdAddCircleOutline } from 'react-icons/md';
+import Moment from 'react-moment';
+import log from '../../img/log.jpg';
+import { connectDev } from '../../store/modules/dev';
+import { css } from '@emotion/core';
+import { RingLoader } from 'react-spinners';
+import {
+    NotAdminModal,
+    HubDeleteModal,
+} from '..';
+
+
+>>>>>>> 2620c0134cfc248d1713dac26ed639340965e601
 const override = css`
                     display: block;
                     margin: 0 auto;
@@ -52,7 +67,11 @@ const DevRowList = ({ connectedDevs }) => {
                         return <Dev
                             key={dev.address}
                             connectedDev={dev}
+<<<<<<< HEAD
                         />  
+=======
+                        />
+>>>>>>> 2620c0134cfc248d1713dac26ed639340965e601
                     }
                 )
             }
@@ -97,9 +116,13 @@ const DevColumnList = ({ connectedDevs }) => {
     )
 }
 
+<<<<<<< HEAD
 const DevBtnBoard = ({ children, hubInfo, title, connectedDevs,
             HubActions, isModalAboutNotAdmin, isModalAboutHubDelete,
             isLoadAboutHubDelete, _handleMethods, userId, msg }) => {
+=======
+const DevBtnBoard = ({ children, hubInfo, title, connectedDevs, HubActions, isModalAboutNotAdmin, isModalAboutHubDelete, isLoadAboutHubDelete, _handleMethods, userId, msg }) => {
+>>>>>>> 2620c0134cfc248d1713dac26ed639340965e601
 
     const isAdmin = (hubInfo.adminId === userId) ? true : false;
     return (
@@ -108,7 +131,11 @@ const DevBtnBoard = ({ children, hubInfo, title, connectedDevs,
                 <header className="basic-header">
                     <h3>
                         <span>
+<<<<<<< HEAD
                             {title} 
+=======
+                            {title}
+>>>>>>> 2620c0134cfc248d1713dac26ed639340965e601
                         </span>
                     </h3>
                 </header>
@@ -117,7 +144,11 @@ const DevBtnBoard = ({ children, hubInfo, title, connectedDevs,
                         <header>
                             <div className="hub-name">
                                 <span className="title">
+<<<<<<< HEAD
                                     <MdDeviceHub 
+=======
+                                    <MdDeviceHub
+>>>>>>> 2620c0134cfc248d1713dac26ed639340965e601
                                         size={21}
                                         style={
                                             {
@@ -128,7 +159,7 @@ const DevBtnBoard = ({ children, hubInfo, title, connectedDevs,
                                                 backgroundColor: '#2A2C2B',
                                                 color: 'white'
                                             }
-                                        } 
+                                        }
                                     />
                                     <strong>{hubInfo.hubName}</strong>
                                 </span>
@@ -150,9 +181,16 @@ const DevBtnBoard = ({ children, hubInfo, title, connectedDevs,
                                         onClick={HubActions.setIsModalWithTrue}
                                     >
                                         삭제
+<<<<<<< HEAD
                                     </div>
                                 )
                             }
+=======
+                                   </div>
+                                )
+                            }
+                            
+>>>>>>> 2620c0134cfc248d1713dac26ed639340965e601
                         </header>
 
                         <section>
@@ -186,6 +224,10 @@ const DevBtnBoard = ({ children, hubInfo, title, connectedDevs,
                                         </Moment>
                                     </div>
                                 </div>
+<<<<<<< HEAD
+=======
+                                
+>>>>>>> 2620c0134cfc248d1713dac26ed639340965e601
                                 <div className='sweet-loading'>
                                     <RingLoader
                                         css={override}
@@ -195,12 +237,27 @@ const DevBtnBoard = ({ children, hubInfo, title, connectedDevs,
                                         loading={isLoadAboutHubDelete}
                                     />
                                 </div> 
+<<<<<<< HEAD
                                 </div>
                                 {
                                     isModalAboutHubDelete && <HubDeleteModal
                                     _handleIsModal={_handleMethods._handleIsModalAboutHubDelete}
                                     msg={msg}
                                                                 />
+=======
+
+                                {
+                                    isModalAboutHubDelete && <HubDeleteModal
+                                                                _handleIsModal={_handleMethods._handleIsModalAboutHubDelete}
+                                                                msg={msg}
+                                                             />
+                                }
+
+                                {
+                                    isModalAboutNotAdmin && <NotAdminModal
+                                                                _handleIsModal={_handleMethods._handleIsModalAboutNotAdmin}
+                                                            />
+>>>>>>> 2620c0134cfc248d1713dac26ed639340965e601
                                 }
 
                                 {
@@ -220,12 +277,21 @@ const DevBtnBoard = ({ children, hubInfo, title, connectedDevs,
                                         }
                                     >
                                         <div className="box-one">
+<<<<<<< HEAD
                                         <MdDescription size={37} style={{ color: '#6D6D74' }} />
                                             <br />
                                             로그 조회 
                                         </div>
                                     </Link>
                                     
+=======
+                                            <img src={log} id={log} size={37} />
+                                            <br />
+                                            로그 조회
+                                        </div>
+                                    </Link>
+
+>>>>>>> 2620c0134cfc248d1713dac26ed639340965e601
                                     {/* 허브 설정 페이지 블로킹 */}
                                     {
                                         isAdmin ? 
@@ -235,7 +301,11 @@ const DevBtnBoard = ({ children, hubInfo, title, connectedDevs,
                                                 to="/set"
                                             >
                                                 <div className="box-two">
+<<<<<<< HEAD
                                                     <MdSettings size={37} style={{ color: '#6D6D74' }} />
+=======
+                                                    <MdSettings size={37} />
+>>>>>>> 2620c0134cfc248d1713dac26ed639340965e601
                                                     <br />
                                                     허브 설정
                                                 </div>
@@ -247,7 +317,10 @@ const DevBtnBoard = ({ children, hubInfo, title, connectedDevs,
                                                 <MdSettings 
                                                     size={37}
                                                     onClick={HubActions.setIsModalWithTrue}
+<<<<<<< HEAD
                                                     style={{ color: '#6D6D74' }} 
+=======
+>>>>>>> 2620c0134cfc248d1713dac26ed639340965e601
                                                 />
                                                 <br />
                                                 허브 설정
@@ -260,13 +333,17 @@ const DevBtnBoard = ({ children, hubInfo, title, connectedDevs,
                                         <MdPersonAdd
                                             size={37}
                                             onClick={_handleMethods._handleGroupUserPage}
+<<<<<<< HEAD
                                             style={{ color: '#6D6D74' }} 
+=======
+>>>>>>> 2620c0134cfc248d1713dac26ed639340965e601
                                         />
                                         <br />
                                         유저 관리
                                     </div>
                                 </div>
                             </article>
+<<<<<<< HEAD
                         </section> 
                         <footer>
                             <div className="device-list">
@@ -274,6 +351,18 @@ const DevBtnBoard = ({ children, hubInfo, title, connectedDevs,
                                     <MdDevicesOther size={25} style={{ position: 'relative' }}/>
                                     <strong style={{ fontSize: '16px', paddingLeft: '6px', marginTop: '3px' }}>
                                         연결 디바이스</strong>
+=======
+                        </section>
+
+                        <footer>
+                            <div className="device-list">
+                                <div className="devlist-title">
+                                    <MdDevicesOther size={25} style={{ position: 'relative', top: '3px' }} />
+                                    <strong style={{ fontSize: '16px', paddingLeft: '6px' }}>
+                                        연결 디바이스</strong>
+                                
+
+>>>>>>> 2620c0134cfc248d1713dac26ed639340965e601
                                     {/* 디바이스 추가 페이지 블로킹 */}
                                     {
                                         isAdmin ?
@@ -297,6 +386,23 @@ const DevBtnBoard = ({ children, hubInfo, title, connectedDevs,
                                                         }
                                                     }
                                                 >
+<<<<<<< HEAD
+=======
+                                                    <MdAddCircleOutline
+                                                        size={25}
+                                                        style={
+                                                            {
+                                                                position: 'relative',
+                                                                bottom: '2px',
+                                                                marginLeft: 'auto'
+                                                            }
+                                                        }
+                                                    />
+                                                </Link>
+                                            )
+                                            :
+                                            (
+>>>>>>> 2620c0134cfc248d1713dac26ed639340965e601
                                                 <MdAddCircleOutline
                                                     size={25}
                                                     style={
@@ -306,6 +412,7 @@ const DevBtnBoard = ({ children, hubInfo, title, connectedDevs,
                                                             marginLeft: 'auto'
                                                         }
                                                     }
+<<<<<<< HEAD
                                                 />
                                             </Link>
                                         )
@@ -326,6 +433,13 @@ const DevBtnBoard = ({ children, hubInfo, title, connectedDevs,
                                 }
                                 </div>
                                 
+=======
+                                                    onClick={HubActions.setIsModalWithTrue}
+                                                />
+                                            )
+                                    }
+                                </div>
+>>>>>>> 2620c0134cfc248d1713dac26ed639340965e601
                                 <DevColumnList
                                     connectedDevs={connectedDevs}
                                 />

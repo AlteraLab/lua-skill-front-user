@@ -44,7 +44,7 @@ export const getHubLogs = (hubMac) => {
             console.log(res);
             return res;
         });
-    }
+}
 
 // 유저 검색 및 추가
 export const searchUser = (hubIp, userEmail) => {

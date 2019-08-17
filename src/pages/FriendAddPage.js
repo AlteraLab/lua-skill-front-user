@@ -66,7 +66,7 @@ class FriendAddPage extends Component {
                                     <label>
                                         <h4> 친구 카카오톡 E-mail </h4> 
                                     </label>
-                                    <form >
+                                    <form>
                                         <MdSearch 
                                             size={35} 
                                             style={
@@ -107,9 +107,9 @@ class FriendAddPage extends Component {
                                     }
                                     <div className="incontent2">
                                         <div id="one">
-                                            아이디로 친구를 추가하세요</div>    
+                                            이메일로 친구를 추가하세요</div>    
                                         <div id="two" >
-                                            상대가 카카오 아이디를 등록하고, <br/>
+                                            상대가 이메일을 등록하고, <br/>
                                             검색허용을 한 경우 찾기가 가능합니다.</div>   
                                     </div>
                                 </div>

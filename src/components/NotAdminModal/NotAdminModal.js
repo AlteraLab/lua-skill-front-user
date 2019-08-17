@@ -8,7 +8,7 @@ const NotAdminModal = ({ _handleIsModal }) => {
 		<div className="NotAdminModal">
 			<div className="nAdmin-content">
 				<div className="close-content">
-				 <MdComment size={25} style={{ marginRight:'10px', color:'blue'}} /> 
+					<MdComment size={25} style={{ marginRight:'10px', color:'blue'}} /> 
 					<p id="mes">권한이 없습니다.</p>
 				</div>
 				<div className="close-btn">
@@ -24,4 +24,4 @@ const NotAdminModal = ({ _handleIsModal }) => {
 	);
 };
 
-export default NotAdminModal; 
+export default NotAdminModal;

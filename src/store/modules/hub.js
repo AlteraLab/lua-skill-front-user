@@ -190,12 +190,3 @@ export default handleActions({
         }
     })
 }, initialState);
-
-/*
-- recordedAt: 1565246191000
-- hrdwrId: 1001
-- hrdwrName: "testDev2"
-- requesterName: "test"
-- content: "Test Content"
-- logType: false
-*/

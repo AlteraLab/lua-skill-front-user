@@ -14,7 +14,7 @@ import BasicBoard from '../components/BasicBoard/BasicBoard';
 class MainPage extends Component {
 
     // 로그인 상태 -> isAuthcated 상태 true 로 변경
-    _toggleIsAuthenticatedToTrue = () => {
+    _toggleIsAuthenticatedToTrue = () => {  
         const { AuthActions } = this.props;
         AuthActions.toggleAuthenticatedToTrue();
     }
@@ -37,6 +37,7 @@ class MainPage extends Component {
     componentDidMount() {
         const { UserActions } = this.props;
         UserActions.getUserInfo(); //사용자의 기본정보 요청
+        UserActions.setIsRedirectToMainWithFalse();
         
     }
 

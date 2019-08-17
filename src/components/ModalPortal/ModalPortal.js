@@ -5,4 +5,4 @@ const ModalPortal = ({ children }) => {
 	return ReactDOM.createPortal(children, el);
 };
 
-export default ModalPortal; 
+export default ModalPortal;

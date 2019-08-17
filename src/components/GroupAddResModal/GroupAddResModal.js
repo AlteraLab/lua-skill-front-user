@@ -18,4 +18,4 @@ const GroupAddResModal = ( { msg, _handleIsModal } ) => {
 	);
 };
 
-export default GroupAddResModal; 
+export default GroupAddResModal;

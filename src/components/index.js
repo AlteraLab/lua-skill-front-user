@@ -19,6 +19,7 @@ import ModalPortal from 'components/ModalPortal/ModalPortal'
 import DevAddResModal from 'components/DevAddResModal/DevAddResModal'
 import GroupAddResModal from 'components/GroupAddResModal/GroupAddResModal'
 import NotAdminModal from 'components/NotAdminModal/NotAdminModal'
+import HubDeleteModal from 'components/HubDeleteModal/HubDeleteModal'
 
 export {
     PrivateRoute,
@@ -41,5 +42,6 @@ export {
     ModalPortal,
     DevAddResModal,
     GroupAddResModal,
-    NotAdminModal
+    NotAdminModal,
+    HubDeleteModal
 }
