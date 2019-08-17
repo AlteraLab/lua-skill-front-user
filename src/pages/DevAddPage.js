@@ -24,12 +24,17 @@ const override = css`
 `;
 
 class DevAddPage extends Component {
-
+    
     componentDidMount() {
+        // const { DevActions, location } = this.props;
+        // const { hubInfo } = location.state;
+        // DevActions.scanDev(hubInfo.externalIp, hubInfo.externalPort);
+    }
+
+    _getScanDevs = () => {
         const { DevActions, location } = this.props;
         const { hubInfo } = location.state;
         DevActions.scanDev(hubInfo.externalIp, hubInfo.externalPort);
-    }
 
     render() {
         const { isLoading, user, scanDevs, DevActions, isModal, isResult, location } = this.props;
@@ -41,10 +46,24 @@ class DevAddPage extends Component {
                 <BasicBoard 
                     title="새로운 디바이스 추가하기"
                 >
-                    <LinkBtn 
+                    <button
+                        onClick={this._getScanDevs}
+                    >
+                        Scan
+                    </button>
+                    {/* <LinkBtn 
                         to='./main' 
                         context="이전"
-                    />
+                    /> */}
+                    <div className='sweet-loading'>
+                        <RingLoader
+                            css={override}
+                            sizeUnit={"px"}
+                            size={150}
+                            color={'#123abc'}
+                            loading={isLoading}
+                        />
+                    </div> 
                     <ScanDevList
                         scanDevs={scanDevs}
                         DevActions={DevActions}
@@ -59,15 +78,6 @@ class DevAddPage extends Component {
                                         />
                                     )
                     }
-                    <div className='sweet-loading'>
-                        <RingLoader
-                            css={override}
-                            sizeUnit={"px"}
-                            size={150}
-                            color={'#123abc'}
-                            loading={isLoading}
-                        />
-                    </div> 
                 </BasicBoard>
                 <BasicFooter />
             </Fragment>
@@ -89,10 +99,7 @@ export default withRouter(
             scanDevs: state.dev.getIn(['dev', 'scanDevs']),
             isModal: state.dev.get('isModal'),
             isResult: state.dev.get('isResult'),
-<<<<<<< HEAD
             isLoading: state.dev.get('isLoading'),
-=======
->>>>>>> upstream/feature
         }),
         // props 로 넣어줄 액션 생성함수
         dispatch => ({

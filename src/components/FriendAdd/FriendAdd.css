@@ -10,7 +10,7 @@
   
   }
   .main input {
-  width:100%;
+  width:80%;
   position:absolute;
   border:none;
   height:37px;
@@ -53,6 +53,7 @@
   color:#06ACBE;
   text-align :center;
   font-size : 18px;
+  padding:20px;
   }
   
   .incontent .incontent2 #two {

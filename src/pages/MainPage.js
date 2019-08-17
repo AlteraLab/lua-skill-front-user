@@ -21,7 +21,6 @@ class MainPage extends Component {
 
     //HubBox 컴포넌트들을 렌더링
     _renderHubBox = () => {
-        // hubBoxList, renderInfo, userInfo
         const { hubs, user } = this.props;
 
         return hubs.map(
@@ -31,10 +30,6 @@ class MainPage extends Component {
                             hubInfo={hubBox} 
                             userId={user.userId}
                         />
-                /*if(renderInfo.items.size ===0){
-                    return <img src={} id={}></img> 
-                }
-                return  <HubBox hubInfo={hubBox} */
             }
         )
     }
@@ -66,45 +61,6 @@ class MainPage extends Component {
                     }
                     type="hub"
                 >
-                    {/* 아래는 소현이가 일부러 안지운 데이터인가? */}
-                    {<HubBox hubInfo={{
-                        hub_name: '거실 허브',
-                        external_ip: '203.250.32.29',
-                        hub_id: 2
-                        // mac_address:'b8:27:eb:96:e5:b4'.toUpperCase(),
-                        // search_id:'dkdkdk',
-                        // createAt:"YYYY-MM-DD HH:mm (UTCZ)"         
-                    }} userInfo={{
-                        user_name: 'gd',
-                        user_id: 2,
-                    }}/>}
-                    <HubBox hubInfo={{
-                        hub_name: '거실 허브',
-                        external_ip: '203.250.32.29',
-                        hub_id: 1,
-                    }} userInfo={{
-                        user_name: 'gd',
-                        external_ip: '203.250.32.29',
-                        user_id: 1,
-                    }}/>
-                    <HubBox hubInfo={{
-                        hub_name: '거실 허브',
-                        external_ip: '203.250.32.29',
-                        hub_id: 2,
-                    }} userInfo={{
-                        user_name: 'gd',
-                        external_ip: '203.250.32.29',
-                        user_id: 4,
-                    }}/>
-                    <HubBox hubInfo={{
-                        hub_name: '거실 허브',
-                        external_ip: '203.250.32.29',
-                        hub_id: 2,
-                    }} userInfo={{
-                        user_name: 'gd',
-                        external_ip: '203.250.32.29',
-                        user_id: 8,
-                    }}/>
                 </BasicBoard>
                 <BasicFooter />
             </Fragment>

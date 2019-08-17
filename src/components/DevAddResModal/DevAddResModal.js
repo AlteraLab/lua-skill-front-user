@@ -1,7 +1,7 @@
 import React from 'react';
 import './DevAddResModal.css'
 
-const DevAddResModal = ({ isResult, _handleIsModal, _handleIsResult }) => {
+const DevAddResModal = ({ isResult, _handleIsModal }) => {
 
 	let title = null;
 	let content = null;

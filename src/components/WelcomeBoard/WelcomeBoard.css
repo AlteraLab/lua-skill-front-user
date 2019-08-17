@@ -20,13 +20,13 @@
 .WelcomeBoard{
     width: 100%;
     height: 100vh;
-    padding-top:55px;
+    padding-top:35px;
 }
 
 .WelcomeBoard header{
     text-align: center;
     font-size: 35px;
-    margin-bottom:25px;
+    margin-bottom:30px;
 }
 
 .WelcomeBoard .title{

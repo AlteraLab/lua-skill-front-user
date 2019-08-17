@@ -8,6 +8,7 @@
     text-align: center;
     margin: auto;
     width: 100%;
+    border-bottom:1px solid #f2f2f2;
 }
 .main {
     padding: 0; 
@@ -16,18 +17,9 @@
     width:100%;
     margin: 0 auto;
 }
-section {
-    display: none;
-    padding: 20px 0 0;
-}
-section p{
-    display: flex;
-}
-p h3 {
-    margin-right: 15px;
-}
+
 /*라디오버튼 숨김*/
-input {
+.tab input {
     display: none;
 }
 
@@ -41,16 +33,42 @@ label {
     border: 1px solid transparent;}
 
 label:hover {
-    color: #1E70BF;
-    cursor: pointer;}
+    font-weight: bolder;
+    color: rgb(0, 96, 185);
+    cursor: pointer;
+    border-bottom: 3px solid rgb(0, 8, 121);
+}
+
+#true:hover {
+    font-weight: bolder;
+    color: black;
+    cursor: pointer;
+    border-bottom: 3px solid rgb(0, 158, 53);
+}
+#false:hover {
+    font-weight: bolder;
+    color: black;
+    cursor: pointer;
+    border-bottom: 3px solid rgb(177, 0, 0);
+}
 
 /*input 클릭시, label 스타일*/
-input:checked + label {
+.tab #tab1:checked + label {
     font-weight: bold;
     color: #555;
-    border: 1px solid #ddd;
-    border-top: 2px solid #E1E0DA;
-    border-bottom: 1px solid #ffffff;}
+    border-bottom: 3px solid rgb(0, 8, 121);
+}
+.tab #tab2:checked + label {
+    font-weight: bold;
+    color: #555;
+    border-bottom: 3px solid rgb(0, 158, 53);
+}
+.tab #tab3:checked + label {
+    font-weight: bold;
+    color: #555;
+    border-bottom: 3px solid rgb(177, 0, 0);
+}
+
 
 #tab1:checked ~ #content1,
 #tab2:checked ~ #content2,
@@ -85,7 +103,7 @@ input:checked + label {
     .number{
         padding: 2px 0;
         font-size: 16px;
-        text-align: left;
+        text-align: center;
         width: 15%;
         margin: 5px;
     }
@@ -95,49 +113,18 @@ input:checked + label {
         padding: 2px 0;
         font-size: 16px;
         text-align: left;
-        width: 40%;
+        width: 35%;
         margin: 5px;
     }
     
      .logstitle{
         padding: 2px 0;
         text-align: left;
-        width: 55%;
+        width: 50%;
         margin: 5px;
         font-size: 16px;
     }
-    
-    
-    
-    /* .BoxMotion .log-state{
-        text-align: left;
-        width: 30%; 
-        font-size: 15px;
-        margin: 7px;
-        padding: 4px 10px;
-        
-    }
-    
-    .BoxMotion .off{
-        color: rgb(255,86,64);
-        border: 1px solid #eee;
-        width:50px;
-        text-align: center;
-        font-size: 12px;
-        height:20px;
-        margin: 0;
-    }
-    
-    .BoxMotion .on{
-        border: 1px solid #eee;
-        color: green;
-        width:70px;
-        text-align: center;
-        height:20px;
-        font-size: 12px;
-        margin: 0;
-    } */
-    
+
     .LogList section{
         font-family: 'Noto Sans KR', sans-serif;
         font-size: 13px;
@@ -149,38 +136,68 @@ input:checked + label {
         display: flex;
         flex-direction: column;
         width:100%;
-        margin-bottom: 2px;
+        margin-bottom: 3px;
         border-bottom: 1px solid #eee;
     }
     
     
-    .LogList .log-row{
+    .LogList .logRow{
         display: flex;
         flex-direction: row;
         width:100%;
-        height:20px;
-        margin-bottom:5px;
+        height: 20px;
+        margin-bottom:3px;
+        padding: 0;
+        text-align: left;
     }
-    .LogList .order{
-        width: 15%;
+    .logRow .order{
+        text-align: center;
+        width: 13%;
+        margin: 3px;
         color: #666666;
         white-space: pre;
-        margin: 3px;
-        float: left;
+        /* border-right: 1px solid #eee; */
     }
-    .LogList.llabel{
-        width: 40%;
+    .logRow .llabel{
         color: #666666;
-        margin: 3px;
-        float: left;
         white-space: pre;
+        width: 35%;
+        /* border-right: 1px solid #eee; */
+        margin: 3px 0 3px 10px;
+        text-align: left;
     }
     
-    .LogList .ccontent{
+    .logRow .ccontent{
         width: 40%;
-        margin-left: 50px;
-        float:left;
         color: #666666;
         white-space: pre;
+        text-align: left;
+        margin: 3px 0 3px 10px;
     }
+    
+    .logRow .LogType{
+        text-align: left;
+        font-size: 13px;
+        margin: 3px ;
+    }
+    
+    .logRow .false{
+        color: rgb(255,86,64);
+        border: 1px solid #eee;
+        width:50px;
+        text-align: center;
+        font-size: 12px;
+        height:20px;
+        margin: 0;
+    }
+    
+    .logRow .true{
+        border: 1px solid #eee;
+        color: green;
+        width:50px;
+        text-align: center;
+        height:20px;
+        font-size: 12px;
+        margin: 0;
+    } 
     

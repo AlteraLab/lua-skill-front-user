@@ -66,7 +66,7 @@ export default withRouter(
             logs: state.hub.getIn(['hubLogList', 'logs']),
         }),
         dispatch => ({
-            HubActions : bindActionCreators(hubActions, dispatch),
+            HubActions : bindActionCreators(hubActions, dispatch)
         })
     )(HubLogPage)
 );

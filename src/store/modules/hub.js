@@ -16,6 +16,12 @@ const GET_HUB_LOGS = 'hub/GET_HUB_LOGS';
 const SET_PRINT_LOG_WITH_ALL_LOG = 'hub/SET_PRINT_LOG_WITH_ALL_LOG';
 const SET_PRINT_LOG_WITH_TRUE_LOG = 'hub/SET_PRINT_LOG_WITH_TRUE_LOG';
 const SET_PRINT_LOG_WITH_FALSE_LOG = 'hub/SET_PRINT_LOG_WITH_FALSE_LOG';
+const SET_IS_GROUP_PAGE_WITH_TRUE = 'hub/SET_IS_GROUP_PAGE_WITH_TRUE';
+const SET_IS_GROUP_PAGE_WITH_FALSE = 'hub/SET_IS_GROUP_PAGE_WITH_FALSE';
+const CHANGE_INPUT_WHEN_FRIEND_ADD = 'hub/CHANGE_INPUT_WHEN_FRIEND_ADD';
+const SEARCH_USER = 'hub/SEARCH_USER';
+const SET_IS_MODAL_WIHT_FALSE = 'hub/SET_IS_MODAL_WIHT_FALSE';
+const SET_IS_MODAL_WIHT_TRUE = 'hub/SET_IS_MODAL_WIHT_TRUE';
 
 /*--------create action--------*/
 export const registerHub = createAction(REGISTER_HUB, HubApi.registerHub);
@@ -27,6 +33,12 @@ export const getHubLogs = createAction(GET_HUB_LOGS, HubApi.getHubLogs);
 export const setPrintLogWithAllLog = createAction(SET_PRINT_LOG_WITH_ALL_LOG);
 export const setPrintLogWithTrueLog = createAction(SET_PRINT_LOG_WITH_TRUE_LOG);
 export const setPrintLogWithFalseLog = createAction(SET_PRINT_LOG_WITH_FALSE_LOG);
+export const setIsGroupPageWithTrue = createAction(SET_IS_GROUP_PAGE_WITH_TRUE);
+export const setIsGroupPageWithFalse = createAction(SET_IS_GROUP_PAGE_WITH_FALSE);
+export const changeInputWhenFriendAdd = createAction(CHANGE_INPUT_WHEN_FRIEND_ADD);
+export const searchUser = createAction(SEARCH_USER, HubApi.searchUser);
+export const setIsModalWithFalse = createAction(SET_IS_MODAL_WIHT_FALSE);
+export const setIsModalWithTrue = createAction(SET_IS_MODAL_WIHT_TRUE);
 
 /*--------state definition--------*/
 const initialState = Map({
@@ -53,6 +65,14 @@ const initialState = Map({
         successLogs: List([]),
         printLogs: List([]),
     }),
+    
+    isGroupPage: false,
+
+    editUserEmail: '',
+
+    isModal: false,
+
+    modalMsg: '',
 });
 
 /*--------reducer--------*/
@@ -91,6 +111,27 @@ export default handleActions({
     [SET_PRINT_LOG_WITH_FALSE_LOG]: (state, action) => {
         const failLogs = state.getIn(['hubLogList', 'failLogs']);
         return state.setIn(['hubLogList', 'printLogs'], failLogs);
+    },
+
+    [SET_IS_GROUP_PAGE_WITH_TRUE]: (state, action) => {
+        return state.set('isGroupPage', true);
+    },
+
+    [SET_IS_GROUP_PAGE_WITH_FALSE]: (state, action) => {
+        return state.set('isGroupPage', false);
+    },
+
+    [CHANGE_INPUT_WHEN_FRIEND_ADD]: (state, action) => {
+        return state.set('editUserEmail', action.payload);
+    },
+
+    [SET_IS_MODAL_WIHT_FALSE]: (state, action) => {
+        return state.set('isModal', false)
+                    .set('modalMsg', '');
+    },
+
+    [SET_IS_MODAL_WIHT_TRUE]: (state, action) => {
+        return state.set('isModal', true);
     },
 
     ...pender({
@@ -134,6 +175,20 @@ export default handleActions({
             }));
         },
     }),
+    
+    ...pender({
+        type: SEARCH_USER,
+        onSuccess: (state, action) => {
+            return state.set('editUserEmail', '')
+                        .set('isModal', true)
+                        .set('modalMsg', action.payload.data.msg);
+        },
+        onFailure: (state, action) => {
+            return state.set('editUserEmail', '')
+                        .set('isModal', true)
+                        .set('modalMsg', action.payload.data.msg);
+        }
+    })
 }, initialState);
 
 /*

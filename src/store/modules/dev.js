@@ -74,7 +74,6 @@ export default handleActions({
 			const scanDevs = state.getIn(['dev', 'scanDevs']);
 			const connectedDevs = state.getIn(['dev', 'connectedDevs']);
 			return state.setIn(['dev', 'scanDevs'], scanDevs.filter((item) => item !== requestDev))
-						//.setIn(['dev', 'connectedDevs'], connectedDevs => connectedDevs.push(requestDev))
 						.setIn(['dev', 'connectedDevs'], [ ...connectedDevs, requestDev ])
 						.setIn(['dev', 'requestDev'], '')
 						.set('isModal', true)

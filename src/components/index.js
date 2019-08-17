@@ -17,6 +17,8 @@ import ScanDevList from 'components/ScanDevList/ScanDevList'
 import ScanDev from 'components/ScanDev/ScanDev'
 import ModalPortal from 'components/ModalPortal/ModalPortal'
 import DevAddResModal from 'components/DevAddResModal/DevAddResModal'
+import GroupAddResModal from 'components/GroupAddResModal/GroupAddResModal'
+import NotAdminModal from 'components/NotAdminModal/NotAdminModal'
 
 export {
     PrivateRoute,
@@ -37,5 +39,7 @@ export {
     ScanDevList,
     ScanDev,
     ModalPortal,
-    DevAddResModal
+    DevAddResModal,
+    GroupAddResModal,
+    NotAdminModal
 }

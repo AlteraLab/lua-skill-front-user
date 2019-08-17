@@ -1,28 +1,23 @@
 import React from 'react';
 import './DevBtnBoard.css';
-import { Link } from 'react-router-dom';
-import { MdDeviceHub , MdPersonAdd, MdSettings, MdDevicesOther, MdAddCircleOutline} from 'react-icons/md';
+import { Link, Redirect } from 'react-router-dom';
+import { MdDeviceHub, MdPersonAdd, MdSettings, 
+        MdDevicesOther, MdAddCircleOutline, MdDescription 
+} from 'react-icons/md';
 import Moment from 'react-moment';
 import log from '../../img/log.jpg';
 import { connectDev } from '../../store/modules/dev';
+import { NotAdminModal } from '..';
+import {NotAdminModal,
+    HubDeleteModal,} from '..';
+import { css } from '@emotion/core';
+import { RingLoader } from 'react-spinners';
 
-const DevAddButton = ({ to }) => {
-    return (        
-        <Link to={to} className="dev-add-btn">
-            <img 
-                src={devices}  
-                style={
-                    {
-                        position:'absolute', 
-                        top:'-5px', 
-                        marginLeft:'58%'
-                    }
-                }
-                id="devices"
-            ></img>
-        </Link>
-    )
-}
+const override = css`
+                    display: block;
+                    margin: 0 auto;
+                    border-color: red;
+                `;
 
 const Dev = ({ connectedDev }) => {
     const devType = connectedDev.devType;
@@ -33,15 +28,15 @@ const Dev = ({ connectedDev }) => {
             {
                 pathname: '/devInfo',
                 state: {
-                    devType: {devType}
+                    devType: { devType }
                 }
             }
         }>
             <div className="devlist">
                 {connectedDev.name}
-                <br/>
+                <br />
                 {/* {connectedDev.address} */}
-                <br/>
+                <br />
                 {/* {connectedDev.devType} */}
             </div>
         </Link>
@@ -55,9 +50,9 @@ const DevRowList = ({ connectedDevs }) => {
                 connectedDevs.map(
                     dev => {
                         return <Dev
-                                    key={dev.address}
-                                    connectedDev={dev}
-                                />
+                            key={dev.address}
+                            connectedDev={dev}
+                        />  
                     }
                 )
             }
@@ -71,16 +66,17 @@ const DevColumnList = ({ connectedDevs }) => {
     let dimenArrConnectedDevs = [];
     let i = 0;
     let devs = [];
-    for(const dev of connectedDevs) {
+
+    for (const dev of connectedDevs) {
         devs.push(dev)
         i++;
-        if(i === 2) {
+        if (i === 2) {
             dimenArrConnectedDevs.push(devs);
             i = 0;
             devs = [];
         }
     }
-    if(i === 1){
+    if (i === 1) {
         dimenArrConnectedDevs.push(devs);
     }
 
@@ -91,9 +87,9 @@ const DevColumnList = ({ connectedDevs }) => {
                 dimenArrConnectedDevs.map(
                     devs => {
                         return <DevRowList
-                                    key={index++}
-                                    connectedDevs={devs}
-                                />
+                            key={index++}
+                            connectedDevs={devs}
+                        />
                     }
                 )
             }
@@ -101,7 +97,11 @@ const DevColumnList = ({ connectedDevs }) => {
     )
 }
 
-const DevBtnBoard = ({ children, hubInfo, title, connectedDevs }) => {
+const DevBtnBoard = ({ children, hubInfo, title, connectedDevs,
+            HubActions, isModalAboutNotAdmin, isModalAboutHubDelete,
+            isLoadAboutHubDelete, _handleMethods, userId, msg }) => {
+
+    const isAdmin = (hubInfo.adminId === userId) ? true : false;
     return (
         <article className="DevBtnBoard">
             <section className="basic-container">
@@ -109,21 +109,6 @@ const DevBtnBoard = ({ children, hubInfo, title, connectedDevs }) => {
                     <h3>
                         <span>
                             {title} 
-                            {
-                                <DevAddButton
-                                    to={
-                                        {
-                                            pathname: `/dadd`,
-                                            state: {
-                                                hubInfo: {
-                                                    externalIp: hubInfo.externalIp,
-                                                    externalPort: hubInfo.externalPort
-                                                }
-                                            }
-                                        }
-                                    } 
-                                />
-                            } 
                         </span>
                     </h3>
                 </header>
@@ -133,7 +118,7 @@ const DevBtnBoard = ({ children, hubInfo, title, connectedDevs }) => {
                             <div className="hub-name">
                                 <span className="title">
                                     <MdDeviceHub 
-                                        size={21} 
+                                        size={21}
                                         style={
                                             {
                                                 position: 'relative',
@@ -148,13 +133,31 @@ const DevBtnBoard = ({ children, hubInfo, title, connectedDevs }) => {
                                     <strong>{hubInfo.hubName}</strong>
                                 </span>
                             </div>
-                            <div className="hubdelete">
-                                삭제
-                            </div>
+                            {
+                                isAdmin ? 
+                                (
+                                    <div
+                                        className="hubdelete"
+                                        onClick={_handleMethods._handleDeleteHub}
+                                    >
+                                            삭제
+                                    </div>
+                                )
+                                :
+                                (
+                                    <div
+                                        className="hubdelete"
+                                        onClick={HubActions.setIsModalWithTrue}
+                                    >
+                                        삭제
+                                    </div>
+                                )
+                            }
                         </header>
 
                         <section>
                             <article>
+                                <div className="Infohub" style={{borderBottom:"1px solid #red", height:'auto'}}>
                                 <div className="hub-row">
                                     <div className="hub-label">연결된 NAT라우터</div>
                                     <div className="hub-content">{hubInfo.externalIp}</div>
@@ -183,9 +186,30 @@ const DevBtnBoard = ({ children, hubInfo, title, connectedDevs }) => {
                                         </Moment>
                                     </div>
                                 </div>
+                                <div className='sweet-loading'>
+                                    <RingLoader
+                                        css={override}
+                                        sizeUnit={"px"}
+                                        size={150}
+                                        color={'#123abc'}
+                                        loading={isLoadAboutHubDelete}
+                                    />
+                                </div> 
+                                </div>
+                                {
+                                    isModalAboutHubDelete && <HubDeleteModal
+                                    _handleIsModal={_handleMethods._handleIsModalAboutHubDelete}
+                                    msg={msg}
+                                                                />
+                                }
 
+                                {
+                                    isModalAboutNotAdmin && <NotAdminModal
+                                                                _handleIsModal={_handleMethods._handleIsModalAboutNotAdmin}
+                                                            />
+                                }
                                 <div className="box-row">
-                                    <Link className="log-btn" 
+                                    <Link className="log-btn"
                                         to={
                                             {
                                                 pathname: '/log',
@@ -196,45 +220,112 @@ const DevBtnBoard = ({ children, hubInfo, title, connectedDevs }) => {
                                         }
                                     >
                                         <div className="box-one">
-                                            <img src={log} id={log} size={37}/>
-                                            <br/>
-                                            로그 조회    
+                                        <MdDescription size={37} style={{ color: '#6D6D74' }} />
+                                            <br />
+                                            로그 조회 
                                         </div>
                                     </Link>
                                     
-                                    <Link className="set-btn" 
-                                        to="/set"
-                                    >
-                                        <div className="box-two">
-                                            <MdSettings size={37} />
-                                            <br/>
-                                            허브 설정
-                                        </div>
-                                    </Link>
-                                    
-                                    <Link className="friadd-btn" 
-                                        to="/friadd"
-                                    >
-                                        <div className="box-three">
-                                            <MdPersonAdd size={37}/>
-                                    {/*className="hambclicker" 
-                                    onClick={ this._menuToggle } */}
-                                            <br/>
-                                            친구 추가
-                                        </div>
-                                    </Link>
+                                    {/* 허브 설정 페이지 블로킹 */}
+                                    {
+                                        isAdmin ? 
+                                        (
+                                            <Link 
+                                                className="set-btn"
+                                                to="/set"
+                                            >
+                                                <div className="box-two">
+                                                    <MdSettings size={37} style={{ color: '#6D6D74' }} />
+                                                    <br />
+                                                    허브 설정
+                                                </div>
+                                            </Link>
+                                        )
+                                        :
+                                        (
+                                            <div className="set-btn box-two">
+                                                <MdSettings 
+                                                    size={37}
+                                                    onClick={HubActions.setIsModalWithTrue}
+                                                    style={{ color: '#6D6D74' }} 
+                                                />
+                                                <br />
+                                                허브 설정
+                                            </div>
+                                        )
+                                    }
+
+                                    {/* 친구 추가 페이지 */}
+                                    <div className="friadd-btn box-three">
+                                        <MdPersonAdd
+                                            size={37}
+                                            onClick={_handleMethods._handleGroupUserPage}
+                                            style={{ color: '#6D6D74' }} 
+                                        />
+                                        <br />
+                                        유저 관리
+                                    </div>
                                 </div>
                             </article>
                         </section> 
-
                         <footer>
                             <div className="device-list">
-                                <span className="devlist-title">
-                                    <MdDevicesOther size={25} style={{position:'relative', top:'3px'}}/>
-                                    <strong style={{fontSize:'16px',paddingLeft:'6px'}}>
-                                        디바이스 목록</strong>
-                                </span>
-                            
+                                <div className="devlist-title">
+                                    <MdDevicesOther size={25} style={{ position: 'relative' }}/>
+                                    <strong style={{ fontSize: '16px', paddingLeft: '6px', marginTop: '3px' }}>
+                                        연결 디바이스</strong>
+                                    {/* 디바이스 추가 페이지 블로킹 */}
+                                    {
+                                        isAdmin ?
+                                            (
+                                                <Link
+                                                    to={
+                                                        {
+                                                            pathname: `/dadd`,
+                                                            state: {
+                                                                hubInfo: {
+                                                                    externalIp: hubInfo.externalIp,
+                                                                    externalPort: hubInfo.externalPort
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                    style={
+                                                        {
+                                                            marginLeft: 'auto',
+                                                            color: 'black'
+                                                        }
+                                                    }
+                                                >
+                                                <MdAddCircleOutline
+                                                    size={25}
+                                                    style={
+                                                        {
+                                                            position: 'relative',
+                                                            bottom: '2px',
+                                                            marginLeft: 'auto'
+                                                        }
+                                                    }
+                                                />
+                                            </Link>
+                                        )
+                                        :
+                                        (
+                                            <MdAddCircleOutline
+                                                size={25}
+                                                style={
+                                                    {
+                                                        position: 'relative',
+                                                        bottom: '2px',
+                                                        marginLeft: 'auto'
+                                                    }
+                                                }
+                                                onClick={HubActions.setIsModalWithTrue}
+                                            />
+                                        )
+                                }
+                                </div>
+                                
                                 <DevColumnList
                                     connectedDevs={connectedDevs}
                                 />
@@ -242,7 +333,7 @@ const DevBtnBoard = ({ children, hubInfo, title, connectedDevs }) => {
                         </footer>
                         {children}
                     </div>
-               </div>
+                </div>
             </section>
         </article>
     );
