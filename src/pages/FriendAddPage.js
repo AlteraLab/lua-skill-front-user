@@ -79,8 +79,8 @@ class FriendAddPage extends Component {
                                         />
                                         <input 
                                             type="text" 
-                                            name="id" 
-                                            placeholder="ID" 
+                                            name="e-mail" 
+                                            placeholder="E-mail" 
                                             value={editUserEmail}
                                             onChange={this._changeInputText}
                                         />

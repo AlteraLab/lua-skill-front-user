@@ -1,12 +1,8 @@
-
-
 .DevBtnBoard {
     display: flex;
     min-height: 125vh;
     padding: 50px 0;
 }
-
-
 
 @media only screen and (min-width:768px) {
     .DevBtnBoard {
@@ -82,7 +78,6 @@
 }
 
 .HubMInfo {
-    
     height: 170px;
     margin-bottom: 13px;
     border-radius: 10px;
@@ -230,6 +225,7 @@
     white-space: pre;
     float: left;
     padding-left: 6px;
+    font-weight: 550;
 }
 
 .HubMInfo .hub-content{
@@ -239,6 +235,17 @@
     color: #666666;
     white-space: pre;
     float: left;
+}
+.hub-content .on{
+    float: right;
+    width: 25px;
+    text-align: center;
+    border-radius: 10px;
+    font-weight: 500;
+    padding: 1px 0 2px 0;
+    font-size: 11px;
+    border: 1px solid green;
+    color: green;
 }
 
 .HubMInfo .dev-column {
@@ -260,12 +267,102 @@
 }
 
 .HubMInfo .devlist-title {
-    margin: 3px 5px 0 10px;
-    padding-bottom: 5px;
+    margin: 3px 5px 0px 10px;
+    padding-bottom: 3px;
     display: flex;
     border-bottom: 1px solid rgb(234,234,234);
 }
 .HubMInfo .dev-row :hover {
     background-color: #F2F2F2;
     border: 1px solid #eee;
+}
+
+.devlist-content {
+    display: flex;
+    border-radius: 10px;
+    flex-direction: row;
+    width:100%;
+    height: 45px;
+    margin:6px;
+    border: 1px solid #dfdfdf; 
+    /* border: 1px solid rgba(158, 158, 158, 0.548); */
+}
+
+.devlist-content .dev-box {
+    display: flex;
+    flex-direction: column;
+    width:100%;
+}
+
+.devImage {
+    width:10%;
+    float: left;
+    height: 50px;
+    font-family: Lato,'Helvetica Neue',Arial,Helvetica,sans-serif;
+}
+
+.dev-box .device-row{
+    display: flex;
+    flex-direction: row;
+    width:100%;
+    height: 22px;
+    padding-bottom: 3px;
+    font-size: 14px;
+    border-bottom:1px solid #eee;
+    text-align: center;
+}
+
+.device-row .device-content {
+    width: 60%;
+    color: #666666;
+    white-space: pre;
+    text-align: left;
+    font-family: Lato,'Helvetica Neue',Arial,Helvetica,sans-serif;
+    margin: 3px 0 3px 10px;
+}
+
+.device-row .device-label {
+    color: #333;
+    white-space: pre;
+    width: 35%;
+    font-weight: bold;
+    font-family: Lato,'Helvetica Neue',Arial,Helvetica,sans-serif;
+    border-right: 1px solid rgba(158, 158, 158, 0.548);
+    margin: 3px 0 3px 10px;
+    text-align: center;
+}
+
+.devlist-content .type-btn {
+    display: flex;
+    flex-direction: row;
+    width:40%;
+    border: none;
+}
+
+.devlist-content #whghlBtn{
+    width: 44px;
+    height: 45px;
+    font-size: 13px;
+    font-family: Lato,'Helvetica Neue',Arial,Helvetica,sans-serif;
+    border:none;
+    background-color: #dfdfdf;
+}
+
+.devlist-content #whghlBtn:hover{
+    border: 1px solid #dfdfdf;
+}
+
+.devlist-content #wpdjBtn{
+    width: 44px;
+    font-size: 13px;
+    height: 45px;
+    font-family: Lato,'Helvetica Neue',Arial,Helvetica,sans-serif;
+    border: none;
+    border-top-right-radius : 10px;
+    border-bottom-right-radius : 10px;
+    background-color: rgba(236, 108, 61, 0.678);
+}
+
+.devlist-content #wpdjBtn:hover{
+    border: 1px solid #dfdfdf;
 }

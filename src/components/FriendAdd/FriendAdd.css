@@ -60,17 +60,6 @@
   color: black;
 }
   
-.hambclicker  {
-  content: '';
-  height: 48px;
-  width: 55px;
-  position: absolute;
-  top: 0px;
-  left: 8px;
-  cursor: pointer;
-  z-index: 1;
-}
-  
 #menu
   {
     position: absolute;

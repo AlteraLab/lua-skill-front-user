@@ -1,33 +1,16 @@
 import React from 'react';
 import './DevBtnBoard.css';
 import { Link, Redirect } from 'react-router-dom';
-<<<<<<< HEAD
 import { MdDeviceHub, MdPersonAdd, MdSettings, 
-        MdDevicesOther, MdAddCircleOutline, MdDescription 
+        MdDevicesOther, MdAddCircleOutline, MdDescription, MdDevices 
 } from 'react-icons/md';
 import Moment from 'react-moment';
-import log from '../../img/log.jpg';
 import { connectDev } from '../../store/modules/dev';
-import { NotAdminModal } from '..';
 import {NotAdminModal,
     HubDeleteModal,} from '..';
 import { css } from '@emotion/core';
-import { RingLoader } from 'react-spinners';
+import { ClipLoader } from 'react-spinners';
 
-=======
-import { MdDeviceHub, MdPersonAdd, MdSettings, MdDevicesOther, MdAddCircleOutline } from 'react-icons/md';
-import Moment from 'react-moment';
-import log from '../../img/log.jpg';
-import { connectDev } from '../../store/modules/dev';
-import { css } from '@emotion/core';
-import { RingLoader } from 'react-spinners';
-import {
-    NotAdminModal,
-    HubDeleteModal,
-} from '..';
-
-
->>>>>>> 2620c0134cfc248d1713dac26ed639340965e601
 const override = css`
                     display: block;
                     margin: 0 auto;
@@ -39,75 +22,68 @@ const Dev = ({ connectedDev }) => {
     console.log('connectDev')
     console.log(connectedDev)
     return (
-        <Link to={
-            {
-                pathname: '/devInfo',
-                state: {
-                    devType: { devType }
-                }
-            }
-        }>
-            <div className="devlist">
-                {connectedDev.name}
-                <br />
-                {/* {connectedDev.address} */}
-                <br />
-                {/* {connectedDev.devType} */}
-            </div>
-        </Link>
-    )
-}
 
-const DevRowList = ({ connectedDevs }) => {
-    return (
-        <div className="dev-row">
-            {
-                connectedDevs.map(
-                    dev => {
-                        return <Dev
-                            key={dev.address}
-                            connectedDev={dev}
-<<<<<<< HEAD
-                        />  
-=======
-                        />
->>>>>>> 2620c0134cfc248d1713dac26ed639340965e601
+        <div className="devlist-content" >
+            <div className="dev-box">
+                <div className="device-row" >
+                    <div className="device-label">
+                        이름
+                    </div>
+                    <div className="device-content">
+                        {connectedDev.name}
+                    </div>
+                </div>
+                <div className="device-row" style={{ 
+                        fontSize:'11px'
+                    }} >
+                    <div className="device-label" >
+                        MAC주소
+                    </div>
+                    <div className="device-content">
+                        {connectedDev.address}
+                    </div>
+                </div>
+            </div>
+            <div className="type-btn">
+                <Link to={
+                    {
+                        pathname: '/devInfo',
+                        state: {
+                            devType: { devType }
+                        }
                     }
-                )
-            }
+                }>
+                    <button
+                        type="radio"
+                        id="whghlBtn"
+                    >
+                        조회
+                    </button>
+                </Link>
+
+                <button
+                    type="radio"
+                    id="wpdjBtn"
+                >
+                    제거
+                </button>
+            </div>
         </div>
     )
 }
 
-const DevColumnList = ({ connectedDevs }) => {
-    // 2차원 배열로 만들어서, 2차원 배열의 각 요소를 넘겨줘야겠다!
-    // Dimensional Array ConnectedDevs : connectedDevs(1차원 배열) 을 2차원 배열 형태로 만든 버전
-    let dimenArrConnectedDevs = [];
-    let i = 0;
-    let devs = [];
 
-    for (const dev of connectedDevs) {
-        devs.push(dev)
-        i++;
-        if (i === 2) {
-            dimenArrConnectedDevs.push(devs);
-            i = 0;
-            devs = [];
-        }
-    }
-    if (i === 1) {
-        dimenArrConnectedDevs.push(devs);
-    }
+const DevColumnList = ({ connectedDevs }) => {
 
     let index = 0;
     return (
         <div className="dev-column">
             {
-                dimenArrConnectedDevs.map(
-                    devs => {
-                        return <DevRowList
+                connectedDevs.map(
+                    dev => {
+                        return <Dev
                             key={index++}
-                            connectedDevs={devs}
+                            connectedDev={dev}
                         />
                     }
                 )
@@ -116,13 +92,7 @@ const DevColumnList = ({ connectedDevs }) => {
     )
 }
 
-<<<<<<< HEAD
-const DevBtnBoard = ({ children, hubInfo, title, connectedDevs,
-            HubActions, isModalAboutNotAdmin, isModalAboutHubDelete,
-            isLoadAboutHubDelete, _handleMethods, userId, msg }) => {
-=======
 const DevBtnBoard = ({ children, hubInfo, title, connectedDevs, HubActions, isModalAboutNotAdmin, isModalAboutHubDelete, isLoadAboutHubDelete, _handleMethods, userId, msg }) => {
->>>>>>> 2620c0134cfc248d1713dac26ed639340965e601
 
     const isAdmin = (hubInfo.adminId === userId) ? true : false;
     return (
@@ -131,11 +101,7 @@ const DevBtnBoard = ({ children, hubInfo, title, connectedDevs, HubActions, isMo
                 <header className="basic-header">
                     <h3>
                         <span>
-<<<<<<< HEAD
-                            {title} 
-=======
                             {title}
->>>>>>> 2620c0134cfc248d1713dac26ed639340965e601
                         </span>
                     </h3>
                 </header>
@@ -144,12 +110,8 @@ const DevBtnBoard = ({ children, hubInfo, title, connectedDevs, HubActions, isMo
                         <header>
                             <div className="hub-name">
                                 <span className="title">
-<<<<<<< HEAD
-                                    <MdDeviceHub 
-=======
                                     <MdDeviceHub
->>>>>>> 2620c0134cfc248d1713dac26ed639340965e601
-                                        size={21}
+                                        size={20}
                                         style={
                                             {
                                                 position: 'relative',
@@ -176,60 +138,54 @@ const DevBtnBoard = ({ children, hubInfo, title, connectedDevs, HubActions, isMo
                                 )
                                 :
                                 (
-                                    <div
-                                        className="hubdelete"
-                                        onClick={HubActions.setIsModalWithTrue}
-                                    >
-                                        삭제
-<<<<<<< HEAD
-                                    </div>
-                                )
-                            }
-=======
-                                   </div>
+                                    null
                                 )
                             }
                             
->>>>>>> 2620c0134cfc248d1713dac26ed639340965e601
                         </header>
 
                         <section>
                             <article>
                                 <div className="Infohub" style={{borderBottom:"1px solid #red", height:'auto'}}>
                                 <div className="hub-row">
-                                    <div className="hub-label">연결된 NAT라우터</div>
+                                    <div className="hub-label">연결된 NAT 라우터</div>
                                     <div className="hub-content">{hubInfo.externalIp}</div>
                                 </div>
                                 <div className="hub-row">
+                                    <div className="hub-label">허브 NAT라우터 포트</div>
+                                    <div className="hub-content">{hubInfo.externalPort}</div>
+                                </div>
+                                <div className="hub-row">
                                     <div className="hub-label">허브 MAC주소</div>
-                                    <div className="hub-content">{'b8:27:eb:96:e5:b4'.toUpperCase()}</div>
+                                    <div className="hub-content">{hubInfo.hubMac.toUpperCase()}</div>
                                 </div>
                                 <div className="hub-row">
                                     <div className="hub-label">검색용 아이디</div>
                                     <div className="hub-content">{hubInfo.searchId}</div>
                                 </div>
                                 <div className="hub-row">
-                                    <div className="hub-label">허브 상태</div>
-                                    <div className="hub-content">on</div>
+                                    <div className="hub-label">허브 설명</div>
+                                    <div className="hub-content">{hubInfo.hubDescript}</div>
                                 </div>
                                 <div className="hub-row">
-                                    <div className="hub-label">허브</div>
-                                    <div className="hub-content">ㅣㅣㅣ</div>
+                                    <div className="hub-label">허브 상태</div>
+                                    <div className="hub-content">
+                                        <div className="on">
+                                            on
+                                        </div>
+                                    </div>
                                 </div>
                                 <div className="hub-row division">
-                                    <div className="hub-label">허브 생성시간</div>
+                                    <div className="hub-label">허브 생성 시간</div>
                                     <div className="hub-content">
                                         <Moment format="YYYY-MM-DD HH:mm (UTCZ)">
                                             {hubInfo.createdAt}
                                         </Moment>
                                     </div>
                                 </div>
-<<<<<<< HEAD
-=======
                                 
->>>>>>> 2620c0134cfc248d1713dac26ed639340965e601
                                 <div className='sweet-loading'>
-                                    <RingLoader
+                                    <ClipLoader
                                         css={override}
                                         sizeUnit={"px"}
                                         size={150}
@@ -237,27 +193,12 @@ const DevBtnBoard = ({ children, hubInfo, title, connectedDevs, HubActions, isMo
                                         loading={isLoadAboutHubDelete}
                                     />
                                 </div> 
-<<<<<<< HEAD
                                 </div>
                                 {
                                     isModalAboutHubDelete && <HubDeleteModal
-                                    _handleIsModal={_handleMethods._handleIsModalAboutHubDelete}
-                                    msg={msg}
+                                                            _handleIsModal={_handleMethods._handleIsModalAboutHubDelete}
+                                                            msg={msg}
                                                                 />
-=======
-
-                                {
-                                    isModalAboutHubDelete && <HubDeleteModal
-                                                                _handleIsModal={_handleMethods._handleIsModalAboutHubDelete}
-                                                                msg={msg}
-                                                             />
-                                }
-
-                                {
-                                    isModalAboutNotAdmin && <NotAdminModal
-                                                                _handleIsModal={_handleMethods._handleIsModalAboutNotAdmin}
-                                                            />
->>>>>>> 2620c0134cfc248d1713dac26ed639340965e601
                                 }
 
                                 {
@@ -265,6 +206,7 @@ const DevBtnBoard = ({ children, hubInfo, title, connectedDevs, HubActions, isMo
                                                                 _handleIsModal={_handleMethods._handleIsModalAboutNotAdmin}
                                                             />
                                 }
+                                
                                 <div className="box-row">
                                     <Link className="log-btn"
                                         to={
@@ -277,21 +219,12 @@ const DevBtnBoard = ({ children, hubInfo, title, connectedDevs, HubActions, isMo
                                         }
                                     >
                                         <div className="box-one">
-<<<<<<< HEAD
                                         <MdDescription size={37} style={{ color: '#6D6D74' }} />
                                             <br />
                                             로그 조회 
                                         </div>
                                     </Link>
                                     
-=======
-                                            <img src={log} id={log} size={37} />
-                                            <br />
-                                            로그 조회
-                                        </div>
-                                    </Link>
-
->>>>>>> 2620c0134cfc248d1713dac26ed639340965e601
                                     {/* 허브 설정 페이지 블로킹 */}
                                     {
                                         isAdmin ? 
@@ -301,11 +234,7 @@ const DevBtnBoard = ({ children, hubInfo, title, connectedDevs, HubActions, isMo
                                                 to="/set"
                                             >
                                                 <div className="box-two">
-<<<<<<< HEAD
                                                     <MdSettings size={37} style={{ color: '#6D6D74' }} />
-=======
-                                                    <MdSettings size={37} />
->>>>>>> 2620c0134cfc248d1713dac26ed639340965e601
                                                     <br />
                                                     허브 설정
                                                 </div>
@@ -317,10 +246,7 @@ const DevBtnBoard = ({ children, hubInfo, title, connectedDevs, HubActions, isMo
                                                 <MdSettings 
                                                     size={37}
                                                     onClick={HubActions.setIsModalWithTrue}
-<<<<<<< HEAD
                                                     style={{ color: '#6D6D74' }} 
-=======
->>>>>>> 2620c0134cfc248d1713dac26ed639340965e601
                                                 />
                                                 <br />
                                                 허브 설정
@@ -333,17 +259,13 @@ const DevBtnBoard = ({ children, hubInfo, title, connectedDevs, HubActions, isMo
                                         <MdPersonAdd
                                             size={37}
                                             onClick={_handleMethods._handleGroupUserPage}
-<<<<<<< HEAD
                                             style={{ color: '#6D6D74' }} 
-=======
->>>>>>> 2620c0134cfc248d1713dac26ed639340965e601
                                         />
                                         <br />
-                                        유저 관리
+                                        친구 관리
                                     </div>
                                 </div>
                             </article>
-<<<<<<< HEAD
                         </section> 
                         <footer>
                             <div className="device-list">
@@ -351,18 +273,6 @@ const DevBtnBoard = ({ children, hubInfo, title, connectedDevs, HubActions, isMo
                                     <MdDevicesOther size={25} style={{ position: 'relative' }}/>
                                     <strong style={{ fontSize: '16px', paddingLeft: '6px', marginTop: '3px' }}>
                                         연결 디바이스</strong>
-=======
-                        </section>
-
-                        <footer>
-                            <div className="device-list">
-                                <div className="devlist-title">
-                                    <MdDevicesOther size={25} style={{ position: 'relative', top: '3px' }} />
-                                    <strong style={{ fontSize: '16px', paddingLeft: '6px' }}>
-                                        연결 디바이스</strong>
-                                
-
->>>>>>> 2620c0134cfc248d1713dac26ed639340965e601
                                     {/* 디바이스 추가 페이지 블로킹 */}
                                     {
                                         isAdmin ?
@@ -386,8 +296,6 @@ const DevBtnBoard = ({ children, hubInfo, title, connectedDevs, HubActions, isMo
                                                         }
                                                     }
                                                 >
-<<<<<<< HEAD
-=======
                                                     <MdAddCircleOutline
                                                         size={25}
                                                         style={
@@ -402,44 +310,10 @@ const DevBtnBoard = ({ children, hubInfo, title, connectedDevs, HubActions, isMo
                                             )
                                             :
                                             (
->>>>>>> 2620c0134cfc248d1713dac26ed639340965e601
-                                                <MdAddCircleOutline
-                                                    size={25}
-                                                    style={
-                                                        {
-                                                            position: 'relative',
-                                                            bottom: '2px',
-                                                            marginLeft: 'auto'
-                                                        }
-                                                    }
-<<<<<<< HEAD
-                                                />
-                                            </Link>
-                                        )
-                                        :
-                                        (
-                                            <MdAddCircleOutline
-                                                size={25}
-                                                style={
-                                                    {
-                                                        position: 'relative',
-                                                        bottom: '2px',
-                                                        marginLeft: 'auto'
-                                                    }
-                                                }
-                                                onClick={HubActions.setIsModalWithTrue}
-                                            />
-                                        )
-                                }
-                                </div>
-                                
-=======
-                                                    onClick={HubActions.setIsModalWithTrue}
-                                                />
+                                                null
                                             )
                                     }
                                 </div>
->>>>>>> 2620c0134cfc248d1713dac26ed639340965e601
                                 <DevColumnList
                                     connectedDevs={connectedDevs}
                                 />

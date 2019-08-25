@@ -9,7 +9,7 @@ const ScanDevList = ( { scanDevs, DevActions, externalIp, externalPort } ) => {
 				scanDevs.map(
 					dev => {
 						return <ScanDev
-									key={dev.address}
+									key={dev.address} 
 									scanDev={dev}
 									DevActions={DevActions}
 									externalIp={externalIp}

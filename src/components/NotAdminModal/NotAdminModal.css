@@ -11,7 +11,7 @@
 }
 
 .NotAdminModal .nAdmin-content {
-	background: white;
+	background: rgb(255, 255, 255);
 	padding: 1rem;
 	width: 200px;
 	height: auto;
@@ -28,20 +28,20 @@
 }
 
 .nAdmin-content .close-btn {
-	display: flex;
-	flex-direction: row;
-	float:right;
+	text-align: center;
+	width: 100%;
 }
 
 .close-btn #btnclose {
 	border: none;
-	font-size: 14px;
+	font-size: 15px;
 	background-color:white;
-	width:40px;
+	width: 100%;
 	height:20px;
 }
 
 #btnclose:hover {
 	background-color:#F7F7F7;
-	border-radius: 50px;
+	border-radius: 70px;
+	border:1px solid #666;
 }

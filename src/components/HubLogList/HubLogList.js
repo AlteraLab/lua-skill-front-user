@@ -93,151 +93,58 @@ class HubLogList extends Component {
                     {this._renderLog()}
                 </div>                
                 <div className="LogList">
-                {/* <header>
-                    <div className="number">
-                        <strong>#</strong>
-                    </div>
-                    <div className="logtitle">
-                        <strong>logs</strong>
-                    </div>
-                    <div className="logstitle">
-                        <strong>contents</strong>
-                    </div>
-                </header> */}
-                <section>
-                    <article>
+                    <div className="logarticle" style={{padding:'0'}}>
                         <div className="logRow">
-                            <div className="order">1</div>
-                            <div className="llabel">recordeAt</div>
-                            <div className="ccontent">1565246191000</div>
-                        </div>
-                        <div className="logRow">
-                            <div className="order">2</div>
-                                <div className="llabel">hrdwrName</div>
+                                <div className="llabel">하드웨어이름</div>
                                 <div className="ccontent">testDev2</div>
                         </div>
                         <div className="logRow">
-                            <div className="order">3</div>
-                                <div className="llabel">requesterName</div>
+                                <div className="llabel">요청자</div>
                                 <div className="ccontent">test</div>
                         </div>
-                        <div className="logRow">
-                            <div className="order">4</div>
-                                <div className="llabel">content</div>
-                                <div className="ccontent">Test Content</div>
+                        
+                        <div className="logContent">
+                                <div className="llabel">내용</div>
+                                <div className="content-box" >Test Content Test Content Test Content 
+                                Test Content Test Content Test Content Test 
+                                </div>
                         </div>
-                        <div className="logRow">
-                            <div className="order">5</div>
-                                <div className="llabel">logType</div>
+                        <div className="logRow-bot">
+                        <div className="llabel-time">생성 시간</div>
+                            <div className="ccontent-time">1565246191000</div>
                                 <div className="ccontent">
-                                    <div className="LogType">
-                                        <div className="false">
-                                        <span>false</span>
-                                        </div>
+                                    <div className="LogType-false">
+                                        <span>fail</span>
                                     </div>
                                 </div>
                         </div>
-                    </article>
-                    <article>
-                    <div className="logRow">
-                            <div className="order">1</div>
-                            <div className="llabel">recordeAt</div>
-                            <div className="ccontent">1565246191000</div>
-                        </div>
+                    </div>
+                    <div className="logarticle" style={{padding:'0'}}>
                         <div className="logRow">
-                            <div className="order">2</div>
-                                <div className="llabel">hrdwrName</div>
+                                <div className="llabel">하드웨어이름</div>
                                 <div className="ccontent">testDev2</div>
                         </div>
                         <div className="logRow">
-                            <div className="order">3</div>
-                                <div className="llabel">requesterName</div>
+                                <div className="llabel">요청자</div>
                                 <div className="ccontent">test</div>
                         </div>
-                        <div className="logRow">
-                            <div className="order">4</div>
-                                <div className="llabel">content</div>
-                                <div className="ccontent">Test Content</div>
+                        
+                        <div className="logContent">
+                                <div className="llabel">내용</div>
+                                <div className="content-box" >Test Content Test Content Test Content 
+                                Test Content Test Content Test Content Test 
+                                </div>
                         </div>
-                        <div className="logRow">
-                        <div className="order">5</div>
-                            <div className="llabel">logType</div>
-                            <div className="ccontent">
-                                <div className="LogType">
-                                    <div className="true">
-                                        <span>true</span>
+                        <div className="logRow-bot">
+                        <div className="llabel-time">생성 시간</div>
+                            <div className="ccontent-time">1565246191000</div>
+                                <div className="ccontent">
+                                    <div className="LogType-true">
+                                        <span>success</span>
                                     </div>
                                 </div>
-                            </div>
                         </div>
-                    </article>
-                    <article>
-                    <div className="logRow">
-                            <div className="order">1</div>
-                            <div className="llabel">recordeAt</div>
-                            <div className="ccontent">1565246191000</div>
-                        </div>
-                        <div className="logRow">
-                            <div className="order">2</div>
-                                <div className="llabel">hrdwrName</div>
-                                <div className="ccontent">testDev2</div>
-                        </div>
-                        <div className="logRow">
-                            <div className="order">3</div>
-                                <div className="llabel">requesterName</div>
-                                <div className="ccontent">test</div>
-                        </div>
-                        <div className="logRow">
-                            <div className="order">4</div>
-                                <div className="llabel">content</div>
-                                <div className="ccontent">Test Content</div>
-                        </div>
-                        <div className="logRow">
-                        <div className="order">5</div>
-                            <div className="llabel">logType</div>
-                            <div className="ccontent">
-                                <div className="LogType">
-                                    <div className="true">
-                                        <span>true</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </article>
-                    <article>
-                    <div className="logRow">
-                            <div className="order">1</div>
-                            <div className="llabel">recordeAt</div>
-                            <div className="ccontent">1565246191000</div>
-                        </div>
-                        <div className="logRow">
-                            <div className="order">2</div>
-                                <div className="llabel">hrdwrName</div>
-                                <div className="ccontent">testDev2</div>
-                        </div>
-                        <div className="logRow">
-                            <div className="order">3</div>
-                                <div className="llabel">requesterName</div>
-                                <div className="ccontent">test</div>
-                        </div>
-                        <div className="logRow">
-                            <div className="order">4</div>
-                                <div className="llabel">content</div>
-                                <div className="ccontent">Test Content</div>
-                        </div>
-                        <div className="logRow">
-                        <div className="order">5</div>
-                            <div className="llabel">logType</div>
-                            <div className="ccontent">
-                                <div className="LogType">
-                                    <div className="true">
-                                        <span>true</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </article>
-                </section>
+                    </div>
             </div>
             </div>
 		)

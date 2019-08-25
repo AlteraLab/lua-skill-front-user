@@ -31,16 +31,6 @@ const DeviceBox = ({ devInfo}) => {
                         <div className="dev-content">{devInfo.dev_model}</div>
                     </div>
                     <div className="dev-row">
-                        <div className="dev-label">* 상태</div>
-                        <div className="dev-content">
-                            <div className="dev-info">
-                                <div className="dev-state on">
-                                    <span><strong>on</strong></span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="dev-row">
                         <div className="dev-label">* 디바이스 타입</div>
                         <div className="dev-content">{devInfo.dev_type}</div>
                     </div>

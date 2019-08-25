@@ -38,7 +38,7 @@ const HubBox = ({ hubInfo, userId }) => {
                     </div>
                     <div className="hub-row">
                         <div className="hub-label">허브 MAC주소</div>
-                        <div className="hub-content">{hubInfo.mac_address}</div>
+                        <div className="hub-content">{hubInfo.mac_addr}</div>
                     </div>
                     <div className="hub-row">
                         <div className="hub-label">검색용 아이디</div>
