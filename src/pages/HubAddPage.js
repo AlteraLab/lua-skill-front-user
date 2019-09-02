@@ -46,7 +46,8 @@ class HubAddPage extends Component {
     _changeInputText = (e) => {
         const { HubActions } = this.props;
         const { name, value } = e.target;
-
+        console.log('이벤트');
+        console.log(name + " " + value);
         HubActions.changeInput({
             name, //input tag의 name, redux store의 상태값과 일치해야
             value
@@ -103,11 +104,11 @@ class HubAddPage extends Component {
                             label='hub_name' 
                             must={true} 
                             placeholder='16자 이내'
-                            onChange={(this._changeInputText)}
+                            onChange={this._changeInputText}
                         />
                         <InputItem 
                             name='검색용 아이디' 
-                            label='hub_id' 
+                            label='search_id' 
                             must={true} 
                             placeholder='20자 이내, 변경불가'
                             onChange={this._changeInputText}

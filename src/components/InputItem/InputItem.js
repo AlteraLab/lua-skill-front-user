@@ -23,15 +23,7 @@ const InputItem = ({ name, label, must, placeholder, disabled, value, onChange }
                     }}
                     value={value}
                     name={label}
-                    /*onChange={(value,e) =>{
-                        this.setState({value});   
-                        console.log(e); 
-                    }}
-                    onBlur={(e) => {console.log(e)}}
-                    validationOption={{
-                        name:'label',
-                        check: true,
-                        required:true}}*/
+                    onChange={onChange}
                 />
             </div>
         </div>
