@@ -1,7 +1,3 @@
-/* @media only screen and (max-width:980px) {
-    
-} */
-
 .HubBox {
     flex: 0 0 100%; /*grow, shrink, basis*/
 }
@@ -9,29 +5,30 @@
 
 @media only screen and (min-width:512px) {
     .HubBox {
-        flex: 0 0 308px; /*grow, shrink, basis*/
+        flex: 0 0 310px; /*grow, shrink, basis*/
     }   
 }
 
 @media only screen and (min-width:768px) {
     .HubBox {
-        flex: 0 0 338px; /*grow, shrink, basis*/
+        flex: 0 0 320px; 
+        /*grow, shrink, basis*/
     }   
 }
 
 @media only screen and (min-width:1024px) {
     .HubBox {
-        flex: 0 0 353px; /*grow, shrink, basis*/
-    }   
+        flex: 0 0 400px; /*grow, shrink, basis*/
+    }
 }
 
-.HubBox{
-    height: 192px;
-    margin-bottom: 11px;
-    border-radius: 2px;
+.HubBox {
+    height: 180px;
+    margin-bottom: 13px;
+    border-radius: 10px;
     border: 1px solid rgb(234,234,234);
-    /* display: flex;
-    flex-direction: column; */
+    display: flex;
+    flex-direction: column;
     background-color: white;
 }
 
@@ -39,6 +36,7 @@
     border-bottom: 1px solid rgb(234,234,234);
     padding: 0;
     display: flex;
+    flex: 2;
     flex-direction: row;
     
 }
@@ -47,13 +45,13 @@
     padding: 0;
     display: flex;
     flex-direction: column;
-    width: 40%;
+    width: 60%;
 }
 
 .HubBox .title{
     padding: 4px 0;
     font-size: 15px;
-    margin: 3px 5px 0 10px;
+    margin: 4px 5px 0 10px;
     color: rgb(51,51,51);
 }
 
@@ -67,13 +65,13 @@
     padding: 0;
     display: flex;
     flex-direction: row;
-    width: 80%;
+    width: 90%;
     align-items: center;
     justify-content: flex-end;
 }
 
 .HubBox .hub-info-item{
-    margin-right: 10px;
+    margin-right: 7px;
 }
 
 .HubBox .hub-state{
@@ -97,7 +95,7 @@
 .HubBox section{
     font-family: 'Noto Sans KR', sans-serif;
     font-size: 12px;
-    padding: 8px 10px 0px 10px;
+    padding: 10px 9px 0px 9px;
 }
 
 .HubBox article{
@@ -106,10 +104,11 @@
     border-left: 3px solid #eee;
 }
 
+
 .HubBox .hub-row{
     display: flex;
     flex-direction: row;
-    margin: 0  0 5px 0;
+    margin: 0  0 3px 0;
 }
 
 .HubBox .hub-label{
@@ -131,7 +130,7 @@
 
 .HubBox footer{
     margin-top: 6px;
-    padding: 0px 10px 0px 10px;
+    padding: 0px 10px 4px 10px;
     width: 100%;
 }
 
@@ -151,7 +150,7 @@
     font-size: 11px;
     display: flex;
     border: 1px solid #eee;
-    border-radius: 5px;
+    border-radius: 10px;
     padding: 3px 6px;
 }
 

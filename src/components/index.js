@@ -10,18 +10,38 @@ import LinkBtn from 'components/LinkBtn/LinkBtn'
 import SubmitBtn from 'components/SubmitBtn/SubmitBtn'
 import UtteranceBox from 'components/UtteranceBox/UtteranceBox'
 import WelcomeBoard from 'components/WelcomeBoard/WelcomeBoard'
+import DeviceBox from 'components/DeviceBox/DeviceBox'
+import DevBtnBoard from 'components/DevBtnBoard/DevBtnBoard'
+import HubLogList from 'components/HubLogList/HubLogList'
+import ScanDevList from 'components/ScanDevList/ScanDevList'
+import ScanDev from 'components/ScanDev/ScanDev'
+import ModalPortal from 'components/ModalPortal/ModalPortal'
+import DevAddResModal from 'components/DevAddResModal/DevAddResModal'
+import GroupAddResModal from 'components/GroupAddResModal/GroupAddResModal'
+import NotAdminModal from 'components/NotAdminModal/NotAdminModal'
+import HubDeleteModal from 'components/HubDeleteModal/HubDeleteModal'
 
 export {
     PrivateRoute,
     SocialLogin,
+    HubLogList,
     BasicNav,
     BasicFooter,
+    DevBtnBoard,
     BasicBoard,
     InputContainer,
     InputItem,
     HubBox,
     LinkBtn,
     SubmitBtn,
+    DeviceBox,
     UtteranceBox,
-    WelcomeBoard
+    WelcomeBoard,
+    ScanDevList,
+    ScanDev,
+    ModalPortal,
+    DevAddResModal,
+    GroupAddResModal,
+    NotAdminModal,
+    HubDeleteModal
 }

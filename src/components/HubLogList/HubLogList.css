@@ -1,0 +1,224 @@
+* {
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.tab {
+    padding: 0; 
+    text-align: center;
+    margin: auto;
+    width: 100%;
+    border-bottom:1px solid #f2f2f2;
+}
+.main {
+    padding: 0; 
+    text-align: center;
+    overflow: hidden; 
+    width:100%;
+    margin: 0 auto;
+}
+
+/*라디오버튼 숨김*/
+.tab input {
+    display: none;
+}
+
+label {
+    display: inline-block;
+    margin: 0 0 -1px;
+    width: 100px;
+    padding: 10px  10px;
+    text-align: center;
+    color: #bbb;
+    border: 1px solid transparent;}
+
+label:hover {
+    font-weight: bolder;
+    color: rgb(0, 96, 185);
+    cursor: pointer;
+    border-bottom: 3px solid rgb(0, 8, 121);
+}
+
+#true:hover {
+    font-weight: bolder;
+    color: black;
+    cursor: pointer;
+    border-bottom: 3px solid rgb(0, 158, 53);
+}
+#false:hover {
+    font-weight: bolder;
+    color: black;
+    cursor: pointer;
+    border-bottom: 3px solid rgb(177, 0, 0);
+}
+
+/*input 클릭시, label 스타일*/
+.tab #tab1:checked + label {
+    font-weight: bold;
+    color: #555;
+    border-bottom: 3px solid rgb(0, 8, 121);
+}
+.tab #tab2:checked + label {
+    font-weight: bold;
+    color: #555;
+    border-bottom: 3px solid rgb(0, 158, 53);
+}
+.tab #tab3:checked + label {
+    font-weight: bold;
+    color: #555;
+    border-bottom: 3px solid rgb(177, 0, 0);
+}
+
+
+#tab1:checked ~ #content1,
+#tab2:checked ~ #content2,
+#tab3:checked ~ #content3{
+    display: block;}
+
+    .LogList {
+        flex: 0 0 100%; /*grow, shrink, basis*/
+    }
+    
+    
+    
+    .LogList {
+        height: auto;
+        margin-bottom: 13px;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    
+    .LogList header{
+        padding: 0;
+        display: flex;
+        flex-direction: row;
+        height: 30px;
+        width:100%;
+        text-align: left;
+        color: rgb(51,51,51);
+        margin:5px;
+        border-bottom:1px solid #666;
+    }
+
+    .LogList {
+        font-family: 'Noto Sans KR', sans-serif;
+        font-size: 13px;
+        text-align: left;
+        padding: 0;
+        width:100%;
+    }
+    
+    .LogList .logarticle{
+        display: flex;
+        flex-direction: column;
+        width:100%;
+        margin-top: 10px;
+        margin-bottom: 5px;
+        border: 1px solid #eee;
+        border-radius: 10px;
+        padding: 0;
+    }
+    
+    
+    .LogList .logRow{
+        display: flex;
+        flex-direction: row;
+        width:100%;
+        height: 27px;
+        margin-bottom:3px;
+        padding: 0;
+        text-align: left;
+        border-bottom: 1px solid #eee;
+    }
+    .LogList .logContent{
+        display: flex;
+        flex-direction: column;
+        width:100%;
+        height: 77px;
+        padding: 0;
+        color: #666666;
+        border-bottom: 1px solid #eee;
+        text-align: left;
+    }
+    .LogList .logRow-bot{
+        display: flex;
+        flex-direction: row;
+        width:100%;
+        height: 27px;
+        margin-bottom:3px;
+        padding: 0;
+        text-align: left;
+    }
+    .logRow .llabel{
+        color: #666666;
+        white-space: pre;
+        width: 50%;
+        border-right: 1px solid #eee;
+        margin: 3px 0 3px 10px;
+        text-align: left;
+        font-size: 13px;
+        font-weight: bolder;
+    }
+    .logRow-bot .llabel-time{
+        color: #666666;
+        white-space: pre;
+        width: 40%;
+        border-right: 1px solid #eee; 
+        margin: 3px 0 0 10px;
+        text-align: left;
+        font-size: 13px;
+        font-weight: bold;
+    }
+    .logRow-bot .ccontent-time{
+        width: 70%;
+        color: #666666;
+        white-space: pre;
+        text-align: left;
+        margin: 3px 0 0 10px;
+        border-right: 5px solid #eee; 
+    }
+    .logRow .ccontent{
+        width: 50%;
+        color: #666666;
+        white-space: pre;
+        text-align: left;
+        margin: 3px 0 3px 10px;
+    }
+    .logContent .llabel{
+        color: #666666;
+        white-space: pre;
+        width: 50%;
+        /* border-right: 1px solid #eee; */
+        text-align: left;
+        margin: 3px 0 3px 10px;
+        font-size: 13px;
+        font-weight: bold;
+    }
+    .logContent .content-box {
+        width:93%;
+        height: 45px;
+        border: 1px solid #a8a8a8;
+        border-radius: 5px;
+        padding: 3px;
+        color: #666666;
+        margin-left: 10px;
+    }
+    .logRow-bot .LogType-false{
+        margin: 5px 0;
+         /* border: 1px solid #eee; */
+        color: rgb(255,86,64);
+        width:80px;
+        text-align: center;
+        font-size: 14px;
+        height:20px;
+    }
+    .logRow-bot .LogType-true{
+        margin: 5px 0;
+         /* border: 1px solid #eee; */
+        color: green;
+        width:80px;
+        text-align: center;
+        font-size: 14px;
+        height:20px;
+    }

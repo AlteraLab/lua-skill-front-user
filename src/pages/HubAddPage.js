@@ -4,8 +4,6 @@ import { withRouter } from 'react-router';
 import { connect } from 'react-redux';
 import * as userActions from '../store/modules/user';
 import * as hubActions from '../store/modules/hub';
-import ip from 'ip';
-import publicIp from 'public-ip';
 import {
     BasicNav,
     BasicBoard,
@@ -15,7 +13,6 @@ import {
     LinkBtn,
     SubmitBtn
 } from '../components';
-import scanBtnImg from '../img/scan-button-img.jpg';
 
 class HubAddPage extends Component {
 
@@ -34,8 +31,6 @@ class HubAddPage extends Component {
         } = this.props;
         
         //form validation 우선적으로 수행해야
-
-
         HubActions.registerHub({
             external_ip: scanHubInfo.external_ip,
             external_port: scanHubInfo.external_port,
@@ -51,7 +46,8 @@ class HubAddPage extends Component {
     _changeInputText = (e) => {
         const { HubActions } = this.props;
         const { name, value } = e.target;
-
+        console.log('이벤트');
+        console.log(name + " " + value);
         HubActions.changeInput({
             name, //input tag의 name, redux store의 상태값과 일치해야
             value
@@ -67,7 +63,6 @@ class HubAddPage extends Component {
         const { user, scanHubInfo } = this.props;
 
         const {
-            status,
             external_ip,
             mac_addr
         } = scanHubInfo;
@@ -109,11 +104,11 @@ class HubAddPage extends Component {
                             label='hub_name' 
                             must={true} 
                             placeholder='16자 이내'
-                            onChange={(this._changeInputText)}
+                            onChange={this._changeInputText}
                         />
                         <InputItem 
                             name='검색용 아이디' 
-                            label='hub_id' 
+                            label='search_id' 
                             must={true} 
                             placeholder='20자 이내, 변경불가'
                             onChange={this._changeInputText}
@@ -126,7 +121,7 @@ class HubAddPage extends Component {
                         />
                         <SubmitBtn onClick={this._registerHub} context='확인'/>
                     </InputContainer>
-                    <LinkBtn to='./main' context="이전"/>
+                    <LinkBtn to='./main' context="이전"  /* LinkBtn to='./no' context="이전" *//>
                 </BasicBoard>
                 <BasicFooter />
             </Fragment>

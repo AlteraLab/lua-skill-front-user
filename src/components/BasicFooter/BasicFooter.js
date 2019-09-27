@@ -1,6 +1,5 @@
 import React from 'react';
 import './BasicFooter.css'
-import { Link } from 'react-router-dom';
 
 const BasicFooter = () => {
 

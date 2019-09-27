@@ -2,12 +2,8 @@ import React, { Component, Fragment } from 'react';
 import { bindActionCreators } from 'redux';
 import { withRouter } from 'react-router';
 import { connect } from 'react-redux';
-import { Redirect } from 'react-router-dom'
 import * as userActions from '../store/modules/user';
-import * as hubActions from '../store/modules/hub';
-import { SibaHeader } from '../components';
-import ip from 'ip';
-import publicIp from 'public-ip';
+import * as authActions from '../store/modules/auth';
 import {
     BasicNav,
     BasicFooter,
@@ -17,11 +13,23 @@ import BasicBoard from '../components/BasicBoard/BasicBoard';
 
 class MainPage extends Component {
 
+    // 로그인 상태 -> isAuthcated 상태 true 로 변경
+    _toggleIsAuthenticatedToTrue = () => {  
+        const { AuthActions } = this.props;
+        AuthActions.toggleAuthenticatedToTrue();
+    }
+
     //HubBox 컴포넌트들을 렌더링
-    _renderHubBox = (hubBoxList, userInfo) => {
-        return hubBoxList.map(
+    _renderHubBox = () => {
+        const { hubs, user } = this.props;
+
+        return hubs.map(
             hubBox => {
-                return <HubBox hubInfo={hubBox} key={hubBox.hubId} userInfo={userInfo}/>
+                return  <HubBox 
+                            key={hubBox.hubId} 
+                            hubInfo={hubBox} 
+                            userId={user.userId}
+                        />
             }
         )
     }
@@ -29,67 +37,31 @@ class MainPage extends Component {
     componentDidMount() {
         const { UserActions } = this.props;
         UserActions.getUserInfo(); //사용자의 기본정보 요청
+        UserActions.setIsRedirectToMainWithFalse();
+        
     }
 
     render() {
-        const { user, hubs } = this.props;
+        const { user, hubs, isAuthenticated } = this.props;
+        
+        if(user.userId !== null && isAuthenticated === false) {
+            this._toggleIsAuthenticatedToTrue();
+        }
+
         return (
             <Fragment>
                 <BasicNav user={user} />
                 <BasicBoard
                     title="내 IoT허브"
-                    renderInfo={{
-                        renderFunc: this._renderHubBox,
-                        items: hubs,
-                        userInfo: user
-                    }}
-                    type="hub">
-<<<<<<< HEAD
-                    {<HubBox hubInfo={{
-                        hub_name: '거실 허브',
-                        external_ip: '203.250.32.29',
-                        hub_id: 2,
-                    }} userInfo={{
-                        user_name: 'gd',
-                        external_ip: '203.250.32.29',
-                        user_id: 5,
-                    }}/>}
-                    <HubBox hubInfo={{
-                        hub_name: '거실 허브',
-                        external_ip: '203.250.32.29',
-                        hub_id: 2,
-                    }} userInfo={{
-                        user_name: 'gd',
-                        external_ip: '203.250.32.29',
-                        user_id: 5,
-                    }}/>
-                    <HubBox hubInfo={{
-                        hub_name: '거실 허브',
-                        external_ip: '203.250.32.29',
-                        hub_id: 2,
-                    }} userInfo={{
-                        user_name: 'gd',
-                        external_ip: '203.250.32.29',
-                        user_id: 5,
-                    }}/>
-                    <HubBox hubInfo={{
-                        hub_name: '거실 허브',
-                        external_ip: '203.250.32.29',
-                        hub_id: 2,
-                    }} userInfo={{
-                        user_name: 'gd',
-                        external_ip: '203.250.32.29',
-                        user_id: 5,
-                    }}/>
-                    
-            
-=======
-                    {/* <HubBox hubInfo={{
-                        hub_name: '거실 허브',
-                        external_ip: '203.250.32.29',
-                        hub_id: 2,
-                    }}/> */}
->>>>>>> 9382bedd945c7d9bbbae442e8de49f3139135aa5
+                    renderInfo={
+                        {
+                            renderFunc: this._renderHubBox,
+                            items: hubs,
+                            userInfo: user
+                        }
+                    }
+                    type="hub"
+                >
                 </BasicBoard>
                 <BasicFooter />
             </Fragment>
@@ -111,6 +83,7 @@ export default withRouter(
         }),
         dispatch => ({
             UserActions: bindActionCreators(userActions, dispatch),
+            AuthActions: bindActionCreators(authActions, dispatch),
         })
     )(MainPage)
 );

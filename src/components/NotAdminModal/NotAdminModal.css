@@ -1,0 +1,47 @@
+.NotAdminModal {
+	background: rgba(0, 0, 0, 0.25);
+	position: fixed;
+	left: 0;
+	top: 0;
+	height: 100%;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.NotAdminModal .nAdmin-content {
+	background: rgb(255, 255, 255);
+	padding: 1rem;
+	width: 200px;
+	height: auto;
+}
+
+.nAdmin-content #mes {
+	font-size: 14px;
+}
+
+.nAdmin-content .close-content {
+	display: flex;
+	flex-direction: row;
+	margin-bottom:10px;
+}
+
+.nAdmin-content .close-btn {
+	text-align: center;
+	width: 100%;
+}
+
+.close-btn #btnclose {
+	border: none;
+	font-size: 15px;
+	background-color:white;
+	width: 100%;
+	height:20px;
+}
+
+#btnclose:hover {
+	background-color:#F7F7F7;
+	border-radius: 70px;
+	border:1px solid #666;
+}
