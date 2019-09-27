@@ -1,0 +1,175 @@
+.DeviceBox {
+    flex: 0 0 100%; /*grow, shrink, basis*/
+}
+
+@media only screen and (min-width:512px) {
+    .DeviceBox {
+        flex: 0 0 310px; /*grow, shrink, basis*/
+    }   
+}
+
+@media only screen and (min-width:768px) {
+    .DeviceBox {
+        flex: 0 0 320px; 
+        /*grow, shrink, basis*/
+    }   
+}
+
+@media only screen and (min-width:1024px) {
+    .DeviceBox {
+        flex: 0 0 400px; /*grow, shrink, basis*/
+    }
+}
+
+.DeviceBox {
+    height: auto;
+    margin-bottom: 13px;
+    display: flex;
+    flex-direction: column;
+}
+
+.DeviceBox .BigTitle {
+    margin:70px 11px 17px 11px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid #666;
+}
+
+.DeviceBox header{
+    margin:0 15px ;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    height: 45px;
+    background-color: #F2F2F2;
+    border:1px solid #eee;
+    border-radius: 30px;
+}
+
+.DeviceBox .dev-name{
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    text-align: left;
+}
+
+.DeviceBox .dtitle{
+    padding: 4px 0;
+    font-size: 16px;
+    margin: 4px 0px 0 10px;
+    color: rgb(51,51,51);
+}
+
+.DeviceBox .subtitle{
+    margin: 0 0 2px 31px;
+    font-size: 11px;
+    color: rgb(165,165,165);
+}
+
+.DeviceBox .dev-info{
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    align-items: center;
+    justify-content: flex-end;
+    margin-right: 7px;
+}
+
+
+.DeviceBox .dev-state{
+    width: 23px;
+    text-align: center;
+    border-radius: 10px;
+    padding: 1px 0 2px 0;
+    font-size: 11px;
+}
+
+.DeviceBox .off{
+    border: 1px solid rgb(255,86,64);
+    color: rgb(255,86,64);
+}
+
+.DeviceBox .on{
+    border: 1px solid green;
+    color: green;
+
+}
+
+.DeviceBox section{
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 13px;
+    padding: 0 10px 10px 10px;
+    margin:0 15px;
+}
+
+.DeviceBox article{
+    display: flex;
+    flex-direction: column;
+}
+
+
+.DeviceBox .dev-row{
+    display: flex;
+    border-bottom: 1px solid #eee;
+    flex-direction: row;
+    padding: 10px;
+    width:100%;
+    height:40px;
+}
+
+.DeviceBox .dev-label{
+    width: 33%;
+    color: #666666;
+    white-space: pre;
+    float: left;
+}
+
+.DeviceBox .dev-content{
+    text-align: right;
+    width: 97%;
+    font-weight: 500;
+    color: #666666;
+    white-space: pre;
+}
+
+/* .DeviceBox footer{
+    margin-top: 6px;
+    padding: 0px 10px 4px 10px;
+    width: 100%;
+} 
+
+.DeviceBox .wrap-btn{
+    border-top: 1px solid #eee;
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: row;
+    padding-top: 7px;
+}
+
+.DeviceBox .short-info{
+    position: absolute;
+    left: 3px;
+    top:6px;
+    font-size: 11px;
+    display: flex;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    padding: 3px 6px;
+}
+
+.DeviceBox .short-info-item{
+    margin-right: 11px;
+    vertical-align: center;
+}
+
+.DeviceBox .short-info-label{
+    margin-left: 16px;
+}
+
+.DeviceBox .short-info-ico{
+    position: absolute;
+    top: 5px;
+}
+*/

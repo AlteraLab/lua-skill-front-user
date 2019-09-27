@@ -1,0 +1,17 @@
+.BasicFooter{
+    position: fixed;
+    display: block;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 20px;
+    background-color: #3d485c;
+    text-align: center;
+    color: white;
+    font-size: 11px;
+}
+
+.BasicFooter a{
+    color: white;
+}

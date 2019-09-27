@@ -1,0 +1,53 @@
+.DevAddResModal {
+	background: rgba(0, 0, 0, 0.25);
+	position: fixed;
+	left: 0;
+	top: 0;
+	height: 100%;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+
+.DevAddResModal .DevRes-content {
+	background: rgb(255, 255, 255);
+	padding: 1rem;
+	width: auto;
+	height: auto;
+}
+.DevRes-content .resModal {
+	display: flex;
+	flex-direction: column;
+}
+.DevRes-content  #res-title {
+	font-size: 14px;
+}
+.DevRes-content  #res-subtitle{
+	font-size: 14px;
+}
+.DevRes-content .devres-content {
+	display: flex;
+	flex-direction: row;
+	margin-bottom:10px;
+}
+
+.DevRes-content  .close-btn {
+	text-align: center;
+	width: 100%;
+}
+
+.close-btn #devAddResbtn {
+	border: none;
+	font-size: 15px;
+	background-color:white;
+	width: 100%;
+	height:20px;
+}
+
+#devAddResbtn:hover {
+	background-color:#F7F7F7;
+	border-radius: 70px;
+	border:1px solid rgb(126, 126, 126);
+}

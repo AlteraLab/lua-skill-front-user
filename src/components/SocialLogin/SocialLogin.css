@@ -1,9 +1,12 @@
 .SocialLogin {
-    
+  display: flex;    
+  flex-direction: column;
+  align-items: center;
+  margin-top:30px;
 }
 
-.btn{
-    display: inline-block;
+.SocialLogin .btn{
+  display: inline-block;
   font-weight: 400;
   text-align: center;
   -ms-touch-action: manipulation;
@@ -12,7 +15,7 @@
   background-image: none;
   border: 1px solid transparent;
   white-space: nowrap;
-  padding: 0 20px;
+  padding: 0 10px;
   font-size: 14px;
   border-radius: 4px;
   height: 45px;
@@ -24,25 +27,57 @@
   -webkit-transition: all .3s cubic-bezier(.645,.045,.355,1);
   transition: all .3s cubic-bezier(.645,.045,.355,1);
   position: relative;
-  color: rgba(0,0,0,.65);
+  /* color: rgba(0,0,0,.65); */
+  color: black;
   background-color: transparent;
-  border-color: #e8e8e8;
+  /* border-color: #eee; */
   outline: none;
 }
 
-.btn-block {
+.SocialLogin .btn-block {
     display: block;
-    width: 100%;
+    max-width: 266px;
+    min-width: 234px;
+    background-color: #FDF01B;
   }
 
-.social-btn {
+.SocialLogin .social-btn {
+    margin-top: 70px;
     margin-bottom: 15px;
     font-weight: 400;
     font-size: 16px;
 }
 
-.social-btn img {
+.SocialLogin .social-btn img {
     height: 32px;
     float: left;
     margin-top: 7px;
+}
+
+.SocialLogin .social-btn:after,
+.SocialLogin .social-btn:before {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 100%;
+    width: 0;
+    height: 0;
+    border-style: solid;
+}
+
+.SocialLogin .social-btn:after {
+    top: 8px;
+    border-color: transparent transparent transparent #FDF01B;
+    border-width: 10px;
+}
+
+.SocialLogin .social-btn:before {
+    top: 7px;
+    border-color: transparent transparent transparent #eee;
+    border-width: 11px;
+}
+
+.SocialLogin #siba{
+  border-radius: 14%;
+  border: 2px solid rgb(51,51,51);;
 }

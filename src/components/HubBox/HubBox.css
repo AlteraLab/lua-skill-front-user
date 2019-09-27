@@ -1,0 +1,169 @@
+.HubBox {
+    flex: 0 0 100%; /*grow, shrink, basis*/
+}
+
+
+@media only screen and (min-width:512px) {
+    .HubBox {
+        flex: 0 0 310px; /*grow, shrink, basis*/
+    }   
+}
+
+@media only screen and (min-width:768px) {
+    .HubBox {
+        flex: 0 0 320px; 
+        /*grow, shrink, basis*/
+    }   
+}
+
+@media only screen and (min-width:1024px) {
+    .HubBox {
+        flex: 0 0 400px; /*grow, shrink, basis*/
+    }
+}
+
+.HubBox {
+    height: 180px;
+    margin-bottom: 13px;
+    border-radius: 10px;
+    border: 1px solid rgb(234,234,234);
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+}
+
+.HubBox header{
+    border-bottom: 1px solid rgb(234,234,234);
+    padding: 0;
+    display: flex;
+    flex: 2;
+    flex-direction: row;
+    
+}
+
+.HubBox .hub-name{
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+}
+
+.HubBox .title{
+    padding: 4px 0;
+    font-size: 15px;
+    margin: 4px 5px 0 10px;
+    color: rgb(51,51,51);
+}
+
+.HubBox .subtitle{
+    margin: 0 0 2px 31px;
+    font-size: 11px;
+    color: rgb(165,165,165);
+}
+
+.HubBox .hub-info{
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    width: 90%;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.HubBox .hub-info-item{
+    margin-right: 7px;
+}
+
+.HubBox .hub-state{
+    width: 25px;
+    text-align: center;
+    border-radius: 10px;
+    padding: 1px 0 2px 0;
+    font-size: 11px;
+}
+
+.HubBox .off{
+    border: 1px solid rgb(255,86,64);
+    color: rgb(255,86,64);
+}
+
+.HubBox .on{
+    border: 1px solid green;
+    color: green;
+}
+
+.HubBox section{
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 12px;
+    padding: 10px 9px 0px 9px;
+}
+
+.HubBox article{
+    display: flex;
+    flex-direction: column;
+    border-left: 3px solid #eee;
+}
+
+
+.HubBox .hub-row{
+    display: flex;
+    flex-direction: row;
+    margin: 0  0 3px 0;
+}
+
+.HubBox .hub-label{
+    width: 33%;
+    color: #666666;
+    white-space: pre;
+    float: left;
+    padding-left: 6px;
+}
+
+.HubBox .hub-content{
+    text-align: right;
+    width: 97%;
+    font-weight: 500;
+    color: #666666;
+    white-space: pre;
+    float: left;
+}
+
+.HubBox footer{
+    margin-top: 6px;
+    padding: 0px 10px 4px 10px;
+    width: 100%;
+}
+
+.HubBox .wrap-btn{
+    border-top: 1px solid #eee;
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: row;
+    padding-top: 7px;
+}
+
+.HubBox .short-info{
+    position: absolute;
+    left: 3px;
+    top:6px;
+    font-size: 11px;
+    display: flex;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    padding: 3px 6px;
+}
+
+.HubBox .short-info-item{
+    margin-right: 11px;
+    vertical-align: center;
+}
+
+.HubBox .short-info-label{
+    margin-left: 16px;
+}
+
+.HubBox .short-info-ico{
+    position: absolute;
+    top: 5px;
+}

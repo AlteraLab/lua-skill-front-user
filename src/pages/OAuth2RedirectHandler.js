@@ -1,7 +1,4 @@
-import React, { Component, Fragment } from 'react';
-import { SocialLoginContainer } from 'containers';
-import { withRouter } from 'react-router';
-import { connect } from 'react-redux';
+import React, { Component } from 'react';
 import  { Redirect } from 'react-router-dom'
 import { ACCESS_TOKEN } from '../constants';
 import { parse } from 'query-string'
@@ -11,7 +8,7 @@ class OAuth2RedirectHandler extends Component {
 
     render() {
         
-        let queryString = parse(this.props.location.search);
+        let queryString = parse(this.props.location.search); // var를 대체하는 변수 let
         let token;
         let error;
 
