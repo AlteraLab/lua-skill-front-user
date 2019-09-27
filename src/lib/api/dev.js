@@ -9,6 +9,7 @@ export const scanDev = (hubIp, hubPort) => {
 	.then(res => {
 		console.log('Axios :: Scan Devs =====');
 		console.log(res.data);
+		console.log('res.data');
 		return res;
 	})
 }
